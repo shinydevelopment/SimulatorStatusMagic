@@ -29,4 +29,9 @@ Until we have a little time to document this better, [the source code contains e
 
 ## Contributing
 
-Sure, however the scope of this project is quite limited. Pull requests will be accepted for bugs or to match any changes Apple make to the default status bar in marketing images on apple.com. Pull requests adding features like being able to set custom carrier text, times other than 9:41 AM or anything which does not match the marketing images on apple.com will be rejected.
+We'd love contributions and even have some suggestions for things that might need working on:
+
+* Found a bug? If you report it with a pull request attached then you get a gold star :)
+* Non-English language support. We'd love it to work with more languages.
+
+However, the scope of this project is intentionally limited. We're not planning to add options to this to allow ultimate customisation of the status bar. It's intended to do just one job really well, change the status bar to match [Apple's marketing materials](http://www.apple.com/ios/). Things like custom time text or custom carrier text are probably out of scope.
