@@ -3,7 +3,7 @@
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
 
 * 9:41 AM is displayed for the time.
-* The battery is full and shows 100% next to it.
+* The battery is full and shows 100%.
 * On iPhone: The carrier text is removed, 5 bars of cellular signal and full WiFi bars are displayed.
 * On iPad: The carrier text is set to "iPad" and full WiFi bars are displayed.
 
@@ -17,13 +17,13 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 ### How do I remove the customisations?
 
-Run the app again and click "Restore Default Status Bar". Resetting the iOS simulator using the menu option in the app also works.
+Run the app again and click "Restore Default Status Bar". Resetting the iOS Simulator using the normal menu option also works.
 
 ### Does this work on device?
 
 No. The status bar server is blocked on devices. However, [this post contains more information on taking perfect screenshots on real devices](http://shinydevelopment.com/blog/status-magic-and-iphone6-screen-sizes/).
 
-## How does this work?
+### How does this work?
 
 Until we have a little time to document this better, [the source code contains everything you need to know](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/SimulatorStatusMagic/SDStatusBarManager.m) :)
 
