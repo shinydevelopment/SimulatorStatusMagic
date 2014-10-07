@@ -25,7 +25,7 @@ No. The status bar server is blocked on devices. However, [this post contains mo
 
 ## How does this work?
 
-Until we have a little time to document this better, the source code contains everything you need to know :)
+Until we have a little time to document this better, [the source code contains everything you need to know](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/SimulatorStatusMagic/SDStatusBarManager.m) :)
 
 ## Contributing
 
