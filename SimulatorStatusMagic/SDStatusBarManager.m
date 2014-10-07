@@ -152,8 +152,8 @@ typedef struct {
 
   // Set 9:41 time in current localization
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:@"h:mm a"];
-  NSDate *date = [dateFormatter dateFromString:@"9:41 AM"];
+  [dateFormatter setDateFormat:NSLocalizedString(@"h:mm a",@"dateFormatter")];
+  NSDate *date = [dateFormatter dateFromString:NSLocalizedString(@"9:41 AM",@"dateString")];
   NSString *dateString = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
   overrides->overrideTimeString = 1;
   strcpy(overrides->values.timeString, [dateString cStringUsingEncoding:NSUTF8StringEncoding]);
@@ -211,7 +211,7 @@ typedef struct {
 
   // Carrier text (it's an override to set it back to the default)
   overrides->overrideServiceString = 1;
-  strcpy(overrides->values.serviceString, [@"Carrier" cStringUsingEncoding:NSUTF8StringEncoding]);
+  strcpy(overrides->values.serviceString, [NSLocalizedString(@"Carrier",@"Carrier") cStringUsingEncoding:NSUTF8StringEncoding]);
 
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
