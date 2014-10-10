@@ -1,0 +1,14 @@
+PODS:
+  - SimulatorStatusMagic (0.1.0)
+
+DEPENDENCIES:
+  - SimulatorStatusMagic (from `../`)
+
+EXTERNAL SOURCES:
+  SimulatorStatusMagic:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SimulatorStatusMagic: d2884c344b78356970a73f1869d41adaf5bad82d
+
+COCOAPODS: 0.34.2
