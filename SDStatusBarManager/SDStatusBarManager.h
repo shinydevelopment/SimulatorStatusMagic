@@ -24,9 +24,18 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(int, SDStatusBarManagerBluetoothState) {
+  SDStatusBarManagerBluetoothDisabled, // does not show bluetooth in status bar
+  SDStatusBarManagerBluetoothEnabled, // enabled but not connected
+  SDStatusBarManagerBluetoothConnected // enabled and connected
+};
+
 @interface SDStatusBarManager : NSObject
 
 @property (assign, nonatomic, readonly) BOOL usingOverrides;
+
+// default is SDStatusBarManagerBluetoothStateDisabled
+@property (assign, nonatomic) SDStatusBarManagerBluetoothState bluetoothState;
 
 - (void)enableOverrides;
 - (void)disableOverrides;

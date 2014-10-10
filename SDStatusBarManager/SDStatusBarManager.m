@@ -146,12 +146,20 @@ typedef struct {
   overrides->overrideBatteryDetailString = 1;
   strcpy(overrides->values.batteryDetailString, [@"100%" cStringUsingEncoding:NSUTF8StringEncoding]);
 
-//  // Bluetooth (uncomment to turn on bluetooth icon).
-//  overrides->booloverrideItemIsEnabled[11] = 1;
-//  overrides->values.boolitemIsEnabled[11] = 1;
-//  overrides->overrideBluetoothConnected = 1;
-//  overrides->values.bluetoothConnected = 1;
 
+  // Bluetooth
+  const BOOL bluetoothEnabled = self.bluetoothState != SDStatusBarManagerBluetoothDisabled;
+  overrides->booloverrideItemIsEnabled[11] = bluetoothEnabled;
+  overrides->values.boolitemIsEnabled[11] = bluetoothEnabled;
+  if (bluetoothEnabled) {
+    const BOOL bluetoothConnected = self.bluetoothState == SDStatusBarManagerBluetoothConnected;
+    overrides->overrideBluetoothConnected = bluetoothConnected;
+    overrides->values.bluetoothConnected = bluetoothConnected;
+  }
+
+
+  // Location service
+  
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
 
@@ -198,6 +206,16 @@ typedef struct {
 - (void)setUsingOverrides:(BOOL)usingOverrides
 {
   [[NSUserDefaults standardUserDefaults] setBool:usingOverrides forKey:@"using_overrides"];
+}
+
+- (void)setBluetoothState:(SDStatusBarManagerBluetoothState)bluetoothState {
+    if (_bluetoothState == bluetoothState) {
+        return;
+    }
+    _bluetoothState = bluetoothState;
+    if (self.usingOverrides) {
+        [self enableOverrides]; // refresh update overrides
+    }
 }
 
 #pragma mark Singleton instance
