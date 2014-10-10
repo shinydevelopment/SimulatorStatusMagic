@@ -13,7 +13,7 @@
 		5516357719E3FF3D001F636D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516357519E3FF3D001F636D /* Main.storyboard */; };
 		5516357919E3FF3D001F636D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516357819E3FF3D001F636D /* Images.xcassets */; };
 		5516357C19E3FF3D001F636D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5516357A19E3FF3D001F636D /* LaunchScreen.xib */; };
-		5516359519E400AD001F636D /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516359419E400AD001F636D /* SDStatusBarManager.m */; };
+		DDACF30B19E83F06004FCB30 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		5516357619E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5516357819E3FF3D001F636D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5516357B19E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5516359319E400AD001F636D /* SDStatusBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarManager.h; sourceTree = "<group>"; };
-		5516359419E400AD001F636D /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; };
+		DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarManager.h; sourceTree = "<group>"; };
+		DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				5516357519E3FF3D001F636D /* Main.storyboard */,
-				5516359219E40098001F636D /* Models */,
+				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
 				5516359119E3FFBB001F636D /* Controllers */,
 				5516357819E3FF3D001F636D /* Images.xcassets */,
 				5516356B19E3FF3D001F636D /* Supporting Files */,
@@ -91,14 +91,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		5516359219E40098001F636D /* Models */ = {
+		DDACF30819E83F06004FCB30 /* SDStatusBarManager */ = {
 			isa = PBXGroup;
 			children = (
-				5516359319E400AD001F636D /* SDStatusBarManager.h */,
-				5516359419E400AD001F636D /* SDStatusBarManager.m */,
+				DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */,
+				DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */,
 			);
-			name = Models;
-			sourceTree = "<group>";
+			path = SDStatusBarManager;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -172,7 +172,7 @@
 			files = (
 				5516357419E3FF3D001F636D /* ViewController.m in Sources */,
 				5516357119E3FF3D001F636D /* AppDelegate.m in Sources */,
-				5516359519E400AD001F636D /* SDStatusBarManager.m in Sources */,
+				DDACF30B19E83F06004FCB30 /* SDStatusBarManager.m in Sources */,
 				5516356E19E3FF3D001F636D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
