@@ -51,6 +51,22 @@
   }
 }
 
+- (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender {
+  SDStatusBarManagerBluetoothState bluetoothState;
+  switch (sender.selectedSegmentIndex) {
+    case 1:
+      bluetoothState = SDStatusBarManagerBluetoothEnabled;
+      break;
+    case 2:
+      bluetoothState = SDStatusBarManagerBluetoothConnected;
+      break;
+    default:
+      bluetoothState = SDStatusBarManagerBluetoothDisabled;
+      break;
+  }
+  [[SDStatusBarManager sharedInstance] setBluetoothState:bluetoothState];
+}
+
 - (void)setOverrideButtonText
 {
   if ([SDStatusBarManager sharedInstance].usingOverrides) {
