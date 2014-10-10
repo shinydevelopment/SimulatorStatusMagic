@@ -151,10 +151,7 @@ typedef struct {
   StatusBarOverrideData *overrides = [UIStatusBarServer getStatusBarOverrideData];
 
   // Set 9:41 time in current localization
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:NSLocalizedString(@"h:mm a",@"dateFormatter")];
-  NSDate *date = [dateFormatter dateFromString:NSLocalizedString(@"9:41 AM",@"dateString")];
-  NSString *dateString = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
+  NSString *dateString = [self localizedTimeString];
   overrides->overrideTimeString = 1;
   strcpy(overrides->values.timeString, [dateString cStringUsingEncoding:NSUTF8StringEncoding]);
 
@@ -238,6 +235,21 @@ typedef struct {
   __strong static id sharedObject = nil;
   dispatch_once(&predicate, ^{ sharedObject = [[self alloc] init]; });
   return sharedObject;
+}
+
+#pragma mark Helper
+
+- (NSString *)localizedTimeString
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterNoStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components: NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    components.hour = 9;
+    components.minute = 41;
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:components];
+    return [formatter stringFromDate:date];
 }
 
 @end
