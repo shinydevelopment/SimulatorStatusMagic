@@ -23,7 +23,7 @@
 // --------------------------------------------------------------------------------
 
 #import "ViewController.h"
-#import "SDStatusBarManager.h"
+#import <SimulatorStatusMagic/SDStatusBarManager.h>
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;

@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'SimulatorStatusMagic', :exclusive => true do
+  pod "SimulatorStatusMagic", :path => "../"
+end
+
