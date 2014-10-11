@@ -46,14 +46,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		110F24E819E4611600012FD7 /* de.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				110F24E519E4610E00012FD7 /* Localizable.strings */,
-			);
-			name = de.lproj;
-			sourceTree = "<group>";
-		};
 		5516355F19E3FF3D001F636D = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +77,7 @@
 		5516356B19E3FF3D001F636D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				110F24E819E4611600012FD7 /* de.lproj */,
+				110F24E519E4610E00012FD7 /* Localizable.strings */,
 				5516357A19E3FF3D001F636D /* LaunchScreen.xib */,
 				5516356C19E3FF3D001F636D /* Info.plist */,
 				5516356D19E3FF3D001F636D /* main.m */,
