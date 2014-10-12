@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110F24E719E4610E00012FD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 110F24E519E4610E00012FD7 /* Localizable.strings */; };
 		5516356E19E3FF3D001F636D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516356D19E3FF3D001F636D /* main.m */; };
 		5516357119E3FF3D001F636D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516357019E3FF3D001F636D /* AppDelegate.m */; };
 		5516357419E3FF3D001F636D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516357319E3FF3D001F636D /* ViewController.m */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110F24E319E45FFE00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		110F24E419E45FFE00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		110F24E619E4610E00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5516356819E3FF3D001F636D /* SimulatorStatusMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimulatorStatusMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5516356C19E3FF3D001F636D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5516356D19E3FF3D001F636D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		5516356B19E3FF3D001F636D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				110F24E519E4610E00012FD7 /* Localizable.strings */,
 				5516357A19E3FF3D001F636D /* LaunchScreen.xib */,
 				5516356C19E3FF3D001F636D /* Info.plist */,
 				5516356D19E3FF3D001F636D /* main.m */,
@@ -141,6 +146,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5516355F19E3FF3D001F636D;
 			productRefGroup = 5516356919E3FF3D001F636D /* Products */;
@@ -158,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5516357719E3FF3D001F636D /* Main.storyboard in Resources */,
+				110F24E719E4610E00012FD7 /* Localizable.strings in Resources */,
 				5516357C19E3FF3D001F636D /* LaunchScreen.xib in Resources */,
 				5516357919E3FF3D001F636D /* Images.xcassets in Resources */,
 			);
@@ -180,10 +187,19 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		110F24E519E4610E00012FD7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				110F24E619E4610E00012FD7 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5516357519E3FF3D001F636D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5516357619E3FF3D001F636D /* Base */,
+				110F24E319E45FFE00012FD7 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -192,6 +208,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5516357B19E3FF3D001F636D /* Base */,
+				110F24E419E45FFE00012FD7 /* de */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
