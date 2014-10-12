@@ -27,6 +27,8 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
+
 @end
 
 @implementation ViewController
@@ -37,6 +39,7 @@
   [super viewDidLoad];
 
   [self setOverrideButtonText];
+  [self setBluetoothSegementedControlSelectedSegment];
 }
 
 #pragma mark Actions
@@ -76,6 +79,22 @@
   }
 }
 
+- (void)setBluetoothSegementedControlSelectedSegment {
+  NSInteger selectedIndex;
+  switch ([SDStatusBarManager sharedInstance].bluetoothState) {
+    default:
+    case SDStatusBarManagerBluetoothDisabled:
+      selectedIndex = 0;
+      break;
+    case SDStatusBarManagerBluetoothEnabled:
+      selectedIndex = 1;
+      break;
+    case SDStatusBarManagerBluetoothConnected:
+      selectedIndex = 2;
+      break;
+  }
+  self.bluetoothSegmentedControl.selectedSegmentIndex = selectedIndex;
+}
 #pragma mark Status bar settings
 - (BOOL)prefersStatusBarHidden
 {
