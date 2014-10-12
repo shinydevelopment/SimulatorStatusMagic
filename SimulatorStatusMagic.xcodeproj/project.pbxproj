@@ -50,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				5516356A19E3FF3D001F636D /* SimulatorStatusMagic */,
+				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
 				5516356919E3FF3D001F636D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				5516357519E3FF3D001F636D /* Main.storyboard */,
-				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
 				5516359119E3FFBB001F636D /* Controllers */,
 				5516357819E3FF3D001F636D /* Images.xcassets */,
 				5516356B19E3FF3D001F636D /* Supporting Files */,
