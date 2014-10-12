@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "SimulatorStatusMagic"
-  s.version          = "0.1.0"
-  s.summary          = "Enable perfect status bar simulation in the iOS Simulator."
+  s.version          = "1.0"
+  s.summary          = "Enable perfect status bars in the iOS Simulator."
   s.description      = <<-DESC
                         Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
 
@@ -11,9 +11,8 @@ Pod::Spec.new do |s|
                         * On iPad: The carrier text is set to "iPad" and full WiFi bars are displayed.
                        DESC
   s.homepage         = "https://github.com/shinydevelopment/SimulatorStatusMagic"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Dave Verwer" => "dave.verwer@shinydevelopment.com" }
+  s.author           = { "Dave Verwer" => "dave.verwer@shinydevelopment.com", "Greg Spiers" => "greg.spiers@shinydevelopment.com" }
   s.source           = { :git => "https://github.com/shinydevelopment/SimulatorStatusMagic.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
