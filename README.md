@@ -19,7 +19,7 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 Run the app again and click "Restore Default Status Bar". Resetting the iOS Simulator using the normal menu option also works.
 
-### I have a script which takes all of my screenshots for me, can I automate this?
+### I have a script to take my screenshots, can I automate this?
 
 Yes! SimulatorStatusMagic is also available through [CocoaPods](http://cocoapods.org). To install, simply add the following line to your Podfile:
 
@@ -37,7 +37,7 @@ No. The status bar server is blocked on devices. However, [this post contains mo
 
 ### How does this work?
 
-Until we have a little time to document this better, [the source code contains everything you need to know](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/SimulatorStatusMagic/SDStatusBarManager.m) :)
+Until we have a little time to document this better, [the source code contains everything you need to know](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/SDStatusBarManager/SDStatusBarManager.m) :)
 
 ## Contributing
 
