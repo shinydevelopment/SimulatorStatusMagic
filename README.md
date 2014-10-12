@@ -15,28 +15,21 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 * Once the app launches, press the only button on the screen :)
 * That's it, you're done! Now just run your app and take screenshots.
 
-#### In unit tests for automated screenshots 
-
-SimulatorStatusMagic is also available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-```ruby
-pod "SimulatorStatusMagic"
-```
-If you want to use git submodules: add this repository as a submodule and add the files from ```SDStatusBarManager``` to your projects.
-
-Then in your unit test call
-```objectivec
-[[SDStatusBarManager sharedInstance] enableOverrides];
-```
-before your screenshot code to enable the status bar overrides and
-```objectivec
-[[SDStatusBarManager sharedInstance] disableOverrides];
-```
-after your screenshots code to disable the status bar overrides.
-
 ### How do I remove the customisations?
 
 Run the app again and click "Restore Default Status Bar". Resetting the iOS Simulator using the normal menu option also works.
+
+#### I have a script which takes all of my screenshots for me, can I automate this?
+
+Yes! SimulatorStatusMagic is also available through [CocoaPods](http://cocoapods.org). To install, simply add the following line to your Podfile:
+
+```ruby
+pod 'SimulatorStatusMagic', :configurations => ['Debug']
+```
+
+We recommend only including `SDStatusBarManager` in your debug configuration so that this code is never included in release builds.
+
+When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
 
 ### Does this work on device?
 
