@@ -149,12 +149,18 @@ typedef struct {
   self.usingOverrides = YES;
 
   StatusBarOverrideData *overrides = [UIStatusBarServer getStatusBarOverrideData];
-
   // Set 9:41 time in current localization
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:NSLocalizedString(@"h:mm a",@"dateFormatter")];
-  NSDate *date = [dateFormatter dateFromString:NSLocalizedString(@"9:41 AM",@"dateString")];
-  NSString *dateString = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
+  [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+  [dateFormatter setDateFormat:@"h:mm a"];
+  NSDate *date = [dateFormatter dateFromString:@"9:41 AM"];
+    
+    
+  NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+  [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
+  [timeFormatter setDateStyle:NSDateFormatterNoStyle];
+  NSString *dateString = [NSString stringWithFormat:@"%@", [timeFormatter stringFromDate:date]];
+    
   overrides->overrideTimeString = 1;
   strcpy(overrides->values.timeString, [dateString cStringUsingEncoding:NSUTF8StringEncoding]);
 
