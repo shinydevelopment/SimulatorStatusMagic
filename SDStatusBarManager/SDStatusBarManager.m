@@ -114,6 +114,10 @@ typedef struct {
 + (void)addStyleOverrides:(int)arg1;
 @end
 
+@interface SDStatusBarManager ()
+@property (nonatomic, readonly) NSUserDefaults *userDefaults;
+@end
+
 @implementation SDStatusBarManager
 
 - (void)enableOverrides
@@ -198,24 +202,39 @@ typedef struct {
 }
 
 #pragma mark Properties
+
+static NSString *const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
+
 - (BOOL)usingOverrides
 {
-  return [[NSUserDefaults standardUserDefaults] boolForKey:@"using_overrides"];
+  return [self.userDefaults boolForKey:SDStatusBarManagerUsingOverridesKey];
 }
 
 - (void)setUsingOverrides:(BOOL)usingOverrides
 {
-  [[NSUserDefaults standardUserDefaults] setBool:usingOverrides forKey:@"using_overrides"];
+  [self.userDefaults setBool:usingOverrides forKey:SDStatusBarManagerUsingOverridesKey];
 }
 
+
+static NSString *const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
+
 - (void)setBluetoothState:(SDStatusBarManagerBluetoothState)bluetoothState {
-    if (_bluetoothState == bluetoothState) {
-        return;
-    }
-    _bluetoothState = bluetoothState;
-    if (self.usingOverrides) {
-        [self enableOverrides]; // refresh update overrides
-    }
+  if (self.bluetoothState == bluetoothState) {
+    return;
+  }
+  [self.userDefaults setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
+
+  if (self.usingOverrides) {
+    [self enableOverrides]; // refresh update overrides
+  }
+}
+
+- (SDStatusBarManagerBluetoothState)bluetoothState {
+  return [[self.userDefaults valueForKey:SDStatusBarManagerBluetoothStateKey] intValue];
+}
+
+- (NSUserDefaults *)userDefaults {
+  return [[NSUserDefaults alloc] initWithSuiteName:@"com.shinydevelopment.SDStatusBarManager"];
 }
 
 #pragma mark Singleton instance
