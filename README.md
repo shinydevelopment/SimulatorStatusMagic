@@ -19,6 +19,18 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 Run the app again and click "Restore Default Status Bar". Resetting the iOS Simulator using the normal menu option also works.
 
+#### I have a script which takes all of my screenshots for me, can I automate this?
+
+Yes! SimulatorStatusMagic is also available through [CocoaPods](http://cocoapods.org). To install, simply add the following line to your Podfile:
+
+```ruby
+pod 'SimulatorStatusMagic', :configurations => ['Debug']
+```
+
+We recommend only including `SDStatusBarManager` in your debug configuration so that this code is never included in release builds.
+
+When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
+
 ### Does this work on device?
 
 No. The status bar server is blocked on devices. However, [this post contains more information on taking perfect screenshots on real devices](http://shinydevelopment.com/blog/status-magic-and-iphone6-screen-sizes/).
