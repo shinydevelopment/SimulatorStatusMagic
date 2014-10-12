@@ -152,8 +152,12 @@ typedef struct {
 
   // Set 9:41 time in current localization
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:NSLocalizedString(@"h:mm a",@"dateFormatter")];
-  NSDate *date = [dateFormatter dateFromString:NSLocalizedString(@"9:41 AM",@"dateString")];
+  dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+  [dateFormatter setDateFormat:@"h:mm a"];
+  NSDate *date = [dateFormatter dateFromString:@"9:41 AM"];
+  dateFormatter.locale = [NSLocale currentLocale];
+  dateFormatter.timeStyle = NSDateFormatterShortStyle;
+  dateFormatter.dateStyle = NSDateFormatterNoStyle;
   NSString *dateString = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
   overrides->overrideTimeString = 1;
   strcpy(overrides->values.timeString, [dateString cStringUsingEncoding:NSUTF8StringEncoding]);
