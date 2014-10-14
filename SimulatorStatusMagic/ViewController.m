@@ -27,6 +27,7 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
 @end
 
 @implementation ViewController
@@ -37,6 +38,7 @@
   [super viewDidLoad];
 
   [self setOverrideButtonText];
+  [self setBluetoothSegementedControlSelectedSegment];
 }
 
 #pragma mark Actions
@@ -51,6 +53,13 @@
   }
 }
 
+- (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender
+{
+  // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
+  [[SDStatusBarManager sharedInstance] setBluetoothState:sender.selectedSegmentIndex];
+}
+
+#pragma mark UI helpers
 - (void)setOverrideButtonText
 {
   if ([SDStatusBarManager sharedInstance].usingOverrides) {
@@ -58,6 +67,12 @@
   } else {
     [self.overrideButton setTitle:NSLocalizedString(@"Apply Clean Status Bar Overrides", "Apply Clean Status Bar Overrides") forState:UIControlStateNormal];
   }
+}
+
+- (void)setBluetoothSegementedControlSelectedSegment
+{
+  // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
+  self.bluetoothSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].bluetoothState;
 }
 
 #pragma mark Status bar settings

@@ -24,12 +24,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
+{
+  SDStatusBarManagerBluetoothHidden = 0,
+  SDStatusBarManagerBluetoothVisibleDimmed,
+  SDStatusBarManagerBluetoothVisibleConnected
+};
+
 @interface SDStatusBarManager : NSObject
 
 @property (assign, nonatomic, readonly) BOOL usingOverrides;
+@property (assign, nonatomic) SDStatusBarManagerBluetoothState bluetoothState;
 
 - (void)enableOverrides;
 - (void)disableOverrides;
+
 + (SDStatusBarManager *)sharedInstance;
 
 @end
