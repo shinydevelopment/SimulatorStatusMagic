@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -27,20 +27,20 @@
                                     <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
-                                <rect key="frame" x="260" y="324" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
+                                <rect key="frame" x="247" y="366" width="107" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-a6-wUU">
-                                <rect key="frame" x="193" y="353" width="214" height="29"/>
+                                <rect key="frame" x="150" y="394" width="300" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="Vei-lk-LDx"/>
+                                    <constraint firstAttribute="width" constant="300" id="Vei-lk-LDx"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Disabled"/>
-                                    <segment title="Enabled"/>
+                                    <segment title="Hidden"/>
+                                    <segment title="Dimmed"/>
                                     <segment title="Connected"/>
                                 </segments>
                                 <connections>
@@ -53,7 +53,7 @@
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="1W5-6m-qnr" secondAttribute="centerX" id="5kz-az-0iU"/>
                             <constraint firstItem="1W5-6m-qnr" firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="GHF-He-aJP"/>
                             <constraint firstAttribute="centerY" secondItem="Omy-wd-t1z" secondAttribute="centerY" id="HwQ-bH-TKM"/>
-                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="Omy-wd-t1z" secondAttribute="bottom" constant="8" symbolic="YES" id="I44-KL-yTT"/>
+                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="Omy-wd-t1z" secondAttribute="bottom" constant="50" id="I44-KL-yTT"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8" symbolic="YES" id="ZhL-bv-eFo"/>
                             <constraint firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="iu0-gd-7Jz"/>
                         </constraints>

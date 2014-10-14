@@ -28,7 +28,6 @@
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
-
 @end
 
 @implementation ViewController
@@ -54,22 +53,13 @@
   }
 }
 
-- (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender {
-  SDStatusBarManagerBluetoothState bluetoothState;
-  switch (sender.selectedSegmentIndex) {
-    case 1:
-      bluetoothState = SDStatusBarManagerBluetoothEnabled;
-      break;
-    case 2:
-      bluetoothState = SDStatusBarManagerBluetoothConnected;
-      break;
-    default:
-      bluetoothState = SDStatusBarManagerBluetoothDisabled;
-      break;
-  }
-  [[SDStatusBarManager sharedInstance] setBluetoothState:bluetoothState];
+- (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender
+{
+  // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
+  [[SDStatusBarManager sharedInstance] setBluetoothState:sender.selectedSegmentIndex];
 }
 
+#pragma mark UI helpers
 - (void)setOverrideButtonText
 {
   if ([SDStatusBarManager sharedInstance].usingOverrides) {
@@ -79,22 +69,12 @@
   }
 }
 
-- (void)setBluetoothSegementedControlSelectedSegment {
-  NSInteger selectedIndex;
-  switch ([SDStatusBarManager sharedInstance].bluetoothState) {
-    default:
-    case SDStatusBarManagerBluetoothDisabled:
-      selectedIndex = 0;
-      break;
-    case SDStatusBarManagerBluetoothEnabled:
-      selectedIndex = 1;
-      break;
-    case SDStatusBarManagerBluetoothConnected:
-      selectedIndex = 2;
-      break;
-  }
-  self.bluetoothSegmentedControl.selectedSegmentIndex = selectedIndex;
+- (void)setBluetoothSegementedControlSelectedSegment
+{
+  // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
+  self.bluetoothSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].bluetoothState;
 }
+
 #pragma mark Status bar settings
 - (BOOL)prefersStatusBarHidden
 {

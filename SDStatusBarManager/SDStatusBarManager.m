@@ -114,9 +114,8 @@ typedef struct {
 + (void)addStyleOverrides:(int)arg1;
 @end
 
-@interface SDStatusBarManager ()
-@property (nonatomic, readonly) NSUserDefaults *userDefaults;
-@end
+static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
+static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
 
 @implementation SDStatusBarManager
 
@@ -150,20 +149,16 @@ typedef struct {
   overrides->overrideBatteryDetailString = 1;
   strcpy(overrides->values.batteryDetailString, [@"100%" cStringUsingEncoding:NSUTF8StringEncoding]);
 
-
   // Bluetooth
-  const BOOL bluetoothEnabled = self.bluetoothState != SDStatusBarManagerBluetoothDisabled;
+  const BOOL bluetoothEnabled = self.bluetoothState != SDStatusBarManagerBluetoothHidden;
   overrides->booloverrideItemIsEnabled[11] = bluetoothEnabled;
   overrides->values.boolitemIsEnabled[11] = bluetoothEnabled;
   if (bluetoothEnabled) {
-    const BOOL bluetoothConnected = self.bluetoothState == SDStatusBarManagerBluetoothConnected;
+    const BOOL bluetoothConnected = (self.bluetoothState == SDStatusBarManagerBluetoothVisibleConnected);
     overrides->overrideBluetoothConnected = bluetoothConnected;
     overrides->values.bluetoothConnected = bluetoothConnected;
   }
 
-
-  // Location service
-  
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
 
@@ -192,7 +187,7 @@ typedef struct {
 
   // Carrier text (it's an override to set it back to the default)
   overrides->overrideServiceString = 1;
-  strcpy(overrides->values.serviceString, [NSLocalizedString(@"Carrier",@"Carrier") cStringUsingEncoding:NSUTF8StringEncoding]);
+  strcpy(overrides->values.serviceString, [NSLocalizedString(@"Carrier", @"Carrier") cStringUsingEncoding:NSUTF8StringEncoding]);
 
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
@@ -202,39 +197,45 @@ typedef struct {
 }
 
 #pragma mark Properties
-
-static NSString *const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
-
 - (BOOL)usingOverrides
 {
-  return [self.userDefaults boolForKey:SDStatusBarManagerUsingOverridesKey];
+  return [[NSUserDefaults standardUserDefaults] boolForKey:SDStatusBarManagerUsingOverridesKey];
 }
 
 - (void)setUsingOverrides:(BOOL)usingOverrides
 {
-  [self.userDefaults setBool:usingOverrides forKey:SDStatusBarManagerUsingOverridesKey];
+  [[NSUserDefaults standardUserDefaults] setBool:usingOverrides forKey:SDStatusBarManagerUsingOverridesKey];
 }
 
+- (void)setBluetoothState:(SDStatusBarManagerBluetoothState)bluetoothState
+{
+  if (self.bluetoothState == bluetoothState) return;
 
-static NSString *const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
-
-- (void)setBluetoothState:(SDStatusBarManagerBluetoothState)bluetoothState {
-  if (self.bluetoothState == bluetoothState) {
-    return;
-  }
-  [self.userDefaults setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
+  [[NSUserDefaults standardUserDefaults] setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
 
   if (self.usingOverrides) {
-    [self enableOverrides]; // refresh update overrides
+    // Refresh the active status bar
+    [self enableOverrides];
   }
 }
 
-- (SDStatusBarManagerBluetoothState)bluetoothState {
-  return [[self.userDefaults valueForKey:SDStatusBarManagerBluetoothStateKey] intValue];
+- (SDStatusBarManagerBluetoothState)bluetoothState
+{
+  return [[[NSUserDefaults standardUserDefaults] valueForKey:SDStatusBarManagerBluetoothStateKey] integerValue];
 }
 
-- (NSUserDefaults *)userDefaults {
-  return [[NSUserDefaults alloc] initWithSuiteName:@"com.shinydevelopment.SDStatusBarManager"];
+#pragma mark Date helper
+- (NSString *)localizedTimeString
+{
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  formatter.dateStyle = NSDateFormatterNoStyle;
+  formatter.timeStyle = NSDateFormatterShortStyle;
+
+  NSDateComponents *components = [[NSCalendar currentCalendar] components: NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+  components.hour = 9;
+  components.minute = 41;
+
+  return [formatter stringFromDate:[[NSCalendar currentCalendar] dateFromComponents:components]];
 }
 
 #pragma mark Singleton instance
@@ -244,21 +245,6 @@ static NSString *const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
   __strong static id sharedObject = nil;
   dispatch_once(&predicate, ^{ sharedObject = [[self alloc] init]; });
   return sharedObject;
-}
-
-#pragma mark Helper
-
-- (NSString *)localizedTimeString
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateStyle = NSDateFormatterNoStyle;
-    formatter.timeStyle = NSDateFormatterShortStyle;
-    
-    NSDateComponents *components = [[NSCalendar currentCalendar] components: NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-    components.hour = 9;
-    components.minute = 41;
-    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:components];
-    return [formatter stringFromDate:date];
 }
 
 @end
