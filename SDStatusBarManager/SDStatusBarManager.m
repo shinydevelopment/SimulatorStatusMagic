@@ -117,6 +117,10 @@ typedef struct {
 static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
 static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
 
+@interface SDStatusBarManager ()
+@property (nonatomic, strong) NSUserDefaults *userDefaults;
+@end
+
 @implementation SDStatusBarManager
 
 - (void)enableOverrides
@@ -199,19 +203,19 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
 #pragma mark Properties
 - (BOOL)usingOverrides
 {
-  return [[NSUserDefaults standardUserDefaults] boolForKey:SDStatusBarManagerUsingOverridesKey];
+  return [self.userDefaults boolForKey:SDStatusBarManagerUsingOverridesKey];
 }
 
 - (void)setUsingOverrides:(BOOL)usingOverrides
 {
-  [[NSUserDefaults standardUserDefaults] setBool:usingOverrides forKey:SDStatusBarManagerUsingOverridesKey];
+  [self.userDefaults setBool:usingOverrides forKey:SDStatusBarManagerUsingOverridesKey];
 }
 
 - (void)setBluetoothState:(SDStatusBarManagerBluetoothState)bluetoothState
 {
   if (self.bluetoothState == bluetoothState) return;
 
-  [[NSUserDefaults standardUserDefaults] setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
+  [self.userDefaults setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
 
   if (self.usingOverrides) {
     // Refresh the active status bar
@@ -221,7 +225,14 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
 
 - (SDStatusBarManagerBluetoothState)bluetoothState
 {
-  return [[[NSUserDefaults standardUserDefaults] valueForKey:SDStatusBarManagerBluetoothStateKey] integerValue];
+  return [[self.userDefaults valueForKey:SDStatusBarManagerBluetoothStateKey] integerValue];
+}
+
+- (NSUserDefaults *)userDefaults {
+  if (!_userDefaults) {
+    _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.shinydevelopment.SDStatusBarManager"];
+  }
+  return _userDefaults;
 }
 
 #pragma mark Date helper
