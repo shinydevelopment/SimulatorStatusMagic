@@ -228,7 +228,8 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
   return [[self.userDefaults valueForKey:SDStatusBarManagerBluetoothStateKey] integerValue];
 }
 
-- (NSUserDefaults *)userDefaults {
+- (NSUserDefaults *)userDefaults
+{
   if (!_userDefaults) {
     _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.shinydevelopment.SDStatusBarManager"];
   }
