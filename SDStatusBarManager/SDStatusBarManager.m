@@ -143,7 +143,7 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
   }
 
   // Remove carrier text for iPhone, set it to "iPad" for the iPad
-  NSString *carrierText = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? @"" : @"iPad";
+  NSString *carrierText = self.carrierName;
   overrides->overrideServiceString = 1;
   strcpy(overrides->values.serviceString, [carrierText cStringUsingEncoding:NSUTF8StringEncoding]);
 
@@ -244,9 +244,9 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
   formatter.timeStyle = NSDateFormatterShortStyle;
 
   NSDateComponents *components = [[NSCalendar currentCalendar] components: NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-  components.hour = 9;
-  components.minute = 41;
-
+  components.hour = self.hour;
+  components.minute = self.minute;
+  
   return [formatter stringFromDate:[[NSCalendar currentCalendar] dateFromComponents:components]];
 }
 
@@ -254,8 +254,13 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
 + (SDStatusBarManager *)sharedInstance
 {
   static dispatch_once_t predicate = 0;
-  __strong static id sharedObject = nil;
-  dispatch_once(&predicate, ^{ sharedObject = [[self alloc] init]; });
+  __strong static SDStatusBarManager *sharedObject = nil;
+  dispatch_once(&predicate, ^{
+    sharedObject = [[self alloc] init];
+    sharedObject.minute = 10;
+    sharedObject.hour = 30;
+    sharedObject.carrierName = @"bitsfabrik";
+  });
   return sharedObject;
 }
 
