@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
-                                <rect key="frame" x="178" y="284" width="244" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-GD-lKh">
+                                <rect key="frame" x="243" y="221" width="115" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Apply Clean Status Bar Overrides">
+                                <state key="normal" title="Hide Status Bar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
+                                    <action selector="hideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bb1-i6-81X"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
@@ -47,19 +47,32 @@
                                     <action selector="bluetoothStatusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="67a-Ux-qau"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
+                                <rect key="frame" x="178" y="284" width="244" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Apply Clean Status Bar Overrides">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="1W5-6m-qnr" secondAttribute="centerX" id="5kz-az-0iU"/>
+                            <constraint firstItem="Omy-wd-t1z" firstAttribute="top" secondItem="PI3-GD-lKh" secondAttribute="bottom" constant="31" id="9Lc-gB-Eg8"/>
                             <constraint firstItem="1W5-6m-qnr" firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="GHF-He-aJP"/>
                             <constraint firstAttribute="centerY" secondItem="Omy-wd-t1z" secondAttribute="centerY" id="HwQ-bH-TKM"/>
                             <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="Omy-wd-t1z" secondAttribute="bottom" constant="50" id="I44-KL-yTT"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8" symbolic="YES" id="ZhL-bv-eFo"/>
+                            <constraint firstItem="Omy-wd-t1z" firstAttribute="centerX" secondItem="PI3-GD-lKh" secondAttribute="centerX" id="bf0-f8-k4p"/>
                             <constraint firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="iu0-gd-7Jz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bluetoothSegmentedControl" destination="VEX-a6-wUU" id="L7z-KL-JJm"/>
+                        <outlet property="hideButton" destination="PI3-GD-lKh" id="va3-dd-ch3"/>
                         <outlet property="overrideButton" destination="Omy-wd-t1z" id="OkF-TC-Syr"/>
                     </connections>
                 </viewController>

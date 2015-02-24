@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
 @property (assign, nonatomic) NSUInteger minute;
 
 - (void)enableOverrides;
+- (void)clearStatusBar;
 - (void)disableOverrides;
 
 + (SDStatusBarManager *)sharedInstance;

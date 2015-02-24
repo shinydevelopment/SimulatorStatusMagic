@@ -170,6 +170,26 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
   [UIStatusBarServer permanentizeStatusBarOverrideData];
 }
 
+- (void)clearStatusBar
+{
+    self.usingOverrides = YES;
+    
+    StatusBarOverrideData *overrides = [UIStatusBarServer getStatusBarOverrideData];
+    
+    // Hide all items
+    for ( int i = 0; i < 25 ; i++ )
+    {
+        overrides->booloverrideItemIsEnabled[i] = 1;
+        overrides->values.boolitemIsEnabled[i] = 0;
+    }
+    
+    // Actually update the status bar
+    [UIStatusBarServer postStatusBarOverrideData:overrides];
+    
+    // Lock in the changes, reset simulator will remove this
+    [UIStatusBarServer permanentizeStatusBarOverrideData];
+}
+
 - (void)disableOverrides
 {
   self.usingOverrides = NO;
@@ -257,9 +277,9 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
   __strong static SDStatusBarManager *sharedObject = nil;
   dispatch_once(&predicate, ^{
     sharedObject = [[self alloc] init];
-    sharedObject.minute = 10;
-    sharedObject.hour = 30;
-    sharedObject.carrierName = @"bitsfabrik";
+    sharedObject.hour = 9;
+    sharedObject.minute = 41;
+    sharedObject.carrierName = @"";
   });
   return sharedObject;
 }
