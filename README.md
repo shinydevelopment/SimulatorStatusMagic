@@ -24,7 +24,7 @@ Run the app again and click "Restore Default Status Bar". Resetting the iOS Simu
 Yes! SimulatorStatusMagic is also available through [CocoaPods](http://cocoapods.org). To install, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SimulatorStatusMagic', :configurations => ['Debug']
+pod 'SimulatorStatusMagic', configurations: ['Debug']
 ```
 
 We recommend only including `SDStatusBarManager` in your debug configuration so that this code is never included in release builds.
