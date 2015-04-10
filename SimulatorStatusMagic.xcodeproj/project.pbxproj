@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		110F24E719E4610E00012FD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 110F24E519E4610E00012FD7 /* Localizable.strings */; };
+		44A44BDE1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */; };
+		44A44BE21AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */; };
 		5516356E19E3FF3D001F636D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516356D19E3FF3D001F636D /* main.m */; };
 		5516357119E3FF3D001F636D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516357019E3FF3D001F636D /* AppDelegate.m */; };
 		5516357419E3FF3D001F636D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5516357319E3FF3D001F636D /* ViewController.m */; };
@@ -21,6 +23,11 @@
 		110F24E319E45FFE00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		110F24E419E45FFE00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		110F24E619E4610E00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		44A44BDC1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost8_3.h; sourceTree = "<group>"; };
+		44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost8_3.m; sourceTree = "<group>"; };
+		44A44BDF1AD734F0003E04A5 /* SDStatusBarOverrider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverrider.h; sourceTree = "<group>"; };
+		44A44BE01AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPre8_3.h; sourceTree = "<group>"; };
+		44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPre8_3.m; sourceTree = "<group>"; };
 		5516356819E3FF3D001F636D /* SimulatorStatusMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimulatorStatusMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5516356C19E3FF3D001F636D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5516356D19E3FF3D001F636D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -32,7 +39,7 @@
 		5516357819E3FF3D001F636D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5516357B19E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarManager.h; sourceTree = "<group>"; };
-		DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; };
+		DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +60,9 @@
 				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
 				5516356919E3FF3D001F636D /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		5516356919E3FF3D001F636D /* Products */ = {
 			isa = PBXGroup;
@@ -101,6 +110,11 @@
 			children = (
 				DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */,
 				DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */,
+				44A44BDF1AD734F0003E04A5 /* SDStatusBarOverrider.h */,
+				44A44BE01AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.h */,
+				44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */,
+				44A44BDC1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.h */,
+				44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */,
 			);
 			path = SDStatusBarManager;
 			sourceTree = SOURCE_ROOT;
@@ -178,9 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5516357419E3FF3D001F636D /* ViewController.m in Sources */,
+				44A44BE21AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m in Sources */,
 				5516357119E3FF3D001F636D /* AppDelegate.m in Sources */,
 				DDACF30B19E83F06004FCB30 /* SDStatusBarManager.m in Sources */,
 				5516356E19E3FF3D001F636D /* main.m in Sources */,
+				44A44BDE1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
