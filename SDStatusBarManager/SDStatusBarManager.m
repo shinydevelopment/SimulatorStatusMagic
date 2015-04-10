@@ -97,8 +97,7 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
     BOOL before8_3 = ([[[UIDevice currentDevice] systemVersion] compare:@"8.3" options:NSNumericSearch] == NSOrderedAscending);
     if (before8_3) {
       _overrider = [SDStatusBarOverriderPre8_3 new];
-    }
-    else {
+    } else {
       _overrider = [SDStatusBarOverriderPost8_3 new];
     }
   }
