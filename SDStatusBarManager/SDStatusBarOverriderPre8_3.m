@@ -121,7 +121,10 @@ typedef struct {
   }
   
   // Remove carrier text for iPhone, set it to "iPad" for the iPad
-  NSString *carrierText = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? @"" : @"iPad";
+  NSString *carrierText = self.carrierName;
+  if (!carrierText) {
+    carrierText = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? @"" : @"iPad";
+  }
   overrides->overrideServiceString = 1;
   strcpy(overrides->values.serviceString, [carrierText cStringUsingEncoding:NSUTF8StringEncoding]);
   
