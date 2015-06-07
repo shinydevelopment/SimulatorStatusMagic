@@ -29,7 +29,7 @@
 
 static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
 static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
-static NSString * const SDStatusBarManagerTimeStringKey = @"bluetooth_state";
+static NSString * const SDStatusBarManagerTimeStringKey = @"timeString_state";
 
 @interface SDStatusBarManager ()
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
