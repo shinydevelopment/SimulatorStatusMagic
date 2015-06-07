@@ -25,8 +25,9 @@
 #import "ViewController.h"
 #import "SDStatusBarManager.h"
 
-@interface ViewController ()
+@interface ViewController () 
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
+@property (weak, nonatomic) IBOutlet UITextField *timeStringTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
 @end
 
@@ -39,6 +40,7 @@
 
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
+  [self setTimeStringTextFieldText];
 }
 
 #pragma mark Actions
@@ -48,6 +50,8 @@
     [[SDStatusBarManager sharedInstance] disableOverrides];
     [self setOverrideButtonText];
   } else {
+    [SDStatusBarManager sharedInstance].timeString = self.timeStringTextField.text;
+    
     [[SDStatusBarManager sharedInstance] enableOverrides];
     [self setOverrideButtonText];
   }
@@ -73,6 +77,9 @@
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
   self.bluetoothSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].bluetoothState;
+}
+- (void)setTimeStringTextFieldText {
+  self.timeStringTextField.text = [SDStatusBarManager sharedInstance].timeString;
 }
 
 #pragma mark Status bar settings
