@@ -17,18 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
-                                <rect key="frame" x="178" y="284" width="244" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Apply Clean Status Bar Overrides">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
-                                <rect key="frame" x="247" y="28" width="106.5" height="19.5"/>
+                                <rect key="frame" x="247" y="28" width="107" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -48,29 +38,42 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text that will be displayed as clock" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
-                                <rect key="frame" x="150" y="142" width="300" height="30"/>
+                                <rect key="frame" x="150" y="143" width="300" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nMZ-yv-GyM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String Instead of Clock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-Mb-bVk">
-                                <rect key="frame" x="212" y="114" width="176" height="20.5"/>
+                                <rect key="frame" x="212" y="114" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
+                                <rect key="frame" x="178" y="195" width="244" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Apply Clean Status Bar Overrides">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CcU-Mb-bVk" firstAttribute="top" secondItem="VEX-a6-wUU" secondAttribute="bottom" constant="30" id="06E-jA-9bB"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8.5" id="6yr-PR-2Mv"/>
                             <constraint firstAttribute="centerX" secondItem="VEX-a6-wUU" secondAttribute="centerX" id="7k2-tb-Tvg"/>
-                            <constraint firstAttribute="centerY" secondItem="Omy-wd-t1z" secondAttribute="centerY" id="8oL-mN-lyb"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="trailing" secondItem="QuK-wD-2d0" secondAttribute="trailing" id="CH2-Pm-5xn"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="leading" secondItem="QuK-wD-2d0" secondAttribute="leading" id="DLs-vg-QzH"/>
                             <constraint firstItem="QuK-wD-2d0" firstAttribute="top" secondItem="CcU-Mb-bVk" secondAttribute="bottom" constant="8" id="GPW-yh-BfV"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="QuK-wD-2d0" secondAttribute="centerX" id="Hji-Sf-pad"/>
                             <constraint firstAttribute="centerX" secondItem="1W5-6m-qnr" secondAttribute="centerX" constant="-0.5" id="Prz-cE-8oA"/>
                             <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Vqa-Qz-Ja3"/>
+                            <constraint firstItem="Omy-wd-t1z" firstAttribute="top" secondItem="QuK-wD-2d0" secondAttribute="bottom" constant="22" id="YAw-nZ-4Ni"/>
                             <constraint firstAttribute="centerX" secondItem="CcU-Mb-bVk" secondAttribute="centerX" id="qxc-YV-wRm"/>
                             <constraint firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="xaa-SO-MPw"/>
                         </constraints>

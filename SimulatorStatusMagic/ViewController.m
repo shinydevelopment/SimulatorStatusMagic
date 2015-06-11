@@ -93,4 +93,11 @@
   return UIStatusBarStyleDefault;
 }
 
+#pragma mark UITextFieldDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [textField resignFirstResponder];
+  return YES;
+}
+
 @end
