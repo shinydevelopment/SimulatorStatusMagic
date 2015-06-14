@@ -29,7 +29,7 @@
 
 static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
 static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
-static NSString * const SDStatusBarManagerTimeStringKey = @"timeString_state";
+static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 
 @interface SDStatusBarManager ()
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
@@ -85,15 +85,22 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"timeString_state";
   return [[self.userDefaults valueForKey:SDStatusBarManagerBluetoothStateKey] integerValue];
 }
 
-- (void)setTimeString:(NSString *)timeString {
+- (void)setTimeString:(NSString *)timeString
+{
   if ([self.timeString isEqualToString:timeString]) return;
   
   [self.userDefaults setObject:timeString forKey:SDStatusBarManagerTimeStringKey];
-}
-- (NSString *)timeString {
-  return [self.userDefaults valueForKey:SDStatusBarManagerTimeStringKey];
+
+  if (self.usingOverrides) {
+    // Refresh the active status bar
+    [self enableOverrides];
+  }
 }
 
+- (NSString *)timeString
+{
+  return [self.userDefaults valueForKey:SDStatusBarManagerTimeStringKey];
+}
 
 - (NSUserDefaults *)userDefaults
 {

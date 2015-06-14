@@ -27,7 +27,7 @@
 
 @interface ViewController () 
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
-@property (weak, nonatomic) IBOutlet UITextField *timeStringTextField;
+@property (strong, nonatomic) IBOutlet UITextField *timeStringTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
 @end
 
@@ -50,17 +50,27 @@
     [[SDStatusBarManager sharedInstance] disableOverrides];
     [self setOverrideButtonText];
   } else {
-    [SDStatusBarManager sharedInstance].timeString = self.timeStringTextField.text;
-    
     [[SDStatusBarManager sharedInstance] enableOverrides];
     [self setOverrideButtonText];
   }
+}
+
+- (IBAction)timeStringTextFieldEditingChanged:(UITextField *)textField
+{
+  [SDStatusBarManager sharedInstance].timeString = textField.text;
 }
 
 - (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
   [[SDStatusBarManager sharedInstance] setBluetoothState:sender.selectedSegmentIndex];
+}
+
+#pragma mark Text field delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+  [textField resignFirstResponder];
+  return YES;
 }
 
 #pragma mark UI helpers
@@ -78,7 +88,9 @@
   // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
   self.bluetoothSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].bluetoothState;
 }
-- (void)setTimeStringTextFieldText {
+
+- (void)setTimeStringTextFieldText
+{
   self.timeStringTextField.text = [SDStatusBarManager sharedInstance].timeString;
 }
 
@@ -91,13 +103,6 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
   return UIStatusBarStyleDefault;
-}
-
-#pragma mark UITextFieldDelegate
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-  [textField resignFirstResponder];
-  return YES;
 }
 
 @end
