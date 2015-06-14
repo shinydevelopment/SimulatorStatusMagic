@@ -29,6 +29,7 @@
 
 static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
 static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
+static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 
 @interface SDStatusBarManager ()
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
@@ -84,6 +85,23 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
   return [[self.userDefaults valueForKey:SDStatusBarManagerBluetoothStateKey] integerValue];
 }
 
+- (void)setTimeString:(NSString *)timeString
+{
+  if ([self.timeString isEqualToString:timeString]) return;
+  
+  [self.userDefaults setObject:timeString forKey:SDStatusBarManagerTimeStringKey];
+
+  if (self.usingOverrides) {
+    // Refresh the active status bar
+    [self enableOverrides];
+  }
+}
+
+- (NSString *)timeString
+{
+  return [self.userDefaults valueForKey:SDStatusBarManagerTimeStringKey];
+}
+
 - (NSUserDefaults *)userDefaults
 {
   if (!_userDefaults) {
@@ -108,6 +126,10 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
 #pragma mark Date helper
 - (NSString *)localizedTimeString
 {
+  if (![self.timeString isEqualToString:@""]) {
+    return self.timeString;
+  }
+  
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
   formatter.dateStyle = NSDateFormatterNoStyle;
   formatter.timeStyle = NSDateFormatterShortStyle;
