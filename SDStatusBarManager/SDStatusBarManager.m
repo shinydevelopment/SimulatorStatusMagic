@@ -126,7 +126,7 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 #pragma mark Date helper
 - (NSString *)localizedTimeString
 {
-  if (![self.timeString isEqualToString:@""]) {
+  if (self.timeString.length > 0) {
     return self.timeString;
   }
   
