@@ -179,6 +179,4 @@ typedef struct {
   [UIStatusBarServer permanentizeStatusBarOverrideData];
 }
 
-
-
 @end
