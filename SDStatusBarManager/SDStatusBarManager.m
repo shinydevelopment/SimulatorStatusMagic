@@ -26,6 +26,7 @@
 #import "SDStatusBarManager.h"
 #import "SDStatusBarOverriderPre8_3.h"
 #import "SDStatusBarOverriderPost8_3.h"
+#import "SDStatusBarOverriderPost9_0.h"
 
 static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
 static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
@@ -113,11 +114,14 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 - (id<SDStatusBarOverrider>)overrider
 {
   if (!_overrider) {
+    BOOL before9_0 = ([[[UIDevice currentDevice] systemVersion] compare:@"9.0" options:NSNumericSearch] == NSOrderedAscending);
     BOOL before8_3 = ([[[UIDevice currentDevice] systemVersion] compare:@"8.3" options:NSNumericSearch] == NSOrderedAscending);
     if (before8_3) {
       _overrider = [SDStatusBarOverriderPre8_3 new];
-    } else {
+    } else if (before9_0) {
       _overrider = [SDStatusBarOverriderPost8_3 new];
+    } else {
+      _overrider = [SDStatusBarOverriderPost9_0 new];
     }
   }
   return _overrider;
