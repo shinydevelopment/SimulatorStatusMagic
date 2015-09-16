@@ -18,20 +18,17 @@
 		5516357919E3FF3D001F636D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516357819E3FF3D001F636D /* Images.xcassets */; };
 		5516357C19E3FF3D001F636D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5516357A19E3FF3D001F636D /* LaunchScreen.xib */; };
 		72AF752F1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AF752E1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AF75411BA9C45500DC3573 /* SimulatorStatusMagicFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF752A1BA9C45400DC3573 /* SimulatorStatusMagicFramework.framework */; };
-		72AF75421BA9C45500DC3573 /* SimulatorStatusMagicFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF752A1BA9C45400DC3573 /* SimulatorStatusMagicFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72AF754A1BA9C4B400DC3573 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
+		72AF754B1BA9C4B400DC3573 /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */; };
+		72AF754C1BA9C4B400DC3573 /* SDStatusBarOverriderPost8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */; };
+		72AF754D1BA9C4B400DC3573 /* SDStatusBarOverriderPost9_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 448EAEA91B3B326100A09FBC /* SDStatusBarOverriderPost9_0.m */; };
+		72AF754E1BA9C4C500DC3573 /* SDStatusBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AF754F1BA9C4C500DC3573 /* SDStatusBarOverrider.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDF1AD734F0003E04A5 /* SDStatusBarOverrider.h */; };
+		72AF75501BA9C4C500DC3573 /* SDStatusBarOverriderPre8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BE01AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.h */; };
+		72AF75511BA9C4C500DC3573 /* SDStatusBarOverriderPost8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDC1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.h */; };
+		72AF75521BA9C4C500DC3573 /* SDStatusBarOverriderPost9_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 448EAEA81B3B326100A09FBC /* SDStatusBarOverriderPost9_0.h */; };
 		DDACF30B19E83F06004FCB30 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		72AF753F1BA9C45500DC3573 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5516356019E3FF3D001F636D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72AF75291BA9C45400DC3573;
-			remoteInfo = SimulatorStatusMagicFramework;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		72AF75481BA9C45500DC3573 /* Embed Frameworks */ = {
@@ -40,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				72AF75421BA9C45500DC3573 /* SimulatorStatusMagicFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72AF75411BA9C45500DC3573 /* SimulatorStatusMagicFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				72AF752F1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h in Headers */,
+				72AF754E1BA9C4C500DC3573 /* SDStatusBarManager.h in Headers */,
+				72AF754F1BA9C4C500DC3573 /* SDStatusBarOverrider.h in Headers */,
+				72AF75501BA9C4C500DC3573 /* SDStatusBarOverriderPre8_3.h in Headers */,
+				72AF75511BA9C4C500DC3573 /* SDStatusBarOverriderPost8_3.h in Headers */,
+				72AF75521BA9C4C500DC3573 /* SDStatusBarOverriderPost9_0.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +207,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				72AF75401BA9C45500DC3573 /* PBXTargetDependency */,
 			);
 			name = SimulatorStatusMagic;
 			productName = SimulatorStatusMagic;
@@ -309,18 +308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AF754A1BA9C4B400DC3573 /* SDStatusBarManager.m in Sources */,
+				72AF754B1BA9C4B400DC3573 /* SDStatusBarOverriderPre8_3.m in Sources */,
+				72AF754C1BA9C4B400DC3573 /* SDStatusBarOverriderPost8_3.m in Sources */,
+				72AF754D1BA9C4B400DC3573 /* SDStatusBarOverriderPost9_0.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		72AF75401BA9C45500DC3573 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 72AF75291BA9C45400DC3573 /* SimulatorStatusMagicFramework */;
-			targetProxy = 72AF753F1BA9C45500DC3573 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		110F24E519E4610E00012FD7 /* Localizable.strings */ = {
@@ -532,6 +527,7 @@
 				72AF75441BA9C45500DC3573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
