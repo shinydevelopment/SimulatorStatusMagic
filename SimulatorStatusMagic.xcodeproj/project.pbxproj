@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		72AF75531BA9C54700DC3573 /* SimulatorStatusMagicUniversalFramework */ = {
+		72ECF7551BAAC49C0071D401 /* SimulatorStatusMagicUniversalFramework */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 72AF75541BA9C54700DC3573 /* Build configuration list for PBXAggregateTarget "SimulatorStatusMagicUniversalFramework" */;
+			buildConfigurationList = 72ECF7561BAAC49C0071D401 /* Build configuration list for PBXAggregateTarget "SimulatorStatusMagicUniversalFramework" */;
 			buildPhases = (
-				72AF75591BA9C54F00DC3573 /* ShellScript */,
+				72ECF75B1BAAC4A40071D401 /* ShellScript */,
 			);
 			dependencies = (
-				72AF75581BA9C54D00DC3573 /* PBXTargetDependency */,
+				72ECF75A1BAAC4A20071D401 /* PBXTargetDependency */,
 			);
 			name = SimulatorStatusMagicUniversalFramework;
 			productName = SimulatorStatusMagicUniversalFramework;
@@ -32,26 +32,27 @@
 		5516357719E3FF3D001F636D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516357519E3FF3D001F636D /* Main.storyboard */; };
 		5516357919E3FF3D001F636D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516357819E3FF3D001F636D /* Images.xcassets */; };
 		5516357C19E3FF3D001F636D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5516357A19E3FF3D001F636D /* LaunchScreen.xib */; };
-		72AF752F1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AF752E1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AF754A1BA9C4B400DC3573 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
-		72AF754B1BA9C4B400DC3573 /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */; };
-		72AF754C1BA9C4B400DC3573 /* SDStatusBarOverriderPost8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */; };
-		72AF754D1BA9C4B400DC3573 /* SDStatusBarOverriderPost9_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 448EAEA91B3B326100A09FBC /* SDStatusBarOverriderPost9_0.m */; };
-		72AF754E1BA9C4C500DC3573 /* SDStatusBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AF754F1BA9C4C500DC3573 /* SDStatusBarOverrider.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDF1AD734F0003E04A5 /* SDStatusBarOverrider.h */; };
-		72AF75501BA9C4C500DC3573 /* SDStatusBarOverriderPre8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BE01AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.h */; };
-		72AF75511BA9C4C500DC3573 /* SDStatusBarOverriderPost8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDC1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.h */; };
-		72AF75521BA9C4C500DC3573 /* SDStatusBarOverriderPost9_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 448EAEA81B3B326100A09FBC /* SDStatusBarOverriderPost9_0.h */; };
+		72ECF72A1BAAC33A0071D401 /* SimulatorStatusMagiciOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 72ECF7291BAAC33A0071D401 /* SimulatorStatusMagiciOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72ECF73D1BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72ECF7441BAAC34E0071D401 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
+		72ECF7451BAAC34E0071D401 /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */; };
+		72ECF7461BAAC34E0071D401 /* SDStatusBarOverriderPost8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */; };
+		72ECF7471BAAC34E0071D401 /* SDStatusBarOverriderPost9_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 448EAEA91B3B326100A09FBC /* SDStatusBarOverriderPost9_0.m */; };
+		72ECF7481BAAC3570071D401 /* SDStatusBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72ECF7491BAAC3570071D401 /* SDStatusBarOverrider.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDF1AD734F0003E04A5 /* SDStatusBarOverrider.h */; };
+		72ECF74A1BAAC3580071D401 /* SDStatusBarOverriderPre8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BE01AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.h */; };
+		72ECF74B1BAAC3580071D401 /* SDStatusBarOverriderPost8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDC1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.h */; };
+		72ECF74C1BAAC3580071D401 /* SDStatusBarOverriderPost9_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 448EAEA81B3B326100A09FBC /* SDStatusBarOverriderPost9_0.h */; };
 		DDACF30B19E83F06004FCB30 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		72AF75571BA9C54D00DC3573 /* PBXContainerItemProxy */ = {
+		72ECF7591BAAC4A20071D401 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5516356019E3FF3D001F636D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 72AF75291BA9C45400DC3573;
-			remoteInfo = SimulatorStatusMagicFramework;
+			remoteGlobalIDString = 72ECF7241BAAC33A0071D401;
+			remoteInfo = SimulatorStatusMagiciOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,6 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				72ECF73D1BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,9 +91,9 @@
 		5516357619E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5516357819E3FF3D001F636D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5516357B19E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		72AF752A1BA9C45400DC3573 /* SimulatorStatusMagicFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimulatorStatusMagicFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72AF752D1BA9C45400DC3573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72AF752E1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimulatorStatusMagicFramework.h; sourceTree = "<group>"; };
+		72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimulatorStatusMagiciOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72ECF7281BAAC33A0071D401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72ECF7291BAAC33A0071D401 /* SimulatorStatusMagiciOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimulatorStatusMagiciOS.h; sourceTree = "<group>"; };
 		DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarManager.h; sourceTree = "<group>"; };
 		DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
@@ -104,7 +106,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72AF75261BA9C45400DC3573 /* Frameworks */ = {
+		72ECF7211BAAC33A0071D401 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,7 +121,7 @@
 			children = (
 				5516356A19E3FF3D001F636D /* SimulatorStatusMagic */,
 				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
-				72AF752B1BA9C45400DC3573 /* SimulatorStatusMagicFramework */,
+				72ECF7261BAAC33A0071D401 /* SimulatorStatusMagiciOS */,
 				5516356919E3FF3D001F636D /* Products */,
 			);
 			indentWidth = 2;
@@ -130,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5516356819E3FF3D001F636D /* SimulatorStatusMagic.app */,
-				72AF752A1BA9C45400DC3573 /* SimulatorStatusMagicFramework.framework */,
+				72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,19 +170,19 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		72AF752B1BA9C45400DC3573 /* SimulatorStatusMagicFramework */ = {
+		72ECF7261BAAC33A0071D401 /* SimulatorStatusMagiciOS */ = {
 			isa = PBXGroup;
 			children = (
-				72AF752E1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h */,
-				72AF752C1BA9C45400DC3573 /* Supporting Files */,
+				72ECF7291BAAC33A0071D401 /* SimulatorStatusMagiciOS.h */,
+				72ECF7271BAAC33A0071D401 /* Supporting Files */,
 			);
-			path = SimulatorStatusMagicFramework;
+			path = SimulatorStatusMagiciOS;
 			sourceTree = "<group>";
 		};
-		72AF752C1BA9C45400DC3573 /* Supporting Files */ = {
+		72ECF7271BAAC33A0071D401 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72AF752D1BA9C45400DC3573 /* Info.plist */,
+				72ECF7281BAAC33A0071D401 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,16 +206,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		72AF75271BA9C45400DC3573 /* Headers */ = {
+		72ECF7221BAAC33A0071D401 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72AF752F1BA9C45400DC3573 /* SimulatorStatusMagicFramework.h in Headers */,
-				72AF754E1BA9C4C500DC3573 /* SDStatusBarManager.h in Headers */,
-				72AF754F1BA9C4C500DC3573 /* SDStatusBarOverrider.h in Headers */,
-				72AF75501BA9C4C500DC3573 /* SDStatusBarOverriderPre8_3.h in Headers */,
-				72AF75511BA9C4C500DC3573 /* SDStatusBarOverriderPost8_3.h in Headers */,
-				72AF75521BA9C4C500DC3573 /* SDStatusBarOverriderPost9_0.h in Headers */,
+				72ECF72A1BAAC33A0071D401 /* SimulatorStatusMagiciOS.h in Headers */,
+				72ECF7481BAAC3570071D401 /* SDStatusBarManager.h in Headers */,
+				72ECF7491BAAC3570071D401 /* SDStatusBarOverrider.h in Headers */,
+				72ECF74A1BAAC3580071D401 /* SDStatusBarOverriderPre8_3.h in Headers */,
+				72ECF74B1BAAC3580071D401 /* SDStatusBarOverriderPost8_3.h in Headers */,
+				72ECF74C1BAAC3580071D401 /* SDStatusBarOverriderPost9_0.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,22 +240,22 @@
 			productReference = 5516356819E3FF3D001F636D /* SimulatorStatusMagic.app */;
 			productType = "com.apple.product-type.application";
 		};
-		72AF75291BA9C45400DC3573 /* SimulatorStatusMagicFramework */ = {
+		72ECF7241BAAC33A0071D401 /* SimulatorStatusMagiciOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72AF75471BA9C45500DC3573 /* Build configuration list for PBXNativeTarget "SimulatorStatusMagicFramework" */;
+			buildConfigurationList = 72ECF73E1BAAC33A0071D401 /* Build configuration list for PBXNativeTarget "SimulatorStatusMagiciOS" */;
 			buildPhases = (
-				72AF75251BA9C45400DC3573 /* Sources */,
-				72AF75261BA9C45400DC3573 /* Frameworks */,
-				72AF75271BA9C45400DC3573 /* Headers */,
-				72AF75281BA9C45400DC3573 /* Resources */,
+				72ECF7201BAAC33A0071D401 /* Sources */,
+				72ECF7211BAAC33A0071D401 /* Frameworks */,
+				72ECF7221BAAC33A0071D401 /* Headers */,
+				72ECF7231BAAC33A0071D401 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SimulatorStatusMagicFramework;
-			productName = SimulatorStatusMagicFramework;
-			productReference = 72AF752A1BA9C45400DC3573 /* SimulatorStatusMagicFramework.framework */;
+			name = SimulatorStatusMagiciOS;
+			productName = SimulatorStatusMagiciOS;
+			productReference = 72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -268,10 +270,10 @@
 					5516356719E3FF3D001F636D = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
-					72AF75291BA9C45400DC3573 = {
+					72ECF7241BAAC33A0071D401 = {
 						CreatedOnToolsVersion = 6.4;
 					};
-					72AF75531BA9C54700DC3573 = {
+					72ECF7551BAAC49C0071D401 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -291,8 +293,8 @@
 			projectRoot = "";
 			targets = (
 				5516356719E3FF3D001F636D /* SimulatorStatusMagic */,
-				72AF75291BA9C45400DC3573 /* SimulatorStatusMagicFramework */,
-				72AF75531BA9C54700DC3573 /* SimulatorStatusMagicUniversalFramework */,
+				72ECF7241BAAC33A0071D401 /* SimulatorStatusMagiciOS */,
+				72ECF7551BAAC49C0071D401 /* SimulatorStatusMagicUniversalFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -309,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72AF75281BA9C45400DC3573 /* Resources */ = {
+		72ECF7231BAAC33A0071D401 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -319,7 +321,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		72AF75591BA9C54F00DC3573 /* ShellScript */ = {
+		72ECF75B1BAAC4A40071D401 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nFRAMEWORK_TARGET=SimulatorStatusMagicFramework\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${FRAMEWORK_TARGET}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${FRAMEWORK_TARGET}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Rename the file to project name\nmv \"${PROJECT_DIR}/build/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build/${PROJECT_NAME}.framework\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"";
+			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nFRAMEWORK_TARGET=SimulatorStatusMagiciOS\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${FRAMEWORK_TARGET}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${FRAMEWORK_TARGET}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Rename the file to project name\n# mv \"${PROJECT_DIR}/build/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build/${PROJECT_NAME}.framework\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -349,24 +351,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72AF75251BA9C45400DC3573 /* Sources */ = {
+		72ECF7201BAAC33A0071D401 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72AF754A1BA9C4B400DC3573 /* SDStatusBarManager.m in Sources */,
-				72AF754B1BA9C4B400DC3573 /* SDStatusBarOverriderPre8_3.m in Sources */,
-				72AF754C1BA9C4B400DC3573 /* SDStatusBarOverriderPost8_3.m in Sources */,
-				72AF754D1BA9C4B400DC3573 /* SDStatusBarOverriderPost9_0.m in Sources */,
+				72ECF7441BAAC34E0071D401 /* SDStatusBarManager.m in Sources */,
+				72ECF7451BAAC34E0071D401 /* SDStatusBarOverriderPre8_3.m in Sources */,
+				72ECF7461BAAC34E0071D401 /* SDStatusBarOverriderPost8_3.m in Sources */,
+				72ECF7471BAAC34E0071D401 /* SDStatusBarOverriderPost9_0.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		72AF75581BA9C54D00DC3573 /* PBXTargetDependency */ = {
+		72ECF75A1BAAC4A20071D401 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72AF75291BA9C45400DC3573 /* SimulatorStatusMagicFramework */;
-			targetProxy = 72AF75571BA9C54D00DC3573 /* PBXContainerItemProxy */;
+			target = 72ECF7241BAAC33A0071D401 /* SimulatorStatusMagiciOS */;
+			targetProxy = 72ECF7591BAAC4A20071D401 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -505,7 +507,7 @@
 			};
 			name = Release;
 		};
-		72AF75431BA9C45500DC3573 /* Debug */ = {
+		72ECF73F1BAAC33A0071D401 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
@@ -519,9 +521,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SimulatorStatusMagicFramework/Info.plist;
+				INFOPLIST_FILE = SimulatorStatusMagiciOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -530,7 +532,7 @@
 			};
 			name = Debug;
 		};
-		72AF75441BA9C45500DC3573 /* Release */ = {
+		72ECF7401BAAC33A0071D401 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -541,9 +543,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = SimulatorStatusMagicFramework/Info.plist;
+				INFOPLIST_FILE = SimulatorStatusMagiciOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -552,14 +554,14 @@
 			};
 			name = Release;
 		};
-		72AF75551BA9C54700DC3573 /* Debug */ = {
+		72ECF7571BAAC49C0071D401 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		72AF75561BA9C54700DC3573 /* Release */ = {
+		72ECF7581BAAC49C0071D401 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,20 +589,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72AF75471BA9C45500DC3573 /* Build configuration list for PBXNativeTarget "SimulatorStatusMagicFramework" */ = {
+		72ECF73E1BAAC33A0071D401 /* Build configuration list for PBXNativeTarget "SimulatorStatusMagiciOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72AF75431BA9C45500DC3573 /* Debug */,
-				72AF75441BA9C45500DC3573 /* Release */,
+				72ECF73F1BAAC33A0071D401 /* Debug */,
+				72ECF7401BAAC33A0071D401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		72AF75541BA9C54700DC3573 /* Build configuration list for PBXAggregateTarget "SimulatorStatusMagicUniversalFramework" */ = {
+		72ECF7561BAAC49C0071D401 /* Build configuration list for PBXAggregateTarget "SimulatorStatusMagicUniversalFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72AF75551BA9C54700DC3573 /* Debug */,
-				72AF75561BA9C54700DC3573 /* Release */,
+				72ECF7571BAAC49C0071D401 /* Debug */,
+				72ECF7581BAAC49C0071D401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
