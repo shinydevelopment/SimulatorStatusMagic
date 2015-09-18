@@ -35,7 +35,7 @@ If you are not using CocoaPods, SimulatorStatusMagic can also be included as a d
 
 * Run the target `SimulatorStatusMagicUniversalFramework` which generates a universal framework for both device and simulator. 
 * Drag and drop the generated framework into your project. 
-* Import the framework using `@import SimulatorStatusMagiciOS` in any file you may want to use it in.
+* Import the framework using `@import SimulatorStatusMagiciOS;` in any file you may want to use it in.
 
 ### Does this work on device?
 
