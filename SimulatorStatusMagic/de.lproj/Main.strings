@@ -1,13 +1,37 @@
 /* Class = "UILabel"; text = "Bluetooth Icon"; ObjectID = "1W5-6m-qnr"; */
 "1W5-6m-qnr.text" = "Bluetooth Icon";
 
-/* Class = "UILabel"; text = "String instead of clock"; ObjectID = "CcU-Mb-bVk"; */
+/* Class = "UILabel"; text = "Network Type"; ObjectID = "3CU-LR-1zf"; */
+"3CU-LR-1zf.text" = "Netzwerktyp";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "CcU-Mb-bVk"; */
 "CcU-Mb-bVk.text" = "Text als Uhrzeit";
+
+/* Class = "UITextField"; placeholder = "Carrier"; ObjectID = "GLS-rK-Ggw"; */
+"GLS-rK-Ggw.placeholder" = "Netzbetreiber";
+
+/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[0] = "GPRS"; ObjectID = "Gb4-q5-oht"; */
+"Gb4-q5-oht.segmentTitles[0]" = "";
+
+/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[1] = "EDGE"; ObjectID = "Gb4-q5-oht"; */
+"Gb4-q5-oht.segmentTitles[1]" = "";
+
+/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[2] = "3G"; ObjectID = "Gb4-q5-oht"; */
+"Gb4-q5-oht.segmentTitles[2]" = "";
+
+/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[3] = "4G"; ObjectID = "Gb4-q5-oht"; */
+"Gb4-q5-oht.segmentTitles[3]" = "";
+
+/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[4] = "LTE"; ObjectID = "Gb4-q5-oht"; */
+"Gb4-q5-oht.segmentTitles[4]" = "";
+
+/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[5] = "WiFi"; ObjectID = "Gb4-q5-oht"; */
+"Gb4-q5-oht.segmentTitles[5]" = "";
 
 /* Class = "UIButton"; normalTitle = "Apply Clean Status Bar Overrides"; ObjectID = "Omy-wd-t1z"; */
 "Omy-wd-t1z.normalTitle" = "Statusleiste mit Clean Status Bar überschreiben";
 
-/* Class = "UITextField"; placeholder = "Text that will be displayed as clock"; ObjectID = "QuK-wD-2d0"; */
+/* Class = "UITextField"; placeholder = "9:41 AM"; ObjectID = "QuK-wD-2d0"; */
 "QuK-wD-2d0.placeholder" = "Text, der anstelle der Uhrzeit angezeigt wird";
 
 /* Class = "UISegmentedControl"; VEX-a6-wUU.segmentTitles[0] = "Hidden"; ObjectID = "VEX-a6-wUU"; */
@@ -18,3 +42,7 @@
 
 /* Class = "UISegmentedControl"; VEX-a6-wUU.segmentTitles[2] = "Connected"; ObjectID = "VEX-a6-wUU"; */
 "VEX-a6-wUU.segmentTitles[2]" = "Verbunden";
+
+/* Class = "UILabel"; text = "Carrier"; ObjectID = "rx3-MR-1uV"; */
+"rx3-MR-1uV.text" = "Netzbetreiber";
+

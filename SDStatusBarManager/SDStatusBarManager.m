@@ -30,7 +30,9 @@
 
 static NSString * const SDStatusBarManagerUsingOverridesKey = @"using_overrides";
 static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state";
-static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
+static NSString * const SDStatusBarManagerTimeStringKey  = @"time_string";
+static NSString * const SDStatusBarManagerNetworkTypeKey = @"network_type";
+static NSString * const SDStatusBarManagerCarrierNameKey = @"carrier_name";
 
 @interface SDStatusBarManager ()
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
@@ -43,18 +45,18 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 {
   self.usingOverrides = YES;
 
-  self.overrider.timeString = [self localizedTimeString];
+  self.overrider.timeString  = [self localizedTimeString];
   self.overrider.carrierName = self.carrierName;
-  self.overrider.bluetoothEnabled = self.bluetoothState != SDStatusBarManagerBluetoothHidden;
+  self.overrider.bluetoothEnabled   = self.bluetoothState != SDStatusBarManagerBluetoothHidden;
   self.overrider.bluetoothConnected = self.bluetoothState == SDStatusBarManagerBluetoothVisibleConnected;
-
+  self.overrider.dataNetworkType    = self.dataNetworkType;
+  
   [self.overrider enableOverrides];
 }
 
 - (void)disableOverrides
 {
   self.usingOverrides = NO;
-
   [self.overrider disableOverrides];
 }
 
@@ -74,11 +76,7 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   if (self.bluetoothState == bluetoothState) return;
 
   [self.userDefaults setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
-
-  if (self.usingOverrides) {
-    // Refresh the active status bar
-    [self enableOverrides];
-  }
+  [self enableOverridesIfUsingOverrides];
 }
 
 - (SDStatusBarManagerBluetoothState)bluetoothState
@@ -91,16 +89,31 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   if ([self.timeString isEqualToString:timeString]) return;
   
   [self.userDefaults setObject:timeString forKey:SDStatusBarManagerTimeStringKey];
+  [self enableOverridesIfUsingOverrides];
+}
 
+- (void)setDataNetworkType:(SDStatusBarManagerDataNetworkType)dataNetworkType
+{
+  if (self.dataNetworkType == dataNetworkType) return;
+  
+  _dataNetworkType = dataNetworkType;
+  [self.userDefaults setValue:@(dataNetworkType) forKey:SDStatusBarManagerNetworkTypeKey];
+  [self enableOverridesIfUsingOverrides];
+}
+
+- (void)setCarrierName:(NSString *)carrierName
+{
+  _carrierName = carrierName;
+  [self.userDefaults setValue:carrierName forKey:SDStatusBarManagerCarrierNameKey];
+  [self enableOverridesIfUsingOverrides];
+}
+
+- (void)enableOverridesIfUsingOverrides
+{
   if (self.usingOverrides) {
     // Refresh the active status bar
     [self enableOverrides];
   }
-}
-
-- (NSString *)timeString
-{
-  return [self.userDefaults valueForKey:SDStatusBarManagerTimeStringKey];
 }
 
 - (NSUserDefaults *)userDefaults
@@ -145,12 +158,21 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   return [formatter stringFromDate:[[NSCalendar currentCalendar] dateFromComponents:components]];
 }
 
+- (void)loadDefaults
+{
+  self.carrierName     = [self.userDefaults valueForKey:SDStatusBarManagerCarrierNameKey];
+  self.dataNetworkType = [self.userDefaults integerForKey:SDStatusBarManagerNetworkTypeKey];
+  self.bluetoothState  = [self.userDefaults integerForKey:SDStatusBarManagerBluetoothStateKey];
+  self.timeString      = [self.userDefaults valueForKey:SDStatusBarManagerTimeStringKey];
+}
+
 #pragma mark Singleton instance
 + (SDStatusBarManager *)sharedInstance
 {
   static dispatch_once_t predicate = 0;
-  __strong static id sharedObject = nil;
+  __strong static SDStatusBarManager *sharedObject = nil;
   dispatch_once(&predicate, ^{ sharedObject = [[self alloc] init]; });
+  [sharedObject loadDefaults];
   return sharedObject;
 }
 

@@ -120,6 +120,8 @@ typedef struct {
 @synthesize carrierName;
 @synthesize bluetoothConnected;
 @synthesize bluetoothEnabled;
+@synthesize dataNetworkType;
+
 
 - (void)enableOverrides
 {

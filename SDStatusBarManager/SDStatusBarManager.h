@@ -23,6 +23,8 @@
 // --------------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
+#import "SDStatusBarOverrider.h"
+
 
 typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
 {
@@ -31,12 +33,14 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
   SDStatusBarManagerBluetoothVisibleConnected
 };
 
+
 @interface SDStatusBarManager : NSObject
 
 @property (copy, nonatomic) NSString *carrierName;
 @property (copy, nonatomic) NSString *timeString;
 @property (assign, nonatomic, readonly) BOOL usingOverrides;
 @property (assign, nonatomic) SDStatusBarManagerBluetoothState bluetoothState;
+@property (assign, nonatomic) SDStatusBarManagerDataNetworkType dataNetworkType;
 
 - (void)enableOverrides;
 - (void)disableOverrides;

@@ -24,6 +24,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, SDStatusBarManagerDataNetworkType)
+{
+  SDStatusBarManagerDataNetworkTypeGPRS = 0,
+  SDStatusBarManagerDataNetworkTypeEDGE,
+  SDStatusBarManagerDataNetworkType3G,
+  SDStatusBarManagerDataNetworkType4G,
+  SDStatusBarManagerDataNetworkTypeLTE,
+  SDStatusBarManagerDataNetworkTypeWiFi
+};
+
+
 @protocol SDStatusBarOverrider <NSObject>
 
 @property (copy, nonatomic) NSString *timeString;
@@ -32,6 +43,7 @@
 
 @property (assign, nonatomic) BOOL bluetoothEnabled;
 @property (assign, nonatomic) BOOL bluetoothConnected;
+@property (assign, nonatomic) SDStatusBarManagerDataNetworkType dataNetworkType;
 
 - (void)enableOverrides;
 - (void)disableOverrides;
