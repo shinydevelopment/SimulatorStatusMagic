@@ -29,6 +29,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
 @property (strong, nonatomic) IBOutlet UITextField *timeStringTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *networkSegmentedControl;
+@property (strong, nonatomic) IBOutlet UITextField *carrierNameTextField;
 @end
 
 @implementation ViewController
@@ -41,6 +43,8 @@
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
   [self setTimeStringTextFieldText];
+  self.networkSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].dataNetworkType;
+  self.carrierNameTextField.text = [SDStatusBarManager sharedInstance].carrierName;
 }
 
 #pragma mark Actions
@@ -60,10 +64,19 @@
   [SDStatusBarManager sharedInstance].timeString = textField.text;
 }
 
+- (IBAction)carrierTextFieldEditingChanged:(UITextField *)textField {
+    [SDStatusBarManager sharedInstance].carrierName = textField.text;
+}
+
 - (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
   [[SDStatusBarManager sharedInstance] setBluetoothState:sender.selectedSegmentIndex];
+}
+
+- (IBAction)networkChanged:(UISegmentedControl *)sender {
+    // Note: The order of the segments should match the definition of SDStatusBarManagerDataNetworkType
+    [[SDStatusBarManager sharedInstance] setDataNetworkType:sender.selectedSegmentIndex];
 }
 
 #pragma mark Text field delegate
@@ -104,5 +117,4 @@
 {
   return UIStatusBarStyleDefault;
 }
-
 @end

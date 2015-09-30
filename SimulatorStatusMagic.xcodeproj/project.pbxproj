@@ -17,6 +17,7 @@
 		5516357719E3FF3D001F636D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516357519E3FF3D001F636D /* Main.storyboard */; };
 		5516357919E3FF3D001F636D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516357819E3FF3D001F636D /* Images.xcassets */; };
 		5516357C19E3FF3D001F636D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5516357A19E3FF3D001F636D /* LaunchScreen.xib */; };
+		AC667BA41BBC13A0004C905D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC667BA61BBC13A0004C905D /* InfoPlist.strings */; };
 		DDACF30B19E83F06004FCB30 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		5516357619E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5516357819E3FF3D001F636D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5516357B19E3FF3D001F636D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AC667BA11BBC1029004C905D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AC667BA51BBC13A0004C905D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDACF30919E83F06004FCB30 /* SDStatusBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarManager.h; sourceTree = "<group>"; };
 		DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
@@ -89,6 +92,7 @@
 		5516356B19E3FF3D001F636D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AC667BA61BBC13A0004C905D /* InfoPlist.strings */,
 				110F24E519E4610E00012FD7 /* Localizable.strings */,
 				5516357A19E3FF3D001F636D /* LaunchScreen.xib */,
 				5516356C19E3FF3D001F636D /* Info.plist */,
@@ -186,6 +190,7 @@
 				110F24E719E4610E00012FD7 /* Localizable.strings in Resources */,
 				5516357C19E3FF3D001F636D /* LaunchScreen.xib in Resources */,
 				5516357919E3FF3D001F636D /* Images.xcassets in Resources */,
+				AC667BA41BBC13A0004C905D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +218,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				110F24E619E4610E00012FD7 /* de */,
+				AC667BA11BBC1029004C905D /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -233,6 +239,14 @@
 				110F24E419E45FFE00012FD7 /* de */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		AC667BA61BBC13A0004C905D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC667BA51BBC13A0004C905D /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

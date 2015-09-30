@@ -2,9 +2,9 @@
 
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
 
-* 9:41 AM is displayed for the time.
+* 9:41 AM is displayed for the time, which can be customized to any string.
 * The battery is full and shows 100%.
-* On iPhone: The carrier text is removed, 5 bars of cellular signal and full WiFi bars are displayed.
+* On iPhone: The carrier text is removed, 5 bars of cellular signal and full WiFi bars are displayed. The carrier can now also be customized.
 * On iPad: The carrier text is set to "iPad" and full WiFi bars are displayed.
 
 ### How do I use it?
@@ -29,7 +29,19 @@ pod 'SimulatorStatusMagic', :configurations => ['Debug']
 
 We recommend only including `SDStatusBarManager` in your debug configuration so that this code is never included in release builds.
 
-When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
+When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. 
+
+To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
+
+To customize carrier name, bluetooth state, time string or network type:
+
+    SDStatusBarManager *statusBarManager = [SDStatusBarManager sharedInstance];
+    statusBarManager.carrierName = @"Swisscom";
+    statusBarManager.dataNetworkType = SDStatusBarManagerDataNetworkType4G;
+    statusBarManager.bluetoothState = SDStatusBarManagerBluetoothVisibleDimmed;
+	[statusBarManager enableOverrides];
+
+![Screenshot](screenshot.png)
 
 ### Does this work on device?
 
@@ -46,4 +58,4 @@ We'd love contributions and even have some suggestions for things that might nee
 * Found a bug? If you report it with a pull request attached then you get a gold star :)
 * ~~Non-English language support. We'd love it to work with more languages.~~ Now works with every language!
 
-However, the scope of this project is intentionally limited. We're not planning to add options to this to allow ultimate customisation of the status bar. It's intended to do just one job really well, change the status bar to match [Apple's marketing materials](http://www.apple.com/ios/). Things like custom time text or custom carrier text are probably out of scope.
+However, the scope of this project is intentionally limited. We're not planning to add options to this to allow ultimate customisation of the status bar. It's intended to do just one job really well, change the status bar to match [Apple's marketing materials](http://www.apple.com/ios/).

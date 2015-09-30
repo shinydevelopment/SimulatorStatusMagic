@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,13 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
-                                <rect key="frame" x="247" y="28" width="106" height="19.5"/>
+                                <rect key="frame" x="247" y="184" width="106" height="20"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-a6-wUU">
-                                <rect key="frame" x="150" y="56" width="300" height="29"/>
+                                <rect key="frame" x="150" y="212" width="300" height="29"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="ySp-lM-X7h"/>
                                 </constraints>
@@ -37,8 +39,34 @@
                                     <action selector="bluetoothStatusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="67a-Ux-qau"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
-                                <rect key="frame" x="150" y="142" width="300" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CU-LR-1zf">
+                                <rect key="frame" x="250" y="107" width="101" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gb4-q5-oht">
+                                <rect key="frame" x="150" y="136" width="300" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="WbC-zx-vRM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="GPRS"/>
+                                    <segment title="EDGE"/>
+                                    <segment title="3G"/>
+                                    <segment title="4G"/>
+                                    <segment title="LTE"/>
+                                    <segment title="WiFi"/>
+                                </segments>
+                                <connections>
+                                    <action selector="networkChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="QLF-Lg-2rv"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
+                                <rect key="frame" x="150" y="289" width="300" height="30"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -47,13 +75,15 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-Mb-bVk">
-                                <rect key="frame" x="281" y="114" width="38" height="20.5"/>
+                                <rect key="frame" x="281" y="260" width="38" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
-                                <rect key="frame" x="179" y="194" width="242" height="32"/>
+                                <rect key="frame" x="179" y="341" width="242" height="32"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Apply Clean Status Bar Overrides">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,25 +92,54 @@
                                     <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carrier" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-rK-Ggw">
+                                <rect key="frame" x="150" y="57" width="300" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="carrierTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="elt-V5-qwk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jpg-Av-4ck"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrier" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx3-MR-1uV">
+                                <rect key="frame" x="274" y="28" width="53" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CcU-Mb-bVk" firstAttribute="top" secondItem="VEX-a6-wUU" secondAttribute="bottom" constant="30" id="06E-jA-9bB"/>
+                            <constraint firstItem="CcU-Mb-bVk" firstAttribute="top" secondItem="VEX-a6-wUU" secondAttribute="bottom" constant="20" id="06E-jA-9bB"/>
+                            <constraint firstItem="GLS-rK-Ggw" firstAttribute="leading" secondItem="Gb4-q5-oht" secondAttribute="leading" id="3k9-VR-y1m"/>
+                            <constraint firstItem="GLS-rK-Ggw" firstAttribute="trailing" secondItem="Gb4-q5-oht" secondAttribute="trailing" id="4Sj-aN-XTs"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8.5" id="6yr-PR-2Mv"/>
                             <constraint firstAttribute="centerX" secondItem="VEX-a6-wUU" secondAttribute="centerX" id="7k2-tb-Tvg"/>
+                            <constraint firstItem="3CU-LR-1zf" firstAttribute="top" secondItem="GLS-rK-Ggw" secondAttribute="bottom" constant="20" id="BIi-Ag-Api"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="trailing" secondItem="QuK-wD-2d0" secondAttribute="trailing" id="CH2-Pm-5xn"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="leading" secondItem="QuK-wD-2d0" secondAttribute="leading" id="DLs-vg-QzH"/>
                             <constraint firstItem="QuK-wD-2d0" firstAttribute="top" secondItem="CcU-Mb-bVk" secondAttribute="bottom" constant="8" id="GPW-yh-BfV"/>
+                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="Gb4-q5-oht" secondAttribute="bottom" constant="20" id="Gr3-2x-TwM"/>
                             <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="QuK-wD-2d0" secondAttribute="centerX" id="Hji-Sf-pad"/>
+                            <constraint firstItem="Gb4-q5-oht" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jds-0D-inu"/>
                             <constraint firstAttribute="centerX" secondItem="1W5-6m-qnr" secondAttribute="centerX" constant="-0.5" id="Prz-cE-8oA"/>
-                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Vqa-Qz-Ja3"/>
                             <constraint firstItem="Omy-wd-t1z" firstAttribute="top" secondItem="QuK-wD-2d0" secondAttribute="bottom" constant="22" id="YAw-nZ-4Ni"/>
+                            <constraint firstItem="Gb4-q5-oht" firstAttribute="top" secondItem="3CU-LR-1zf" secondAttribute="bottom" constant="8.5" id="aFT-9n-acd"/>
+                            <constraint firstItem="GLS-rK-Ggw" firstAttribute="top" secondItem="rx3-MR-1uV" secondAttribute="bottom" constant="8" id="m8E-oV-HXR"/>
                             <constraint firstAttribute="centerX" secondItem="CcU-Mb-bVk" secondAttribute="centerX" id="qxc-YV-wRm"/>
+                            <constraint firstItem="3CU-LR-1zf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rf5-EX-9LD"/>
+                            <constraint firstItem="rx3-MR-1uV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t8B-Of-K2K"/>
                             <constraint firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="xaa-SO-MPw"/>
+                            <constraint firstItem="rx3-MR-1uV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ybg-JH-iub"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bluetoothSegmentedControl" destination="VEX-a6-wUU" id="L7z-KL-JJm"/>
+                        <outlet property="carrierNameTextField" destination="GLS-rK-Ggw" id="pD4-QO-JtB"/>
+                        <outlet property="networkSegmentedControl" destination="Gb4-q5-oht" id="RVw-L5-e7c"/>
                         <outlet property="overrideButton" destination="Omy-wd-t1z" id="OkF-TC-Syr"/>
                         <outlet property="timeStringTextField" destination="QuK-wD-2d0" id="65v-sA-1Yd"/>
                     </connections>
