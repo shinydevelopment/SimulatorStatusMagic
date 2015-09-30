@@ -10,24 +10,6 @@
 /* Class = "UITextField"; placeholder = "Carrier"; ObjectID = "GLS-rK-Ggw"; */
 "GLS-rK-Ggw.placeholder" = "Netzbetreiber";
 
-/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[0] = "GPRS"; ObjectID = "Gb4-q5-oht"; */
-"Gb4-q5-oht.segmentTitles[0]" = "";
-
-/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[1] = "EDGE"; ObjectID = "Gb4-q5-oht"; */
-"Gb4-q5-oht.segmentTitles[1]" = "";
-
-/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[2] = "3G"; ObjectID = "Gb4-q5-oht"; */
-"Gb4-q5-oht.segmentTitles[2]" = "";
-
-/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[3] = "4G"; ObjectID = "Gb4-q5-oht"; */
-"Gb4-q5-oht.segmentTitles[3]" = "";
-
-/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[4] = "LTE"; ObjectID = "Gb4-q5-oht"; */
-"Gb4-q5-oht.segmentTitles[4]" = "";
-
-/* Class = "UISegmentedControl"; Gb4-q5-oht.segmentTitles[5] = "WiFi"; ObjectID = "Gb4-q5-oht"; */
-"Gb4-q5-oht.segmentTitles[5]" = "";
-
 /* Class = "UIButton"; normalTitle = "Apply Clean Status Bar Overrides"; ObjectID = "Omy-wd-t1z"; */
 "Omy-wd-t1z.normalTitle" = "Statusleiste mit Clean Status Bar überschreiben";
 

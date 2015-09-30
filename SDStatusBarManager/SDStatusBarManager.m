@@ -88,6 +88,7 @@ static NSString * const SDStatusBarManagerCarrierNameKey = @"carrier_name";
 {
   if ([self.timeString isEqualToString:timeString]) return;
   
+  _timeString = timeString;
   [self.userDefaults setObject:timeString forKey:SDStatusBarManagerTimeStringKey];
   [self enableOverridesIfUsingOverrides];
 }

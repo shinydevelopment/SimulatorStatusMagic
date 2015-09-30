@@ -64,7 +64,7 @@
                                     <action selector="networkChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="QLF-Lg-2rv"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
                                 <rect key="frame" x="150" y="289" width="300" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -92,7 +92,7 @@
                                     <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carrier" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-rK-Ggw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carrier" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-rK-Ggw">
                                 <rect key="frame" x="150" y="57" width="300" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

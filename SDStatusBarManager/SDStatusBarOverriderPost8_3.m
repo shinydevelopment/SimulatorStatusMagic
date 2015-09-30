@@ -160,6 +160,10 @@ typedef struct {
     overrides->values.bluetoothConnected = self.bluetoothConnected;
   }
   
+  // Network Type
+  overrides->overrideDataNetworkType = 1;
+  overrides->values.dataNetworkType = self.dataNetworkType;
+  
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
   
@@ -177,7 +181,8 @@ typedef struct {
   overrides->overrideBatteryDetailString = 0;
   overrides->overrideBatteryDetailString = 0;
   overrides->overrideBluetoothConnected = 0;
-  
+  overrides->overrideDataNetworkType = 0;
+
   // Remove all overrides that use the array of bools
   for (int i = 0; i < 26; i++) {
     overrides->booloverrideItemIsEnabled[i] = 0;

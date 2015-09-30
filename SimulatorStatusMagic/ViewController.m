@@ -117,16 +117,4 @@
 {
   return UIStatusBarStyleDefault;
 }
-
-#pragma mark - UITextFieldDelegate
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    if (textField == self.carrierNameTextField) {
-//        [SDStatusBarManager sharedInstance].carrierName = textField.text;
-//    } else if (textField == self.timeStringTextField) {
-//        [SDStatusBarManager sharedInstance].timeString = textField.text;
-//    }
-//    return YES;
-//}
-
 @end
