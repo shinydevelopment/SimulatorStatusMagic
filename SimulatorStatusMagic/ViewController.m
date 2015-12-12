@@ -41,6 +41,8 @@
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
   [self setTimeStringTextFieldText];
+  
+  [self overrideButtonTapped:nil];
 }
 
 #pragma mark Actions
