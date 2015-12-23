@@ -25,6 +25,6 @@
 #import <Foundation/Foundation.h>
 #import "SDStatusBarOverrider.h"
 
-@interface SDStatusBarOverriderPost8_3 : NSObject <SDStatusBarOverrider>
+@interface SDStatusBarOverriderPost9_0 : NSObject  <SDStatusBarOverrider>
 
 @end
