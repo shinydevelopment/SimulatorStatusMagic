@@ -175,7 +175,6 @@ typedef struct {
   overrides->overrideTimeString = 0;
   overrides->overrideGsmSignalStrengthBars = 0;
   overrides->overrideBatteryDetailString = 0;
-  overrides->overrideBatteryDetailString = 0;
   overrides->overrideBluetoothConnected = 0;
   
   // Remove all overrides that use the array of bools
