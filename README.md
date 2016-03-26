@@ -11,7 +11,7 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 * Clone this repository.
 * Open SimulatorStatusMagic.xcodeproj with Xcode 6 (or above).
-* Run the app on whichever simulator type you would like to modify, it works with every device.
+* Run the app target `SimulatorStatusMagic` on whichever simulator type you would like to modify, it works with every device.
 * Once the app launches, press the only button on the screen :)
 * That's it, you're done! Now just run your app and take screenshots.
 
@@ -30,6 +30,12 @@ pod 'SimulatorStatusMagic', :configurations => ['Debug']
 We recommend only including `SDStatusBarManager` in your debug configuration so that this code is never included in release builds.
 
 When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
+
+If you are not using CocoaPods, SimulatorStatusMagic can also be included as a dynamic framework by following steps: 
+
+* Run the target `SimulatorStatusMagicUniversalFramework` which generates a universal framework for both device and simulator. 
+* Drag and drop the generated framework into your project. 
+* Import the framework using `@import SimulatorStatusMagiciOS;` in any file you may want to use it in.
 
 ### Does this work on device?
 
