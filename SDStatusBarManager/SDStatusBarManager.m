@@ -34,8 +34,10 @@ static NSString * const SDStatusBarManagerBluetoothStateKey = @"bluetooth_state"
 static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 
 @interface SDStatusBarManager ()
+
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
 @property (nonatomic, strong) id <SDStatusBarOverrider> overrider;
+
 @end
 
 @implementation SDStatusBarManager
