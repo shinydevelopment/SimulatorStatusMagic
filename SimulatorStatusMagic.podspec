@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SimulatorStatusMagic"
-  s.version          = "1.7"
+  s.version          = "1.8"
   s.summary          = "Enable perfect status bars in the iOS Simulator."
   s.description      = <<-DESC
                         Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author           = { "Dave Verwer" => "dave.verwer@shinydevelopment.com", "Greg Spiers" => "greg.spiers@shinydevelopment.com" }
   s.source           = { :git => "https://github.com/shinydevelopment/SimulatorStatusMagic.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '6.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'SDStatusBarManager'
