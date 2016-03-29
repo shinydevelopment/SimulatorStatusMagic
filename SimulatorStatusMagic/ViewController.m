@@ -38,7 +38,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-    
+  
   [self setOverrideButtonText];
   [self updateHideButton];
   [self setBluetoothSegementedControlSelectedSegment];
@@ -93,11 +93,11 @@
 #pragma mark UI helpers
 - (void)setOverrideButtonText
 {
-    if ([SDStatusBarManager sharedInstance].usingOverrides) {
-        [self.overrideButton setTitle:NSLocalizedString(@"Restore Default Status Bar", @"Restore Default Status Bar")  forState:UIControlStateNormal];
-    } else {
-        [self.overrideButton setTitle:NSLocalizedString(@"Apply Clean Status Bar Overrides", "Apply Clean Status Bar Overrides") forState:UIControlStateNormal];
-    }
+  if ([SDStatusBarManager sharedInstance].usingOverrides) {
+    [self.overrideButton setTitle:NSLocalizedString(@"Restore Default Status Bar", @"Restore Default Status Bar")  forState:UIControlStateNormal];
+  } else {
+    [self.overrideButton setTitle:NSLocalizedString(@"Apply Clean Status Bar Overrides", "Apply Clean Status Bar Overrides") forState:UIControlStateNormal];
+  }
 }
 
 - (void)updateHideButton
