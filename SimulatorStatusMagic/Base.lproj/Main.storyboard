@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,26 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-GD-lKh">
-                                <rect key="frame" x="244" y="221" width="113" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Hide Status Bar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="hideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bb1-i6-81X"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
-                                <rect key="frame" x="247" y="366" width="106" height="20"/>
+                                <rect key="frame" x="247" y="28" width="106" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-a6-wUU">
-                                <rect key="frame" x="150" y="394" width="300" height="29"/>
+                                <rect key="frame" x="150" y="56" width="300" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Vei-lk-LDx"/>
+                                    <constraint firstAttribute="width" constant="300" id="ySp-lM-X7h"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Hidden"/>
@@ -47,21 +37,8 @@
                                     <action selector="bluetoothStatusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="67a-Ux-qau"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
-                                <rect key="frame" x="179" y="284" width="242" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Apply Clean Status Bar Overrides">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
-                                <rect key="frame" x="150" y="142" width="300" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="A9f-P9-aAb"/>
-                                </constraints>
+                                <rect key="frame" x="150" y="143" width="300" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -75,32 +52,42 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
+                                <rect key="frame" x="179" y="195" width="242" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Apply Clean Status Bar Overrides">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PI3-GD-lKh" firstAttribute="top" secondItem="QuK-wD-2d0" secondAttribute="bottom" constant="49" id="3OI-YW-8tq"/>
-                            <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="1W5-6m-qnr" secondAttribute="centerX" id="5kz-az-0iU"/>
-                            <constraint firstItem="Omy-wd-t1z" firstAttribute="top" secondItem="PI3-GD-lKh" secondAttribute="bottom" constant="31" id="9Lc-gB-Eg8"/>
-                            <constraint firstItem="QuK-wD-2d0" firstAttribute="centerX" secondItem="PI3-GD-lKh" secondAttribute="centerX" id="BT4-Yr-c6h"/>
-                            <constraint firstItem="1W5-6m-qnr" firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="GHF-He-aJP"/>
-                            <constraint firstAttribute="centerY" secondItem="Omy-wd-t1z" secondAttribute="centerY" id="HwQ-bH-TKM"/>
-                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="Omy-wd-t1z" secondAttribute="bottom" constant="50" id="I44-KL-yTT"/>
-                            <constraint firstItem="QuK-wD-2d0" firstAttribute="top" secondItem="CcU-Mb-bVk" secondAttribute="bottom" constant="7" id="LSV-1D-PXF"/>
-                            <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8" symbolic="YES" id="ZhL-bv-eFo"/>
-                            <constraint firstItem="Omy-wd-t1z" firstAttribute="centerX" secondItem="PI3-GD-lKh" secondAttribute="centerX" id="bf0-f8-k4p"/>
-                            <constraint firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="iu0-gd-7Jz"/>
-                            <constraint firstItem="CcU-Mb-bVk" firstAttribute="centerX" secondItem="QuK-wD-2d0" secondAttribute="centerX" id="wGa-fP-149"/>
+                            <constraint firstItem="CcU-Mb-bVk" firstAttribute="top" secondItem="VEX-a6-wUU" secondAttribute="bottom" constant="30" id="06E-jA-9bB"/>
+                            <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8.5" id="6yr-PR-2Mv"/>
+                            <constraint firstAttribute="centerX" secondItem="VEX-a6-wUU" secondAttribute="centerX" id="7k2-tb-Tvg"/>
+                            <constraint firstItem="VEX-a6-wUU" firstAttribute="trailing" secondItem="QuK-wD-2d0" secondAttribute="trailing" id="CH2-Pm-5xn"/>
+                            <constraint firstItem="VEX-a6-wUU" firstAttribute="leading" secondItem="QuK-wD-2d0" secondAttribute="leading" id="DLs-vg-QzH"/>
+                            <constraint firstItem="QuK-wD-2d0" firstAttribute="top" secondItem="CcU-Mb-bVk" secondAttribute="bottom" constant="8" id="GPW-yh-BfV"/>
+                            <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="QuK-wD-2d0" secondAttribute="centerX" id="Hji-Sf-pad"/>
+                            <constraint firstAttribute="centerX" secondItem="1W5-6m-qnr" secondAttribute="centerX" constant="-0.5" id="Prz-cE-8oA"/>
+                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Vqa-Qz-Ja3"/>
+                            <constraint firstItem="Omy-wd-t1z" firstAttribute="top" secondItem="QuK-wD-2d0" secondAttribute="bottom" constant="22" id="YAw-nZ-4Ni"/>
+                            <constraint firstAttribute="centerX" secondItem="CcU-Mb-bVk" secondAttribute="centerX" id="qxc-YV-wRm"/>
+                            <constraint firstAttribute="centerX" secondItem="Omy-wd-t1z" secondAttribute="centerX" id="xaa-SO-MPw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bluetoothSegmentedControl" destination="VEX-a6-wUU" id="L7z-KL-JJm"/>
-                        <outlet property="hideButton" destination="PI3-GD-lKh" id="va3-dd-ch3"/>
                         <outlet property="overrideButton" destination="Omy-wd-t1z" id="OkF-TC-Syr"/>
-                        <outlet property="timeStringTextField" destination="QuK-wD-2d0" id="SPj-od-URk"/>
+                        <outlet property="timeStringTextField" destination="QuK-wD-2d0" id="65v-sA-1Yd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="394" y="323"/>
         </scene>
     </scenes>
 </document>

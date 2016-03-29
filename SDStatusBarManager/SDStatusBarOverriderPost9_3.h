@@ -23,20 +23,8 @@
 // --------------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
+#import "SDStatusBarOverrider.h"
 
-@protocol SDStatusBarOverrider <NSObject>
-
-@property (copy, nonatomic) NSString *timeString;
-@property (copy, nonatomic) NSString* carrierName;
-
-@property (assign, nonatomic) BOOL bluetoothEnabled;
-@property (assign, nonatomic) BOOL bluetoothConnected;
-
-- (void)enableOverrides;
-- (void)disableOverrides;
-
-@optional
-
-- (void)clearStatusBar;
+@interface SDStatusBarOverriderPost9_3 : NSObject  <SDStatusBarOverrider>
 
 @end
