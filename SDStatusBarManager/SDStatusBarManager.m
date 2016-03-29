@@ -168,6 +168,8 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   formatter.timeStyle = NSDateFormatterShortStyle;
 
   NSDateComponents *components = [[NSCalendar currentCalendar] components: NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+  components.hour = 9;
+  components.minute = 41;
   
   return [formatter stringFromDate:[[NSCalendar currentCalendar] dateFromComponents:components]];
 }
@@ -179,7 +181,6 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   __strong static SDStatusBarManager *sharedObject = nil;
   dispatch_once(&predicate, ^{
     sharedObject = [[self alloc] init];
-    sharedObject.carrierName = @"";
   });
   return sharedObject;
 }
