@@ -40,9 +40,14 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
 @property (assign, nonatomic) SDStatusBarManagerBluetoothState bluetoothState;
 
 - (void)enableOverrides;
-- (void)clearStatusBar;
 - (void)disableOverrides;
 
 + (SDStatusBarManager *)sharedInstance;
+
+// Method to clear (actually hide the content of) the status bar, useful for Launch Image screenshot
+- (void)clearStatusBar;
+
+// clearStatusBar method of the overridder is optional: this property tell if it's implemented
+@property (readonly, nonatomic) BOOL canClearStatusBar;
 
 @end

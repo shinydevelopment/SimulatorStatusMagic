@@ -103,9 +103,17 @@
 - (void)updateHideButton
 {
     if ([SDStatusBarManager sharedInstance].usingOverrides) {
-        self.hideButton.hidden = YES;
+      self.hideButton.hidden = YES;
     } else {
-        self.hideButton.hidden = NO;
+      self.hideButton.hidden = NO;
+      if ([SDStatusBarManager sharedInstance].canClearStatusBar)
+      {
+        self.hideButton.enabled = YES;
+      }
+      else
+      {
+        self.hideButton.enabled = NO;
+      }
     }
 }
 

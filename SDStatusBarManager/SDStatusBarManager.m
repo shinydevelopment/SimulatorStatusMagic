@@ -54,19 +54,26 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   [self.overrider enableOverrides];
 }
 
-- (void)clearStatusBar
-{
-  self.usingOverrides = YES;
-  
-  if ([self.overrider respondsToSelector:@selector(clearStatusBar)])
-    [self.overrider clearStatusBar];
-}
-
 - (void)disableOverrides
 {
   self.usingOverrides = NO;
 
   [self.overrider disableOverrides];
+}
+
+#pragma mark Clear Status Bar
+- (BOOL)canClearStatusBar
+{
+  return [self.overrider respondsToSelector:@selector(clearStatusBar)];
+}
+
+- (void)clearStatusBar
+{
+  if (self.canClearStatusBar)
+  {
+    self.usingOverrides = YES;
+    [self.overrider clearStatusBar];
+  }
 }
 
 #pragma mark Properties
