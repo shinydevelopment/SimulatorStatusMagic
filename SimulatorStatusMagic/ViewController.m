@@ -41,8 +41,10 @@
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
   [self setTimeStringTextFieldText];
-  
-  [self overrideButtonTapped:nil];
+  NSDictionary *environment = [[NSProcessInfo processInfo] environment];
+  if (environment[@"autooverride"]) {
+    [self overrideButtonTapped:nil];
+  }
 }
 
 #pragma mark Actions
