@@ -117,17 +117,15 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 + (id<SDStatusBarOverrider>)overriderForSystemVersion:(NSString *)systemVersion
 {
   id<SDStatusBarOverrider> overrider = nil;
-  BOOL before9_3 = ([systemVersion compare:@"9.3" options:NSNumericSearch] == NSOrderedAscending);
-  BOOL before9_0 = ([systemVersion compare:@"9.0" options:NSNumericSearch] == NSOrderedAscending);
-  BOOL before8_3 = ([systemVersion compare:@"8.3" options:NSNumericSearch] == NSOrderedAscending);
-  if (before8_3) {
-    overrider = [SDStatusBarOverriderPre8_3 new];
-  } else if (before9_0) {
-    overrider = [SDStatusBarOverriderPost8_3 new];
-  } else if (before9_3) {
-    overrider = [SDStatusBarOverriderPost9_0 new];
-  } else {
+  NSProcessInfo *pi = [NSProcessInfo processInfo];
+  if ([pi isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){ 9, 3, 0 }]) {
     overrider = [SDStatusBarOverriderPost9_3 new];
+  } else if ([pi isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){ 9, 0, 0 }]) {
+    overrider = [SDStatusBarOverriderPost9_0 new];
+  } else if ([pi isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){ 8, 3, 0 }]) {
+    overrider = [SDStatusBarOverriderPost8_3 new];
+  } else {
+    overrider = [SDStatusBarOverriderPre8_3 new];
   }
   return overrider;
 }
