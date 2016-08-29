@@ -31,10 +31,10 @@ We recommend only including `SDStatusBarManager` in your debug configuration so 
 
 When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
 
-If you are not using CocoaPods, SimulatorStatusMagic can also be included as a dynamic framework by following steps: 
+If you are not using CocoaPods, SimulatorStatusMagic can also be included as a dynamic framework by following steps:
 
-* Run the target `SimulatorStatusMagicUniversalFramework` which generates a universal framework for both device and simulator. 
-* Drag and drop the generated framework into your project. 
+* Run the target `SimulatorStatusMagicUniversalFramework` which generates a universal framework for both device and simulator.
+* Drag and drop the generated framework into your project.
 * Import the framework using `@import SimulatorStatusMagiciOS;` in any file you may want to use it in.
 
 ### Does this work on device?
