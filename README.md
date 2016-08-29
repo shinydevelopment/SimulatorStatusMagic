@@ -25,6 +25,24 @@ Yes! SimulatorStatusMagic is available via [CocoaPods](http://cocoapods.org), [C
 
 It is recommended to only include `SDStatusBarManager` in your debug configuration so that the code is never included in release builds. Then, when you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
 
+### What about automation of the sample app?
+
+If you'd prefer to automate the app itself to automatically enable or disable the overrides, this can be done with environment variables.
+
+Run with:
+
+````
+SIMULATOR_STATUS_MAGIC_OVERRIDES = enable
+````
+
+or
+
+````
+SIMULATOR_STATUS_MAGIC_OVERRIDES = enable
+````
+
+The overrides will be automatically enabled or disabled on launch.
+
 ### Does this work on device?
 
 No. The status bar server is blocked on devices. However, [this post contains more information on taking perfect screenshots on real devices](http://shinydevelopment.com/blog/status-magic-and-iphone6-screen-sizes/).
