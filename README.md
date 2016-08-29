@@ -21,21 +21,13 @@ Run the app again and click "Restore Default Status Bar". Resetting the iOS Simu
 
 ### I have a script to take my screenshots, can I automate this?
 
-Yes! SimulatorStatusMagic is also available through [CocoaPods](http://cocoapods.org). To install, simply add the following line to your Podfile:
+Yes! SimulatorStatusMagic is also available via [CocoaPods](http://cocoapods.org), [Carthage](https://github.com/Carthage/Carthage) and as a standalone source release. [Installation instructions](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/INSTALLATION.md) are available for each method.
 
-```ruby
-pod 'SimulatorStatusMagic', :configurations => ['Debug']
-```
+#### Tips
 
 We recommend only including `SDStatusBarManager` in your debug configuration so that this code is never included in release builds.
 
 When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
-
-If you are not using CocoaPods, SimulatorStatusMagic can also be included as a dynamic framework by following steps:
-
-* Run the target `SimulatorStatusMagicUniversalFramework` which generates a universal framework for both device and simulator.
-* Drag and drop the generated framework into your project.
-* Import the framework using `@import SimulatorStatusMagiciOS;` in any file you may want to use it in.
 
 ### Does this work on device?
 
