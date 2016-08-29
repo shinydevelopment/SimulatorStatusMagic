@@ -11,7 +11,7 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 * Clone this repository.
 * Open SimulatorStatusMagic.xcodeproj with Xcode 6 (or above).
-* Switch to the app target `SimulatorStatusMagic` (not `SimulatorStatusMagiciOS`) and run it on whichever simulator type you would like to modify (it works with every device).
+* Run the app target `SimulatorStatusMagic` (not `SimulatorStatusMagiciOS`) on whichever simulator type you would like to modify (it works with every device).
 * Once the app launches, press the only button on the screen :)
 * That's it, you're done! Now just run your app and take screenshots.
 
