@@ -213,7 +213,7 @@ typedef struct {
 
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
-  
+
   // Lock in the changes, reset simulator will remove this
   [UIStatusBarServer permanentizeStatusBarOverrideData];
 }
@@ -239,7 +239,7 @@ typedef struct {
 
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
-  
+
   // Have to call this to remove all the overrides
   [UIStatusBarServer permanentizeStatusBarOverrideData];
 }
