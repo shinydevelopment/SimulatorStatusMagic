@@ -41,7 +41,15 @@
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
   [self setTimeStringTextFieldText];
-}
+  NSDictionary *environment = [[NSProcessInfo processInfo] environment];
+  if ([environment[@"SIMULATOR_STATUS_MAGIC_OVERRIDES"] isEqualToString:@"ENABLE"]) {
+    [[SDStatusBarManager sharedInstance] enableOverrides];
+    [self setOverrideButtonText];
+  }
+  if ([environment[@"SIMULATOR_STATUS_MAGIC_OVERRIDES"] isEqualToString:@"DISABLE"]) {
+    [[SDStatusBarManager sharedInstance] disableOverrides];
+    [self setOverrideButtonText];
+  }}
 
 #pragma mark Actions
 - (IBAction)overrideButtonTapped:(UIButton *)sender
