@@ -202,6 +202,7 @@ typedef struct {
   overrides->values.battery = 100;
   overrides->shouldOverrideBatteryState = 1;
   overrides->values.batteryState = BatteryStateUnplugged;
+  overrides->shouldOverrideBatteryString = 1;
 
   // Bluetooth
   overrides->shouldOverrideEnabled[Bluetooth] = !!self.bluetoothEnabled;
@@ -231,6 +232,7 @@ typedef struct {
   overrides->shouldOverrideSignalStrength = 0;
   overrides->shouldOverrideBattery = 0;
   overrides->shouldOverrideBatteryState = 0;
+  overrides->shouldOverrideBatteryString = 0;
   overrides->shouldOverrideBluetoothConnected = 0;
 
   // Carrier text (it's an override to set it back to the default)
