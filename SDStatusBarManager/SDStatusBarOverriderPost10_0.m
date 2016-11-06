@@ -197,12 +197,13 @@ typedef struct {
   }
   strcpy(overrides->values.serviceString, [carrierText cStringUsingEncoding:NSUTF8StringEncoding]);
 
-  // Battery: 100% and unpluged
+  // Battery: 100% and unplugged
+  overrides->overrideItemIsEnabled[BatteryDetail] = YES;
+  overrides->values.itemIsEnabled[BatteryDetail] = YES;
   overrides->overrideBatteryCapacity = 1;
   overrides->values.batteryCapacity = 100;
   overrides->overrideBatteryState = 1;
   overrides->values.batteryState = BatteryStateUnplugged;
-  overrides->overrideBatteryDetailString = 1;
 
   // Bluetooth
   overrides->overrideItemIsEnabled[Bluetooth] = !!self.bluetoothEnabled;
