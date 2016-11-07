@@ -200,10 +200,13 @@ typedef struct {
   // Battery: 100% and unplugged
   overrides->overrideItemIsEnabled[BatteryDetail] = YES;
   overrides->values.itemIsEnabled[BatteryDetail] = YES;
-  overrides->overrideBatteryCapacity = 1;
+  overrides->overrideBatteryCapacity = YES;
   overrides->values.batteryCapacity = 100;
-  overrides->overrideBatteryState = 1;
+  overrides->overrideBatteryState = YES;
   overrides->values.batteryState = BatteryStateUnplugged;
+  overrides->overrideBatteryDetailString = YES;
+  NSString *batteryDetailString = [NSString stringWithFormat:@"%@%%", @(overrides->values.batteryCapacity)];
+  strcpy(overrides->values.batteryDetailString, [batteryDetailString cStringUsingEncoding:NSUTF8StringEncoding]);
 
   // Bluetooth
   overrides->overrideItemIsEnabled[Bluetooth] = !!self.bluetoothEnabled;
