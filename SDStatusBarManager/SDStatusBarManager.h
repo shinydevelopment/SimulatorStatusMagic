@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
 @property (copy, nonatomic) NSString *timeString;
 @property (assign, nonatomic, readonly) BOOL usingOverrides;
 @property (assign, nonatomic) SDStatusBarManagerBluetoothState bluetoothState;
+@property (assign, nonatomic) BOOL batteryDetailEnabled;
 
 - (void)enableOverrides;
 - (void)disableOverrides;

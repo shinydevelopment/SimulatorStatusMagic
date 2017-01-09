@@ -31,6 +31,7 @@
 
 @property (assign, nonatomic) BOOL bluetoothEnabled;
 @property (assign, nonatomic) BOOL bluetoothConnected;
+@property (assign, nonatomic) BOOL batteryDetailEnabled;
 
 - (void)enableOverrides;
 - (void)disableOverrides;
