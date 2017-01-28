@@ -206,7 +206,7 @@ typedef struct {
   overrides->overrideBatteryState = YES;
   overrides->values.batteryState = BatteryStateUnplugged;
   overrides->overrideBatteryDetailString = YES;
-    NSString *batteryDetailString = self.batteryDetailEnabled? [NSString stringWithFormat:@"%@%%", @(overrides->values.batteryCapacity)] : @" "; // setting to empty string will not do the trick
+  NSString *batteryDetailString = self.batteryDetailEnabled ? [NSString stringWithFormat:@"%@%%", @(overrides->values.batteryCapacity)] : @" "; // setting to empty string will not do the trick
   strcpy(overrides->values.batteryDetailString, [batteryDetailString cStringUsingEncoding:NSUTF8StringEncoding]);
 
   // Bluetooth
