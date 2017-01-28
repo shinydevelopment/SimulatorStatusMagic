@@ -81,7 +81,6 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   [self.userDefaults setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
 
   if (self.usingOverrides) {
-    // Refresh the active status bar
     [self enableOverrides];
   }
 }
@@ -98,7 +97,6 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   [self.userDefaults setObject:timeString forKey:SDStatusBarManagerTimeStringKey];
 
   if (self.usingOverrides) {
-    // Refresh the active status bar
     [self enableOverrides];
   }
 }
