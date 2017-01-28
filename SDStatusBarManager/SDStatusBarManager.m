@@ -43,6 +43,16 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 
 @implementation SDStatusBarManager
 
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    // Set any defaults for the status bar
+    self.batteryDetailEnabled = YES;
+  }
+  return self;
+}
+
 - (void)enableOverrides
 {
   self.usingOverrides = YES;
