@@ -121,6 +121,7 @@ typedef struct {
 @synthesize carrierName;
 @synthesize bluetoothConnected;
 @synthesize bluetoothEnabled;
+@synthesize batteryDetailEnabled;
 
 - (void)enableOverrides
 {
@@ -150,7 +151,7 @@ typedef struct {
   overrides->booloverrideItemIsEnabled[8] = 1;
   overrides->values.boolitemIsEnabled[8] = 1;
   overrides->overrideBatteryDetailString = 1;
-  strcpy(overrides->values.batteryDetailString, [@"100%" cStringUsingEncoding:NSUTF8StringEncoding]);
+  strcpy(overrides->values.batteryDetailString, [self.batteryDetailEnabled? @"100%" : @" " cStringUsingEncoding:NSUTF8StringEncoding]);
   
   // Bluetooth
   overrides->booloverrideItemIsEnabled[11] = self.bluetoothEnabled;
@@ -162,6 +163,13 @@ typedef struct {
   
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
+    
+  // if battery detail was not required, then it was set to one space @" ", so let's correct it here in case bluetooth icon comes after it
+  if (!self.batteryDetailEnabled) {
+    strcpy(overrides->values.batteryDetailString, [@"" cStringUsingEncoding:NSUTF8StringEncoding]);
+    [UIStatusBarServer postStatusBarOverrideData:overrides];
+  }
+    
   
   // Lock in the changes, reset simulator will remove this
   [UIStatusBarServer permanentizeStatusBarOverrideData];

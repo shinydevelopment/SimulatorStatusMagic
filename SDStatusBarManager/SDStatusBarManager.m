@@ -43,6 +43,16 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 
 @implementation SDStatusBarManager
 
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    // Set any defaults for the status bar
+    self.batteryDetailEnabled = YES;
+  }
+  return self;
+}
+
 - (void)enableOverrides
 {
   self.usingOverrides = YES;
@@ -51,6 +61,7 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   self.overrider.carrierName = self.carrierName;
   self.overrider.bluetoothEnabled = self.bluetoothState != SDStatusBarManagerBluetoothHidden;
   self.overrider.bluetoothConnected = self.bluetoothState == SDStatusBarManagerBluetoothVisibleConnected;
+  self.overrider.batteryDetailEnabled = self.batteryDetailEnabled;
 
   [self.overrider enableOverrides];
 }
@@ -80,7 +91,6 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   [self.userDefaults setValue:@(bluetoothState) forKey:SDStatusBarManagerBluetoothStateKey];
 
   if (self.usingOverrides) {
-    // Refresh the active status bar
     [self enableOverrides];
   }
 }
@@ -97,7 +107,6 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   [self.userDefaults setObject:timeString forKey:SDStatusBarManagerTimeStringKey];
 
   if (self.usingOverrides) {
-    // Refresh the active status bar
     [self enableOverrides];
   }
 }
