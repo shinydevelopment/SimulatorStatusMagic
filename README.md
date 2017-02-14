@@ -38,7 +38,7 @@ SIMULATOR_STATUS_MAGIC_OVERRIDES = enable
 or
 
 ````
-SIMULATOR_STATUS_MAGIC_OVERRIDES = enable
+SIMULATOR_STATUS_MAGIC_OVERRIDES = disable
 ````
 
 The overrides will be automatically enabled or disabled on launch.
