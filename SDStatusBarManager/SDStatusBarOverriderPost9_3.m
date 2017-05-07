@@ -121,7 +121,6 @@ typedef struct {
 
 @interface UIStatusBarServer : NSObject {
   struct __CFRunLoopSource { } * _source;
-  //<UIStatusBarServerClient> * _statusBar;
   id<UIStatusBarServerClient> _statusBar;
 }
 
