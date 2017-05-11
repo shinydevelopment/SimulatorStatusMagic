@@ -246,4 +246,22 @@ typedef struct {
   [UIStatusBarServer permanentizeStatusBarOverrideData];
 }
 
+- (void)clearStatusBar
+{
+  StatusBarOverrideData *overrides = [UIStatusBarServer getStatusBarOverrideData];
+  
+  // Hide all items
+  for ( int i = 0; i < 29 ; i++ )
+  {
+    overrides->booloverrideItemIsEnabled[i] = 1;
+    overrides->values.boolitemIsEnabled[i] = 0;
+  }
+  
+  // Actually update the status bar
+  [UIStatusBarServer postStatusBarOverrideData:overrides];
+  
+  // Lock in the changes, reset simulator will remove this
+  [UIStatusBarServer permanentizeStatusBarOverrideData];
+}
+
 @end

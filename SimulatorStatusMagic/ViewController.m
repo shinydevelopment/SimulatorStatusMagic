@@ -27,6 +27,7 @@
 
 @interface ViewController () 
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
+@property (weak, nonatomic) IBOutlet UIButton *hideButton;
 @property (strong, nonatomic) IBOutlet UITextField *timeStringTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
 @end
@@ -37,8 +38,9 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
+  
   [self setOverrideButtonText];
+  [self updateHideButton];
   [self setBluetoothSegementedControlSelectedSegment];
   [self setTimeStringTextFieldText];
   
@@ -58,10 +60,25 @@
   if ([SDStatusBarManager sharedInstance].usingOverrides) {
     [[SDStatusBarManager sharedInstance] disableOverrides];
     [self setOverrideButtonText];
+      [self updateHideButton];
   } else {
     [[SDStatusBarManager sharedInstance] enableOverrides];
     [self setOverrideButtonText];
+      [self updateHideButton];
   }
+}
+
+- (IBAction)hideButtonTapped:(id)sender
+{
+    if ([SDStatusBarManager sharedInstance].usingOverrides) {
+        [[SDStatusBarManager sharedInstance] disableOverrides];
+        [self setOverrideButtonText];
+        [self updateHideButton];
+    } else {
+        [[SDStatusBarManager sharedInstance] clearStatusBar];
+        [self setOverrideButtonText];
+        [self updateHideButton];
+    }
 }
 
 - (IBAction)timeStringTextFieldEditingChanged:(UITextField *)textField
@@ -90,6 +107,23 @@
   } else {
     [self.overrideButton setTitle:NSLocalizedString(@"Apply Clean Status Bar Overrides", "Apply Clean Status Bar Overrides") forState:UIControlStateNormal];
   }
+}
+
+- (void)updateHideButton
+{
+    if ([SDStatusBarManager sharedInstance].usingOverrides) {
+      self.hideButton.hidden = YES;
+    } else {
+      self.hideButton.hidden = NO;
+      if ([SDStatusBarManager sharedInstance].canClearStatusBar)
+      {
+        self.hideButton.enabled = YES;
+      }
+      else
+      {
+        self.hideButton.enabled = NO;
+      }
+    }
 }
 
 - (void)setBluetoothSegementedControlSelectedSegment
