@@ -58,4 +58,4 @@ We'd love contributions and even have some suggestions for things that might nee
 * Found a bug? If you report it with a pull request attached then you get a gold star :)
 * ~~Non-English language support. We'd love it to work with more languages.~~ Now works with every language!
 
-However, the scope of this project is intentionally limited. We're not planning to add options to this to allow ultimate customisation of the status bar. It's intended to do just one job really well, change the status bar to match [Apple's marketing materials](http://www.apple.com/ios/). Things like custom carrier text are probably out of scope.
+However, the scope of this project is intentionally limited. We're not planning to add options to this to allow ultimate customisation of the status bar. It's intended to do just one job really well, change the status bar to match [Apple's marketing materials](http://www.apple.com/ios/).
