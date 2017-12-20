@@ -28,6 +28,7 @@
 @interface ViewController () 
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
 @property (strong, nonatomic) IBOutlet UITextField *timeStringTextField;
+@property (strong, nonatomic) IBOutlet UITextField *carrierNameTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *networkSegmentedControl;
 @end
@@ -42,6 +43,7 @@
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
   [self setNetworkSegementedControlSelectedSegment];
+  [self setCarrierNameTextFieldText];
   [self setTimeStringTextFieldText];
   
   NSDictionary *environment = [[NSProcessInfo processInfo] environment];
@@ -64,6 +66,11 @@
     [[SDStatusBarManager sharedInstance] enableOverrides];
     [self setOverrideButtonText];
   }
+}
+
+- (IBAction)carrierNameTextFieldEditingChanged:(UITextField *)textField
+{
+  [SDStatusBarManager sharedInstance].carrierName = textField.text;
 }
 
 - (IBAction)timeStringTextFieldEditingChanged:(UITextField *)textField
@@ -110,6 +117,12 @@
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerNetworkType
   self.networkSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].networkType;
+}
+
+- (void)setCarrierNameTextFieldText
+{
+  self.carrierNameTextField.placeholder = NSLocalizedString(@"Carrier", @"Carrier");
+  self.carrierNameTextField.text = [SDStatusBarManager sharedInstance].carrierName;
 }
 
 - (void)setTimeStringTextFieldText
