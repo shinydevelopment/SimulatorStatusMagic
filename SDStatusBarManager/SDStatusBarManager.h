@@ -34,11 +34,11 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
 typedef NS_ENUM(NSInteger, SDStatusBarManagerNetworkType)
 {
   SDStatusBarManagerNetworkTypeWiFi = 0,
-  SDStatusBarManagerNetworkTypeGPRS = 1,
-  SDStatusBarManagerNetworkTypeEdge = 2,
-  SDStatusBarManagerNetworkType3G = 3,
-  SDStatusBarManagerNetworkType4G = 4,
-  SDStatusBarManagerNetworkTypeLTE = 5
+  SDStatusBarManagerNetworkTypeGPRS,
+  SDStatusBarManagerNetworkTypeEdge,
+  SDStatusBarManagerNetworkType3G,
+  SDStatusBarManagerNetworkType4G,
+  SDStatusBarManagerNetworkTypeLTE
 };
 
 @interface SDStatusBarManager : NSObject
