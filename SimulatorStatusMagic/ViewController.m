@@ -28,7 +28,9 @@
 @interface ViewController () 
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
 @property (strong, nonatomic) IBOutlet UITextField *timeStringTextField;
+@property (strong, nonatomic) IBOutlet UITextField *carrierNameTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *networkSegmentedControl;
 @end
 
 @implementation ViewController
@@ -40,6 +42,8 @@
 
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
+  [self setNetworkSegementedControlSelectedSegment];
+  [self setCarrierNameTextFieldText];
   [self setTimeStringTextFieldText];
   
   NSDictionary *environment = [[NSProcessInfo processInfo] environment];
@@ -64,6 +68,11 @@
   }
 }
 
+- (IBAction)carrierNameTextFieldEditingChanged:(UITextField *)textField
+{
+  [SDStatusBarManager sharedInstance].carrierName = textField.text;
+}
+
 - (IBAction)timeStringTextFieldEditingChanged:(UITextField *)textField
 {
   [SDStatusBarManager sharedInstance].timeString = textField.text;
@@ -73,6 +82,12 @@
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
   [[SDStatusBarManager sharedInstance] setBluetoothState:sender.selectedSegmentIndex];
+}
+
+- (IBAction)networkTypeChanged:(UISegmentedControl *)sender
+{
+  // Note: The order of the segments should match the definition of SDStatusBarManagerNetworkType
+  [[SDStatusBarManager sharedInstance] setNetworkType:sender.selectedSegmentIndex];
 }
 
 #pragma mark Text field delegate
@@ -96,6 +111,18 @@
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerBluetoothState
   self.bluetoothSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].bluetoothState;
+}
+
+- (void)setNetworkSegementedControlSelectedSegment
+{
+  // Note: The order of the segments should match the definition of SDStatusBarManagerNetworkType
+  self.networkSegmentedControl.selectedSegmentIndex = [SDStatusBarManager sharedInstance].networkType;
+}
+
+- (void)setCarrierNameTextFieldText
+{
+  self.carrierNameTextField.placeholder = NSLocalizedString(@"Carrier", @"Carrier");
+  self.carrierNameTextField.text = [SDStatusBarManager sharedInstance].carrierName;
 }
 
 - (void)setTimeStringTextFieldText

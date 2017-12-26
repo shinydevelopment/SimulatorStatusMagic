@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,68 +22,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-6m-qnr">
-                                <rect key="frame" x="132" y="28" width="111" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-a6-wUU">
-                                <rect key="frame" x="64.5" y="56" width="245" height="29"/>
-                                <segments>
-                                    <segment title="Hidden"/>
-                                    <segment title="Dimmed"/>
-                                    <segment title="Connected"/>
-                                </segments>
-                                <connections>
-                                    <action selector="bluetoothStatusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="67a-Ux-qau"/>
-                                </connections>
-                            </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuK-wD-2d0">
-                                <rect key="frame" x="65" y="133" width="245" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="timeStringTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="bps-rh-Uc2"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nMZ-yv-GyM"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-Mb-bVk">
-                                <rect key="frame" x="168" y="104" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-wd-t1z">
-                                <rect key="frame" x="60" y="193" width="255" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Apply Clean Status Bar Overrides">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6d-d9-0ab"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xyG-Pn-i6h">
+                                <rect key="frame" x="36" y="40" width="303" height="327"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62A-L5-iwF">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ESw-bP-Eft">
+                                        <rect key="frame" x="0.0" y="32.5" width="303" height="29"/>
+                                        <segments>
+                                            <segment title="Hidden"/>
+                                            <segment title="Dimmed"/>
+                                            <segment title="Connected"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="bluetoothStatusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Wx-HL-z0i"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jih-4l-Bui">
+                                        <rect key="frame" x="0.0" y="72.5" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hoe-iY-qSQ">
+                                        <rect key="frame" x="0.0" y="105" width="303" height="29"/>
+                                        <segments>
+                                            <segment title="Wi-Fi"/>
+                                            <segment title="GPRS"/>
+                                            <segment title="Edge"/>
+                                            <segment title="3G"/>
+                                            <segment title="4G"/>
+                                            <segment title="LTE"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="networkTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="AxI-1A-F43"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrier Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qib-L9-pkd">
+                                        <rect key="frame" x="0.0" y="145" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carrier" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gAn-fq-dJa">
+                                        <rect key="frame" x="0.0" y="177.5" width="303" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="carrierNameTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="kJm-xY-PkL"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="14H-0D-xcn"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKI-le-FqG">
+                                        <rect key="frame" x="0.0" y="219.5" width="303" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:41 AM" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-HZ-npu">
+                                        <rect key="frame" x="0.0" y="252" width="303" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="timeStringTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="FeN-GQ-E6D"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="pAl-PL-KXu"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0W-Cx-jCM">
+                                        <rect key="frame" x="0.0" y="294" width="303" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Apply Clean Status Bar Overrides">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="overrideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJI-kT-5lq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QuK-wD-2d0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Awe-wT-yI0"/>
-                            <constraint firstItem="CcU-Mb-bVk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fng-SD-a0Q"/>
-                            <constraint firstItem="VEX-a6-wUU" firstAttribute="top" secondItem="1W5-6m-qnr" secondAttribute="bottom" constant="8" id="O6j-FA-1oW"/>
-                            <constraint firstItem="Omy-wd-t1z" firstAttribute="top" secondItem="QuK-wD-2d0" secondAttribute="bottom" constant="30" id="eCF-n8-ZBm"/>
-                            <constraint firstItem="1W5-6m-qnr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="jDE-Wa-LQG"/>
-                            <constraint firstItem="1W5-6m-qnr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rPg-ws-Qkj"/>
-                            <constraint firstItem="QuK-wD-2d0" firstAttribute="top" secondItem="CcU-Mb-bVk" secondAttribute="bottom" constant="8" id="rh4-hQ-z2L"/>
-                            <constraint firstItem="QuK-wD-2d0" firstAttribute="width" secondItem="VEX-a6-wUU" secondAttribute="width" id="tjr-ZR-m6j"/>
-                            <constraint firstItem="Omy-wd-t1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vmG-K8-4sI"/>
-                            <constraint firstItem="VEX-a6-wUU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wcw-Rj-c20"/>
-                            <constraint firstItem="CcU-Mb-bVk" firstAttribute="top" secondItem="VEX-a6-wUU" secondAttribute="bottom" constant="20" id="yYu-3l-88s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xyG-Pn-i6h" secondAttribute="trailing" constant="20" id="4S6-0N-FtW"/>
+                            <constraint firstItem="xyG-Pn-i6h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="4bz-OC-Ow2"/>
+                            <constraint firstItem="xyG-Pn-i6h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="tNd-yT-emn"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bluetoothSegmentedControl" destination="VEX-a6-wUU" id="L7z-KL-JJm"/>
-                        <outlet property="overrideButton" destination="Omy-wd-t1z" id="OkF-TC-Syr"/>
-                        <outlet property="timeStringTextField" destination="QuK-wD-2d0" id="65v-sA-1Yd"/>
+                        <outlet property="bluetoothSegmentedControl" destination="ESw-bP-Eft" id="CvD-yz-7Fk"/>
+                        <outlet property="carrierNameTextField" destination="gAn-fq-dJa" id="nxI-oF-1tt"/>
+                        <outlet property="networkSegmentedControl" destination="hoe-iY-qSQ" id="l6m-PF-wMf"/>
+                        <outlet property="overrideButton" destination="w0W-Cx-jCM" id="kCn-jU-1yy"/>
+                        <outlet property="timeStringTextField" destination="fLD-HZ-npu" id="5BZ-hB-7hl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
