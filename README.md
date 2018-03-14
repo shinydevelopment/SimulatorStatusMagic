@@ -45,7 +45,7 @@ The overrides will be automatically enabled or disabled on launch.
 
 ### Does this work on device?
 
-No. The status bar server is blocked on devices. However, [this post contains more information on taking perfect screenshots on real devices](http://shinydevelopment.com/blog/status-magic-and-iphone6-screen-sizes/).
+No. The status bar server is blocked on devices. However, macOS includes the facility to include a perfect status bar when recording your device screen with QuickTime ([Read more](https://appadvice.com/appnn/2014/08/quicktime-in-os-x-yosemite-reveals-that-apple-cares-about-status-bars)).
 
 ### How does this work?
 
