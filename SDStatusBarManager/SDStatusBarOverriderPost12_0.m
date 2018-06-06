@@ -11,24 +11,24 @@
 
 typedef NS_ENUM(int, StatusBarItem) {
   // 0
-  DoNotDisturb = 1,
+  // 1
   // 2
-  SignalStrengthBars = 3,
-  // 4
+  // 3
+  SignalStrengthBars = 4,
   // 5
   // 6
   // 7
   // 8
-  BatteryDetail = 9,
-  // 10
+  // 9
+  BatteryDetail = 10,
   // 11
-  Bluetooth = 12,
-  // 13
-  Alarms = 14,
+  // 12
+  Bluetooth = 13,
+  // 14
   // 15
   // 16
   // 17
-  RotationLock = 18,
+  // 18
   // 19
   // 20
   // 21
@@ -52,9 +52,10 @@ typedef NS_ENUM(unsigned int, BatteryState) {
 };
 
 typedef struct {
-  bool itemIsEnabled[35];
+  bool itemIsEnabled[36];
   char timeString[64];
   char shortTimeString[64];
+  char dateString[256];
   int gsmSignalStrengthRaw;
   int gsmSignalStrengthBars;
   char serviceString[100];
@@ -94,8 +95,9 @@ typedef struct {
 } StatusBarRawData;
 
 typedef struct {
-  bool overrideItemIsEnabled[35];
+  bool overrideItemIsEnabled[36];
   unsigned int overrideTimeString : 1;
+  unsigned int overrideDateString : 1;
   unsigned int overrideGsmSignalStrengthRaw : 1;
   unsigned int overrideGsmSignalStrengthBars : 1;
   unsigned int overrideServiceString : 1;
