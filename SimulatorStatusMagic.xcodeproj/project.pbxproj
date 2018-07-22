@@ -82,7 +82,7 @@
 
 /* Begin PBXFileReference section */
 		110F24E319E45FFE00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		110F24E619E4610E00012FD7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		110F24E619E4610E00012FD7 /* de */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D3ED70420C7CAD0006BBCC8 /* SDStatusBarOverriderPost12_0.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost12_0.h; sourceTree = "<group>"; };
 		3D3ED70520C7CAD0006BBCC8 /* SDStatusBarOverriderPost12_0.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost12_0.m; sourceTree = "<group>"; };
 		441955821F152DF600F1F39B /* SDStatusBarOverriderPost11_0.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost11_0.h; sourceTree = "<group>"; };
