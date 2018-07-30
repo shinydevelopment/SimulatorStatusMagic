@@ -52,7 +52,7 @@ typedef NS_ENUM(unsigned int, BatteryState) {
 };
 
 typedef struct {
-  bool itemIsEnabled[36];
+  bool itemIsEnabled[37];
   char timeString[64];
   char shortTimeString[64];
   char dateString[256];
@@ -95,7 +95,7 @@ typedef struct {
 } StatusBarRawData;
 
 typedef struct {
-  bool overrideItemIsEnabled[36];
+  bool overrideItemIsEnabled[37];
   unsigned int overrideTimeString : 1;
   unsigned int overrideDateString : 1;
   unsigned int overrideGsmSignalStrengthRaw : 1;
