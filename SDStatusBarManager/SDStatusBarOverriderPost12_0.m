@@ -15,18 +15,18 @@ typedef NS_ENUM(int, StatusBarItem) {
   // 2
   // 3
   SignalStrengthBars = 4,
-  // 5
+  SecondarySignalStrengthBars = 5,
   // 6
   // 7
   // 8
   // 9
-  BatteryDetail = 10,
+  // 10
   // 11
   // 12
-  Bluetooth = 13,
+  BatteryDetail = 13,
   // 14
   // 15
-  // 16
+  Bluetooth = 16,
   // 17
   // 18
   // 19
@@ -45,6 +45,12 @@ typedef NS_ENUM(int, StatusBarItem) {
   // 32
   // 33
   // 34
+  // 35
+  // 36
+  // 37
+  // 38
+  // 39
+  // 40
 };
 
 typedef NS_ENUM(unsigned int, BatteryState) {
@@ -52,20 +58,26 @@ typedef NS_ENUM(unsigned int, BatteryState) {
 };
 
 typedef struct {
-  bool itemIsEnabled[37];
+  bool itemIsEnabled[41];
   char timeString[64];
   char shortTimeString[64];
   char dateString[256];
   int gsmSignalStrengthRaw;
+  int secondaryGsmSignalStrengthRaw;
   int gsmSignalStrengthBars;
+  int secondaryGsmSignalStrengthBars;
   char serviceString[100];
+  char secondaryServiceString[100];
   char serviceCrossfadeString[100];
+  char secondaryServiceCrossfadeString[100];
   char serviceImages[2][100];
   char operatorDirectory[1024];
   unsigned int serviceContentType;
+  unsigned int secondaryServiceContentType;
   int wifiSignalStrengthRaw;
   int wifiSignalStrengthBars;
   unsigned int dataNetworkType;
+  unsigned int secondaryDataNetworkType;
   int batteryCapacity;
   unsigned int batteryState;
   char batteryDetailString[150];
@@ -92,21 +104,29 @@ typedef struct {
   unsigned int wifiSearching : 1;
   double backgroundActivityDisplayStartDate;
   unsigned int shouldShowEmergencyOnlyStatus : 1;
+  unsigned int secondaryCellularConfigured : 1;
+  char primaryServiceBadgeString[100];
+  char secondaryServiceBadgeString[100];
 } StatusBarRawData;
 
 typedef struct {
-  bool overrideItemIsEnabled[37];
+  bool overrideItemIsEnabled[41];
   unsigned int overrideTimeString : 1;
   unsigned int overrideDateString : 1;
   unsigned int overrideGsmSignalStrengthRaw : 1;
+  unsigned int overrideSecondaryGsmSignalStrengthRaw : 1;
   unsigned int overrideGsmSignalStrengthBars : 1;
+  unsigned int overrideSecondaryGsmSignalStrengthBars : 1;
   unsigned int overrideServiceString : 1;
+  unsigned int overrideSecondaryServiceString : 1;
   unsigned int overrideServiceImages : 2;
   unsigned int overrideOperatorDirectory : 1;
   unsigned int overrideServiceContentType : 1;
+  unsigned int overrideSecondaryServiceContentType : 1;
   unsigned int overrideWifiSignalStrengthRaw : 1;
   unsigned int overrideWifiSignalStrengthBars : 1;
   unsigned int overrideDataNetworkType : 1;
+  unsigned int overrideSecondaryDataNetworkType : 1;
   unsigned int disallowsCellularDataNetworkTypes : 1;
   unsigned int overrideBatteryCapacity : 1;
   unsigned int overrideBatteryState : 1;
@@ -122,6 +142,9 @@ typedef struct {
   unsigned int overrideDisplayRawWifiSignal : 1;
   unsigned int overridePersonName : 1;
   unsigned int overrideWifiLinkWarning : 1;
+  unsigned int overrideSecondaryCellularConfigured : 1;
+  unsigned int overridePrimaryServiceBadgeString : 1;
+  unsigned int overrideSecondaryServiceBadgeString : 1;
   StatusBarRawData values;
 } StatusBarOverrideData;
 
