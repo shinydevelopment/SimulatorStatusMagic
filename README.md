@@ -1,3 +1,7 @@
+# :boom: Important Note on iOS 12 Compatibility :boom:
+
+The latest version is mostly working with iOS 12 thanks to [@cysp](https://github.com/cysp)'s kind pull request, however the new date status bar functionality on the iPad is not yet supported. It is being discussed in [#68](https://github.com/shinydevelopment/SimulatorStatusMagic/issues/68) and [#72](https://github.com/shinydevelopment/SimulatorStatusMagic/issues/72), and of course pull requests with support for this are very welcome.
+
 ## Simulator Status Magic
 
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
