@@ -54,6 +54,8 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   if (self) {
     // Set any defaults for the status bar
     self.batteryDetailEnabled = YES;
+    self.iPadDateEnabled = NO;
+    self.iPadGsmSignalEnabled = NO;
   }
   return self;
 }
@@ -68,6 +70,8 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
   self.overrider.bluetoothConnected = self.bluetoothState == SDStatusBarManagerBluetoothVisibleConnected;
   self.overrider.batteryDetailEnabled = self.batteryDetailEnabled;
   self.overrider.networkType = self.networkType;
+  self.overrider.iPadDateEnabled = self.iPadDateEnabled;
+  self.overrider.iPadGsmSignalEnabled = self.iPadGsmSignalEnabled;
 
   [self.overrider enableOverrides];
 }

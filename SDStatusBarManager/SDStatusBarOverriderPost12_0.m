@@ -11,12 +11,12 @@
 
 typedef NS_ENUM(int, StatusBarItem) {
   // 0
-  // 1
+  dateStringIpad = 1,
   // 2
   // 3
   SignalStrengthBars = 4,
   SecondarySignalStrengthBars = 5,
-  // 6
+  SignalStrengthBarsVisibleOnIpad = 6,
   // 7
   // 8
   // 9
@@ -179,6 +179,8 @@ typedef struct {
 @synthesize bluetoothEnabled;
 @synthesize batteryDetailEnabled;
 @synthesize networkType;
+@synthesize iPadDateEnabled;
+@synthesize iPadGsmSignalEnabled;
 
 - (void)enableOverrides {
   StatusBarOverrideData *overrides = [UIStatusBarServer getStatusBarOverrideData];
@@ -186,6 +188,12 @@ typedef struct {
   // Set 9:41 time in current localization
   strcpy(overrides->values.timeString, [self.timeString cStringUsingEncoding:NSUTF8StringEncoding]);
   overrides->overrideTimeString = 1;
+  
+  // Show / Hide date on iPad
+  if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+    overrides->overrideItemIsEnabled[dateStringIpad] = 1;
+    overrides->values.itemIsEnabled[dateStringIpad] = self.iPadDateEnabled ? 1 : 0;
+  }
 
   // Enable 5 bars of mobile (iPhone only)
   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
@@ -193,6 +201,19 @@ typedef struct {
     overrides->values.itemIsEnabled[SignalStrengthBars] = 1;
     overrides->overrideGsmSignalStrengthBars = 1;
     overrides->values.gsmSignalStrengthBars = 5;
+  }
+  
+  // Enable / Disable GSM signal bars on iPad
+  if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+    if (self.iPadGsmSignalEnabled) {
+      overrides->overrideItemIsEnabled[SignalStrengthBars] = 1;
+      overrides->values.itemIsEnabled[SignalStrengthBars] = 1;
+      overrides->overrideGsmSignalStrengthBars = 1;
+      overrides->values.gsmSignalStrengthBars = 5;
+    } else {
+      overrides->overrideItemIsEnabled[SignalStrengthBarsVisibleOnIpad] = 1;
+      overrides->values.itemIsEnabled[SignalStrengthBars] = 0;
+    }
   }
 
   overrides->overrideDataNetworkType = self.networkType != SDStatusBarManagerNetworkTypeWiFi;

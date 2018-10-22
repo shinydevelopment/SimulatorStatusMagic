@@ -49,6 +49,8 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerNetworkType)
 @property (assign, nonatomic) SDStatusBarManagerBluetoothState bluetoothState;
 @property (assign, nonatomic) SDStatusBarManagerNetworkType networkType;
 @property (assign, nonatomic) BOOL batteryDetailEnabled;
+@property (assign, nonatomic) BOOL iPadDateEnabled;
+@property (assign, nonatomic) BOOL iPadGsmSignalEnabled;
 
 - (void)enableOverrides;
 - (void)disableOverrides;
