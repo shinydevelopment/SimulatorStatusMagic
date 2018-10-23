@@ -35,6 +35,8 @@
 @property (assign, nonatomic) BOOL bluetoothConnected;
 @property (assign, nonatomic) BOOL batteryDetailEnabled;
 @property (assign, nonatomic) SDStatusBarManagerNetworkType networkType;
+@property (assign, nonatomic) BOOL iPadDateEnabled;
+@property (assign, nonatomic) BOOL iPadGsmSignalEnabled;
 
 - (void)enableOverrides;
 - (void)disableOverrides;
