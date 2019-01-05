@@ -174,6 +174,7 @@ typedef struct {
 @implementation SDStatusBarOverriderPost12_0
 
 @synthesize timeString;
+@synthesize dateString;
 @synthesize carrierName;
 @synthesize bluetoothConnected;
 @synthesize bluetoothEnabled;
@@ -188,6 +189,10 @@ typedef struct {
   // Set 9:41 time in current localization
   strcpy(overrides->values.timeString, [self.timeString cStringUsingEncoding:NSUTF8StringEncoding]);
   overrides->overrideTimeString = 1;
+  
+  // Set Tue Jan 9 in current localization
+  strcpy(overrides->values.dateString, [self.dateString cStringUsingEncoding:NSUTF8StringEncoding]);
+  overrides->overrideDateString = 1;
   
   // Show / Hide date on iPad
   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
@@ -262,6 +267,7 @@ typedef struct {
 
   // Remove specific overrides (separate flags)
   overrides->overrideTimeString = 0;
+  overrides->overrideDateString = 0;
   overrides->overrideGsmSignalStrengthBars = 0;
   overrides->overrideDataNetworkType = 0;
   overrides->overrideBatteryCapacity = 0;

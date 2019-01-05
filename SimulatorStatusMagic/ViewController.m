@@ -28,6 +28,7 @@
 @interface ViewController () 
 @property (strong, nonatomic) IBOutlet UIButton *overrideButton;
 @property (strong, nonatomic) IBOutlet UITextField *timeStringTextField;
+@property (strong, nonatomic) IBOutlet UITextField *dateStringTextField;
 @property (strong, nonatomic) IBOutlet UITextField *carrierNameTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bluetoothSegmentedControl;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *networkSegmentedControl;
@@ -76,6 +77,9 @@
 - (IBAction)timeStringTextFieldEditingChanged:(UITextField *)textField
 {
   [SDStatusBarManager sharedInstance].timeString = textField.text;
+}
+- (IBAction)dateStringTextFieldEditingChanged:(UITextField *)textField {
+	[SDStatusBarManager sharedInstance].dateString = textField.text;
 }
 
 - (IBAction)bluetoothStatusChanged:(UISegmentedControl *)sender
@@ -128,6 +132,11 @@
 - (void)setTimeStringTextFieldText
 {
   self.timeStringTextField.text = [SDStatusBarManager sharedInstance].timeString;
+}
+
+- (void)setDateStringTextFieldText
+{
+  self.dateStringTextField.text = [SDStatusBarManager sharedInstance].dateString;
 }
 
 #pragma mark Status bar settings
