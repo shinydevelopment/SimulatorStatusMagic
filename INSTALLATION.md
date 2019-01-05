@@ -1,4 +1,4 @@
-#### Installing with Cocoapods
+## Installing with Cocoapods
 
 SimulatorStatusMagic is available through [CocoaPods](http://cocoapods.org). To install, simply add the following line to your Podfile:
 
@@ -6,7 +6,7 @@ SimulatorStatusMagic is available through [CocoaPods](http://cocoapods.org). To 
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
 ```
 
-#### Installing with Carthage
+## Installing with Carthage
 
 SimlatorStatusMagic is also available through [Carthage](https://github.com/Carthage/Carthage). Carthage will not make any modifications to your project, so installation is more involved than with CocoaPods. This describes a way of adding `SimulatorStatusMagic` so that it is only imported for `DEBUG` build configurations.
 
@@ -41,7 +41,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 6. Run your app in `DEBUG` to see the status bar changes in effect.
 
-#### Installing without a dependency manager
+## Installing without a dependency manager
 
 SimulatorStatusMagic can also be included as a dynamic framework by following steps:
 
