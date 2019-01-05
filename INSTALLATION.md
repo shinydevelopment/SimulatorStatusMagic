@@ -8,29 +8,38 @@ pod 'SimulatorStatusMagic', :configurations => ['Debug']
 
 #### Installing with Carthage
 
-SimlatorStatusMagic is also available through [Carthage](https://github.com/Carthage/Carthage). Carthage will not make any modifications to your project, so installation is more involved than with CocoaPods. To get started, ensure that you have installed Carthage and then create a Cartfile with the following content:
+SimlatorStatusMagic is also available through [Carthage](https://github.com/Carthage/Carthage). Carthage will not make any modifications to your project, so installation is more involved than with CocoaPods. This describes a way of adding `SimulatorStatusMagic` so that it is only imported for `DEBUG` build configurations.
 
-```ruby
+1. Add `SimulatorStatusMagic` to your `Cartfile`:
+```
 github "shinydevelopment/SimulatorStatusMagic"
 ```
+2. Run `carthage update SimulatorStatusMagic --platform iOS`
+3. Add the framework file directly from `Carthage/Build/iOS/` to `Linked Frameworks and Libraries`, **NOT** Embedded Libraries. Ensure that the file is reference at this location so that future `carthage update` builds will be embedded correctly.
 
-Next bootstrap your environment by executing carthage update:
+![Linked Frameworks and Libraries](linked-frameworks.png)
 
-```sh
-$ carthage update
+4. Add the `embed-debug-only-framework.sh` script found [here](https://gist.github.com/kenthumphries/cf04683184217c7331f9c213c556c65a) and discussed [here](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/INSTALLATION.md).
+
+![Embed run script phase](run-script-phase.png)
+
+5. Add code referencing `SimulatorStatusMagiciOS` inside `#if canImport ... #endif` blocks in your `AppDelegate`:
+```swift
+#if canImport(SimulatorStatusMagiciOS)
+  import SimulatorStatusMagiciOS
+#endif
+
+@UIApplicationMain
+final class AppDelegate: UIResponder, UIApplicationDelegate {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool {
+    #if canImport(SimulatorStatusMagiciOS)
+      SDStatusBarManager.sharedInstance()?.enableOverrides()
+    #endif
+  }
+}
 ```
 
-Next drag SimulatorStatusMagiciOS.framework from Carthage/Build/iOS and onto your project and link it with your application target. Then select your application target within Xcode, navigate to the Build Phases panel and click the + icon and select New Run Script Phase. Set the content to:
-
-```sh
-/usr/local/bin/carthage copy-frameworks
-```
-
-In the Input Files section add:
-
-- `$(SRCROOT)/Carthage/Build/iOS/SimulatorStatusMagiciOS.framework`
-
-Now build your application target and everything should be set.
+6. Run your app in `DEBUG` to see the status bar changes in effect.
 
 #### Installing without a dependency manager
 
