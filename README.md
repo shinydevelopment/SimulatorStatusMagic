@@ -3,10 +3,9 @@
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
 
 * 9:41 AM is displayed for the time.
-* Tue Oct 30 is displayed for the date (iPad only)
 * The battery is full and shows 100%.
-* On iPhone: The carrier text is removed, 5 bars of cellular signal and full WiFi bars are displayed.
-* On iPad: The carrier text is set to "iPad" and full WiFi bars are displayed.
+* 5 bars of cellular signal and full WiFi bars are displayed.
+* Tue Jan 9 is displayed for the date (iPad only)
 
 ### How do I use it?
 
