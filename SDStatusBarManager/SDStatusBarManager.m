@@ -244,9 +244,9 @@ static NSString * const SDStatusBarManagerDateStringKey = @"date_string";
   formatter.dateFormat = [[NSDateFormatter dateFormatFromTemplate:@"EEE MMM d" options:0 locale:NSLocale.currentLocale] stringByReplacingOccurrencesOfString:@"," withString:@""];
   
   NSDateComponents *components = [[NSCalendar currentCalendar] components:  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:[NSDate date]];
-  components.day = 30;
-  components.month = 10;
-  components.year = 2018;
+  components.day = 9;
+  components.month = 1;
+  components.year = 2007;
   
   return [formatter stringFromDate:[[NSCalendar currentCalendar] dateFromComponents:components]];
 }
