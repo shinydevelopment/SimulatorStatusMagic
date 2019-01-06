@@ -130,6 +130,7 @@
                     <connections>
                         <outlet property="bluetoothSegmentedControl" destination="ESw-bP-Eft" id="CvD-yz-7Fk"/>
                         <outlet property="carrierNameTextField" destination="gAn-fq-dJa" id="nxI-oF-1tt"/>
+                        <outlet property="dateStringLabel" destination="eIb-YX-XaO" id="cfS-nu-4Bz"/>
                         <outlet property="dateStringTextField" destination="SDw-De-k5w" id="hg6-pS-IfR"/>
                         <outlet property="networkSegmentedControl" destination="hoe-iY-qSQ" id="l6m-PF-wMf"/>
                         <outlet property="overrideButton" destination="w0W-Cx-jCM" id="kCn-jU-1yy"/>
