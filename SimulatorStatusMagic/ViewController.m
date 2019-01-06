@@ -144,11 +144,7 @@
 - (void)setDateFieldVisibility
 {
   // Only show the date field on iPad devices as the date is never shown on iPhone devices.
-  // Note: Trait collections can't be used here as not all iPhones are compact.
-  // Note: Also, getenv() needs to be used instead of uname() to get the device information on the simulator.
-  
-  NSString *deviceName = [NSString stringWithCString:getenv("SIMULATOR_MODEL_IDENTIFIER") encoding:NSUTF8StringEncoding];
-  BOOL dateFieldHidden = [deviceName rangeOfString:@"iPad"].location == NSNotFound;
+  BOOL dateFieldHidden = UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad;
   self.dateStringLabel.hidden = dateFieldHidden;
   self.dateStringTextField.hidden = dateFieldHidden;
 }
