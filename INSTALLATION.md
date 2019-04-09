@@ -25,14 +25,14 @@ github "shinydevelopment/SimulatorStatusMagic"
 
 5. Add code referencing `SimulatorStatusMagiciOS` inside `#if canImport ... #endif` blocks in your `AppDelegate`:
 ```swift
-#if canImport(SimulatorStatusMagiciOS)
+#if DEBUG
   import SimulatorStatusMagiciOS
 #endif
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool {
-    #if canImport(SimulatorStatusMagiciOS)
+    #if DEBUG
       SDStatusBarManager.sharedInstance()?.enableOverrides()
     #endif
   }
