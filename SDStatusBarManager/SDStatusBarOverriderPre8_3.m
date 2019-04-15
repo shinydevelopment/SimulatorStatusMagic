@@ -117,6 +117,7 @@ typedef struct {
 @implementation SDStatusBarOverriderPre8_3
 
 @synthesize timeString;
+@synthesize dateString;
 @synthesize carrierName;
 @synthesize bluetoothConnected;
 @synthesize bluetoothEnabled;

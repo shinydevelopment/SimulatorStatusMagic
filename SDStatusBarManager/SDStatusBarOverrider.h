@@ -29,6 +29,7 @@
 @protocol SDStatusBarOverrider <NSObject>
 
 @property (copy, nonatomic) NSString *timeString;
+@property (copy, nonatomic) NSString *dateString;
 @property (copy, nonatomic) NSString* carrierName;
 
 @property (assign, nonatomic) BOOL bluetoothEnabled;

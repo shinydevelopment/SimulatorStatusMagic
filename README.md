@@ -1,17 +1,11 @@
-# :boom: Important Note on iOS 12 Compatibility :boom:
-
-The latest version is mostly working with iOS 12 thanks to [@cysp](https://github.com/cysp)'s kind pull request, however the new date status bar functionality on the iPad is not yet supported. It is being discussed in [#68](https://github.com/shinydevelopment/SimulatorStatusMagic/issues/68) and [#72](https://github.com/shinydevelopment/SimulatorStatusMagic/issues/72), and of course pull requests with support for this are very welcome.
-
----
-
 ## Simulator Status Magic
 
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
 
 * 9:41 AM is displayed for the time.
 * The battery is full and shows 100%.
-* On iPhone: The carrier text is removed, 5 bars of cellular signal and full WiFi bars are displayed.
-* On iPad: The carrier text is set to "iPad" and full WiFi bars are displayed.
+* 5 bars of cellular signal and full WiFi bars are displayed.
+* Tue Jan 9 is displayed for the date (iPad only)
 
 ### How do I use it?
 
@@ -27,9 +21,9 @@ Run the app again and click "Restore Default Status Bar". Resetting the iOS Simu
 
 ### I have a script to take my screenshots, can I automate this?
 
-Yes! SimulatorStatusMagic is available via [CocoaPods](http://cocoapods.org), [Carthage](https://github.com/Carthage/Carthage) and as a standalone source release. [Installation instructions](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/INSTALLATION.md) are available for each method.
+Yes! SimulatorStatusMagic is available via [CocoaPods](http://cocoapods.org), [Carthage](https://github.com/Carthage/Carthage) and as a standalone source release. [Installation instructions](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/INSTALLATION.md) are available.
 
-It is recommended to only include `SDStatusBarManager` in your debug configuration so that the code is never included in release builds. Then, when you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
+It is recommended to **only** include `SDStatusBarManager` in your debug configuration so that the code is **never** included in release builds. When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
 
 ### What about automation of the sample app?
 
