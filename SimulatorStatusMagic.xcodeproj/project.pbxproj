@@ -310,7 +310,7 @@
 			};
 			buildConfigurationList = 5516356319E3FF3D001F636D /* Build configuration list for PBXProject "SimulatorStatusMagic" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
