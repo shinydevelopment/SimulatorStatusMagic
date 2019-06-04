@@ -51,6 +51,7 @@ typedef NS_ENUM(int, StatusBarItem) {
   // 38
   // 39
   // 40
+  // 41
 };
 
 typedef NS_ENUM(unsigned int, BatteryState) {
@@ -58,7 +59,7 @@ typedef NS_ENUM(unsigned int, BatteryState) {
 };
 
 typedef struct {
-  bool itemIsEnabled[41];
+  bool itemIsEnabled[42];
   char timeString[64];
   char shortTimeString[64];
   char dateString[256];
@@ -74,8 +75,11 @@ typedef struct {
   char operatorDirectory[1024];
   unsigned int serviceContentType;
   unsigned int secondaryServiceContentType;
+  unsigned int cellLowDataModeActive:1;
+  unsigned int secondaryCellLowDataModeActive:1;
   int wifiSignalStrengthRaw;
   int wifiSignalStrengthBars;
+  unsigned int wifiLowDataModeActive:1;
   unsigned int dataNetworkType;
   unsigned int secondaryDataNetworkType;
   int batteryCapacity;
@@ -91,6 +95,7 @@ typedef struct {
   unsigned int displayRawGSMSignal : 1;
   unsigned int displayRawWifiSignal : 1;
   unsigned int locationIconType : 1;
+  unsigned int voiceControlIconType:2;
   unsigned int quietModeInactive : 1;
   unsigned int tetheringConnectionCount;
   unsigned int batterySaverModeActive : 1;
@@ -100,6 +105,7 @@ typedef struct {
   char breadcrumbSecondaryTitle[256];
   char personName[100];
   unsigned int electronicTollCollectionAvailable : 1;
+  unsigned int radarAvailable : 1;
   unsigned int wifiLinkWarning : 1;
   unsigned int wifiSearching : 1;
   double backgroundActivityDisplayStartDate;
@@ -110,7 +116,7 @@ typedef struct {
 } StatusBarRawData;
 
 typedef struct {
-  bool overrideItemIsEnabled[41];
+  bool overrideItemIsEnabled[42];
   unsigned int overrideTimeString : 1;
   unsigned int overrideDateString : 1;
   unsigned int overrideGsmSignalStrengthRaw : 1;
