@@ -1,3 +1,7 @@
+# iOS 13 Support is being worked on in the `ios13` branch. Discussion is also happening in [this pull request](https://github.com/shinydevelopment/SimulatorStatusMagic/pull/80).
+
+---
+
 ## Simulator Status Magic
 
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
