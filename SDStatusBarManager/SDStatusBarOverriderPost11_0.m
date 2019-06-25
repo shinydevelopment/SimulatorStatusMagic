@@ -10,32 +10,32 @@
 #import "SDStatusBarOverriderPost11_0.h"
 
 typedef NS_ENUM(int, StatusBarItem) {
-  // 0
-  DoNotDisturb = 1,
-  // 2
-  SignalStrengthBars = 3,
-  // 4
+  TimeStatusBarItem = 0,
+  QuietModeStatusBarItem = 1,
+  AirplaneModeStatusBarItem = 2,
+  CellularSignalStrengthStatusBarItem = 3,
+  CellularServiceStatusBarItem = 4,
   // 5
-  // 6
+  CellularDataNetworkStatusBarItem = 6,
   // 7
-  // 8
-  BatteryDetail = 9,
+  MainBatteryStatusBarItem = 8,
+  ProminentlyShowBatteryDetailStatusBarItem = 9,
   // 10
   // 11
-  Bluetooth = 12,
-  // 13
-  Alarms = 14,
+  BluetoothStatusBarItem = 12,
+  TTYStatusBarItem = 13,
+  AlarmStatusBarItem = 14,
   // 15
   // 16
-  // 17
-  RotationLock = 18,
+  LocationStatusBarItem = 17,
+  RotationLockStatusBarItem = 18,
   // 19
-  // 20
-  // 21
-  // 22
+  AirPlayStatusBarItem = 20,
+  AssistantStatusBarItem = 21,
+  CarPlayStatusBarItem = 22,
   // 23
-  // 24
-  // 25
+  VPNStatusBarItem = 24,
+  CallForwardingStatusBarItem = 25,
   // 26
   // 27
   // 28
@@ -43,7 +43,7 @@ typedef NS_ENUM(int, StatusBarItem) {
   // 30
   // 31
   // 32
-  // 33
+  LiquidDetectionStatusBarItem = 33,
   // 34
 };
 
@@ -168,8 +168,8 @@ typedef struct {
   
   // Enable 5 bars of mobile (iPhone only)
   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-    overrides->overrideItemIsEnabled[SignalStrengthBars] = 1;
-    overrides->values.itemIsEnabled[SignalStrengthBars] = 1;
+    overrides->overrideItemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
+    overrides->values.itemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
     overrides->overrideGsmSignalStrengthBars = 1;
     overrides->values.gsmSignalStrengthBars = 5;
   }
@@ -186,8 +186,8 @@ typedef struct {
   strcpy(overrides->values.serviceString, [carrierText cStringUsingEncoding:NSUTF8StringEncoding]);
   
   // Battery: 100% and unplugged
-  overrides->overrideItemIsEnabled[BatteryDetail] = YES;
-  overrides->values.itemIsEnabled[BatteryDetail] = YES;
+  overrides->overrideItemIsEnabled[ProminentlyShowBatteryDetailStatusBarItem] = YES;
+  overrides->values.itemIsEnabled[ProminentlyShowBatteryDetailStatusBarItem] = YES;
   overrides->overrideBatteryCapacity = YES;
   overrides->values.batteryCapacity = 100;
   overrides->overrideBatteryState = YES;
@@ -198,8 +198,8 @@ typedef struct {
   strcpy(overrides->values.batteryDetailString, [batteryDetailString cStringUsingEncoding:NSUTF8StringEncoding]);
   
   // Bluetooth
-  overrides->overrideItemIsEnabled[Bluetooth] = !!self.bluetoothEnabled;
-  overrides->values.itemIsEnabled[Bluetooth] = !!self.bluetoothEnabled;
+  overrides->overrideItemIsEnabled[BluetoothStatusBarItem] = !!self.bluetoothEnabled;
+  overrides->values.itemIsEnabled[BluetoothStatusBarItem] = !!self.bluetoothEnabled;
   if (self.bluetoothEnabled) {
     overrides->overrideBluetoothConnected = self.bluetoothConnected;
     overrides->values.bluetoothConnected = self.bluetoothConnected;
