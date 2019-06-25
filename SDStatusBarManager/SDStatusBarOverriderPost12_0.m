@@ -10,35 +10,35 @@
 #import "SDStatusBarOverriderPost12_0.h"
 
 typedef NS_ENUM(int, StatusBarItem) {
-  // 0
-  dateStringIpad = 1,
-  // 2
-  // 3
-  SignalStrengthBars = 4,
-  SecondarySignalStrengthBars = 5,
-  SignalStrengthBarsVisibleOnIpad = 6,
-  // 7
+  TimeStatusBarItem = 0,
+  DateStatusBarItem = 1,
+  QuietModeStatusBarItem = 2,
+  AirplaneModeStatusBarItem = 3,
+  CellularSignalStrengthStatusBarItem = 4,
+  SecondaryCellularSignalStrengthStatusBarItem = 5,
+  CellularServiceStatusBarItem = 6,
+  SecondaryCellularServiceStatusBarItem = 7,
   // 8
-  // 9
-  // 10
+  CellularDataNetworkStatusBarItem = 9,
+  SecondaryCellularDataNetworkStatusBarItem = 10,
   // 11
-  // 12
-  BatteryDetail = 13,
+  MainBatteryStatusBarItem = 12,
+  ProminentlyShowBatteryDetailStatusBarItem = 13,
   // 14
   // 15
-  Bluetooth = 16,
-  // 17
-  // 18
+  BluetoothStatusBarItem = 16,
+  TTYStatusBarItem = 17,
+  AlarmStatusBarItem = 18,
   // 19
   // 20
-  // 21
-  // 22
+  LocationStatusBarItem = 21,
+  RotationLockStatusBarItem = 22,
   // 23
-  // 24
-  // 25
-  // 26
-  // 27
-  // 28
+  AirPlayStatusBarItem = 24,
+  AssistantStatusBarItem = 25,
+  CarPlayStatusBarItem = 26,
+  StudentStatusBarItem = 27,
+  VPNStatusBarItem = 28,
   // 29
   // 30
   // 31
@@ -48,7 +48,7 @@ typedef NS_ENUM(int, StatusBarItem) {
   // 35
   // 36
   // 37
-  // 38
+  LiquidDetectionStatusBarItem = 38,
   // 39
   // 40
 };
@@ -196,14 +196,14 @@ typedef struct {
   
   // Show / Hide date on iPad
   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-    overrides->overrideItemIsEnabled[dateStringIpad] = 1;
-    overrides->values.itemIsEnabled[dateStringIpad] = self.iPadDateEnabled ? 1 : 0;
+    overrides->overrideItemIsEnabled[DateStatusBarItem] = 1;
+    overrides->values.itemIsEnabled[DateStatusBarItem] = self.iPadDateEnabled ? 1 : 0;
   }
 
   // Enable 5 bars of mobile (iPhone only)
   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-    overrides->overrideItemIsEnabled[SignalStrengthBars] = 1;
-    overrides->values.itemIsEnabled[SignalStrengthBars] = 1;
+    overrides->overrideItemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
+    overrides->values.itemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
     overrides->overrideGsmSignalStrengthBars = 1;
     overrides->values.gsmSignalStrengthBars = 5;
   }
@@ -211,13 +211,13 @@ typedef struct {
   // Enable / Disable GSM signal bars on iPad
   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
     if (self.iPadGsmSignalEnabled) {
-      overrides->overrideItemIsEnabled[SignalStrengthBars] = 1;
-      overrides->values.itemIsEnabled[SignalStrengthBars] = 1;
+      overrides->overrideItemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
+      overrides->values.itemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
       overrides->overrideGsmSignalStrengthBars = 1;
       overrides->values.gsmSignalStrengthBars = 5;
     } else {
-      overrides->overrideItemIsEnabled[SignalStrengthBarsVisibleOnIpad] = 1;
-      overrides->values.itemIsEnabled[SignalStrengthBars] = 0;
+      overrides->overrideItemIsEnabled[CellularSignalStrengthStatusBarItem] = 1;
+      overrides->values.itemIsEnabled[CellularSignalStrengthStatusBarItem] = 0;
     }
   }
 
@@ -233,8 +233,8 @@ typedef struct {
   strcpy(overrides->values.serviceString, [carrierText cStringUsingEncoding:NSUTF8StringEncoding]);
 
   // Battery: 100% and unplugged
-  overrides->overrideItemIsEnabled[BatteryDetail] = YES;
-  overrides->values.itemIsEnabled[BatteryDetail] = self.batteryDetailEnabled;
+  overrides->overrideItemIsEnabled[ProminentlyShowBatteryDetailStatusBarItem] = YES;
+  overrides->values.itemIsEnabled[ProminentlyShowBatteryDetailStatusBarItem] = self.batteryDetailEnabled;
   overrides->overrideBatteryCapacity = YES;
   overrides->values.batteryCapacity = 100;
   overrides->overrideBatteryState = YES;
@@ -244,8 +244,8 @@ typedef struct {
   strcpy(overrides->values.batteryDetailString, [batteryDetailString cStringUsingEncoding:NSUTF8StringEncoding]);
 
   // Bluetooth
-  overrides->overrideItemIsEnabled[Bluetooth] = !!self.bluetoothEnabled;
-  overrides->values.itemIsEnabled[Bluetooth] = !!self.bluetoothEnabled;
+  overrides->overrideItemIsEnabled[BluetoothStatusBarItem] = !!self.bluetoothEnabled;
+  overrides->values.itemIsEnabled[BluetoothStatusBarItem] = !!self.bluetoothEnabled;
   if (self.bluetoothEnabled) {
     overrides->overrideBluetoothConnected = self.bluetoothConnected;
     overrides->values.bluetoothConnected = self.bluetoothConnected;
