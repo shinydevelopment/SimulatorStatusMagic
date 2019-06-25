@@ -257,6 +257,9 @@ typedef struct {
     overrides->values.bluetoothConnected = self.bluetoothConnected;
   }
 
+  overrides->overrideItemIsEnabled[AirPlayStatusBarItem] = YES;
+  overrides->values.itemIsEnabled[AirPlayStatusBarItem] = NO;
+
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
 
