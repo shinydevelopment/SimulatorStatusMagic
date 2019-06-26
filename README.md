@@ -2,6 +2,10 @@
 
 ---
 
+# Also, if you use SimulatorStatusMagic, I'd love to get some information on how you use it. It'll only take two minutes of your time. Thanks! https://iosdevweekly.typeform.com/to/VMLZfN
+
+---
+
 ## Simulator Status Magic
 
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
