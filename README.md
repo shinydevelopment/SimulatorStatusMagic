@@ -1,11 +1,3 @@
-# iOS 13 Support is being worked on in the `ios13` branch. Discussion is also happening in [this pull request](https://github.com/shinydevelopment/SimulatorStatusMagic/pull/80).
-
----
-
-# Also, if you use SimulatorStatusMagic, I'd love to get some information on how you use it. It'll only take two minutes of your time. Thanks! https://iosdevweekly.typeform.com/to/VMLZfN
-
----
-
 ## Simulator Status Magic
 
 Modify the iOS Simulator so that it has a perfect status bar, then run your app and take perfect screenshots every time. The modifications made are designed to match the images you see on the Apple site and are as follows:
@@ -14,6 +6,10 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 * The battery is full and shows 100%.
 * 5 bars of cellular signal and full WiFi bars are displayed.
 * Tue Jan 9 is displayed for the date (iPad only)
+
+## Xcode 11 beta 4 and `simctl status_bar`! 🚀
+
+Xcode 11 beta 4 includes support for perfect status bars wityout SimulatorStatusMagic! 🎉 Run `xcrun simctl status_bar` with beta 4 or later installed and rejoice! This project will be going away soon, which is great news.
 
 ### How do I use it?
 
