@@ -9,7 +9,7 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 ## Xcode 11 beta 4 and `simctl status_bar`! 🚀
 
-Xcode 11 beta 4 includes support for perfect status bars wityout SimulatorStatusMagic! 🎉 Run `xcrun simctl status_bar` with beta 4 or later installed and rejoice! This project will be going away soon, which is great news.
+Xcode 11 beta 4 includes support for perfect status bars without SimulatorStatusMagic! 🎉 Run `xcrun simctl status_bar` with beta 4 or later installed and rejoice! This project will be going away soon, which is great news.
 
 ### How do I use it?
 
