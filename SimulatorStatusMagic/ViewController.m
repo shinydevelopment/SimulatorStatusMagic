@@ -41,6 +41,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  self.overrideButton.titleLabel.adjustsFontSizeToFitWidth = YES;
 
   [self setOverrideButtonText];
   [self setBluetoothSegementedControlSelectedSegment];
