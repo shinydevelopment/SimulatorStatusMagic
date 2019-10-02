@@ -222,7 +222,7 @@ typedef struct {
   }
 
   overrides->overrideDataNetworkType = self.networkType != SDStatusBarManagerNetworkTypeWiFi;
-  overrides->values.dataNetworkType = self.networkType - 1;
+  overrides->values.dataNetworkType = (unsigned int)self.networkType - 1;
 
   // Remove carrier text for iPhone, set it to "iPad" for the iPad
   overrides->overrideServiceString = 1;
