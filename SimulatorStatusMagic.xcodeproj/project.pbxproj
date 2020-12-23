@@ -302,7 +302,7 @@
 		5516356019E3FF3D001F636D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Shiny Development";
 				TargetAttributes = {
 					5516356719E3FF3D001F636D = {
