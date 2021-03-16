@@ -127,7 +127,7 @@ static NSString * const SDStatusBarManagerDateStringKey = @"date_string";
 
 - (SDStatusBarManagerNetworkType)networkType
 {
-  return [[self.userDefaults valueForKey:SDStatusBarManagerNetworkTypeKey] integerValue];
+  return [[self.userDefaults valueForKey:SDStatusBarManagerNetworkTypeKey] unsignedIntValue];
 }
 
 - (void)setCarrierName:(NSString *)carrierName
