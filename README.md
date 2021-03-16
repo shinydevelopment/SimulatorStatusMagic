@@ -7,9 +7,9 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 * 5 bars of cellular signal and full WiFi bars are displayed.
 * Tue Jan 9 is displayed for the date (iPad only)
 
-## Xcode 11 beta 4 and `simctl status_bar`! 🚀
+## Can't I just use `xcrun simctl status_bar`? 🚀
 
-Xcode 11 beta 4 includes support for perfect status bars without SimulatorStatusMagic! 🎉 Run `xcrun simctl status_bar` with beta 4 or later installed and rejoice! This project will be going away soon, which is great news.
+Starting in Xcode 11, the `simctl` command line tool includes a `status_bar` option that allows you to override the appearance of the status bar in the simulator. Hopefully this will eventually supercede the need for SimulatorStatusMagic, but at the moment it still has holes that make this project continue to be relevant. In particular, `simctl status_bar` does not currently provide a way to add localized date and time strings in the status bar.
 
 ### How do I use it?
 
@@ -57,9 +57,6 @@ The best idea is to check [the source code](https://github.com/shinydevelopment/
 
 ## Contributing
 
-We'd love contributions and even have some suggestions for things that might need working on:
-
-* Found a bug? If you report it with a pull request attached then you get a gold star :)
-* ~~Non-English language support. We'd love it to work with more languages.~~ Now works with every language!
+We'd love contributions! Found a bug? If you report it with a pull request attached then you get a gold star :)
 
 However, the scope of this project is intentionally limited. We're not planning to add options to this to allow ultimate customisation of the status bar. It's intended to do just one job really well, change the status bar to match [Apple's marketing materials](http://www.apple.com/ios/).
