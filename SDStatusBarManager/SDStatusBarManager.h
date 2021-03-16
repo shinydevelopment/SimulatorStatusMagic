@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, SDStatusBarManagerBluetoothState)
   SDStatusBarManagerBluetoothVisibleConnected
 };
 
-typedef NS_ENUM(NSInteger, SDStatusBarManagerNetworkType)
+typedef NS_ENUM(unsigned int, SDStatusBarManagerNetworkType)
 {
   SDStatusBarManagerNetworkTypeWiFi = 0,
   SDStatusBarManagerNetworkTypeGPRS,
