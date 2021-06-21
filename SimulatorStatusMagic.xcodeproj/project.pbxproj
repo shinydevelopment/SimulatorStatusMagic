@@ -54,6 +54,9 @@
 		72ECF74A1BAAC3580071D401 /* SDStatusBarOverriderPre8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BE01AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.h */; };
 		72ECF74B1BAAC3580071D401 /* SDStatusBarOverriderPost8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 44A44BDC1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.h */; };
 		72ECF74C1BAAC3580071D401 /* SDStatusBarOverriderPost9_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 448EAEA81B3B326100A09FBC /* SDStatusBarOverriderPost9_0.h */; };
+		8301C2F02674190900557F0B /* SDStatusBarOverriderPost15_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 8301C2EE2674190900557F0B /* SDStatusBarOverriderPost15_0.m */; };
+		8301C2F12674190900557F0B /* SDStatusBarOverriderPost15_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 8301C2EF2674190900557F0B /* SDStatusBarOverriderPost15_0.h */; };
+		8301C2F22674191000557F0B /* SDStatusBarOverriderPost15_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 8301C2EE2674190900557F0B /* SDStatusBarOverriderPost15_0.m */; };
 		B7C0DC072577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h in Headers */ = {isa = PBXBuildFile; fileRef = B7C0DC052577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h */; };
 		B7C0DC082577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DC062577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m */; };
 		B7C0DC092577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DC062577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m */; };
@@ -119,6 +122,8 @@
 		72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimulatorStatusMagiciOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72ECF7281BAAC33A0071D401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72ECF7291BAAC33A0071D401 /* SimulatorStatusMagiciOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimulatorStatusMagiciOS.h; sourceTree = "<group>"; };
+		8301C2EE2674190900557F0B /* SDStatusBarOverriderPost15_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost15_0.m; sourceTree = "<group>"; };
+		8301C2EF2674190900557F0B /* SDStatusBarOverriderPost15_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost15_0.h; sourceTree = "<group>"; };
 		B7C0DC052577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost14_0.h; sourceTree = "<group>"; };
 		B7C0DC062577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost14_0.m; sourceTree = "<group>"; };
 		DB9638001D6E24C9002F122B /* SDStatusBarOverriderPost10_0.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost10_0.h; sourceTree = "<group>"; };
@@ -243,6 +248,8 @@
 				3D97737022A6615C0031C416 /* SDStatusBarOverriderPost13_0.m */,
 				B7C0DC052577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h */,
 				B7C0DC062577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m */,
+				8301C2EF2674190900557F0B /* SDStatusBarOverriderPost15_0.h */,
+				8301C2EE2674190900557F0B /* SDStatusBarOverriderPost15_0.m */,
 			);
 			path = SDStatusBarManager;
 			sourceTree = SOURCE_ROOT;
@@ -258,6 +265,7 @@
 				72ECF72A1BAAC33A0071D401 /* SimulatorStatusMagiciOS.h in Headers */,
 				72ECF7481BAAC3570071D401 /* SDStatusBarManager.h in Headers */,
 				72ECF7491BAAC3570071D401 /* SDStatusBarOverrider.h in Headers */,
+				8301C2F12674190900557F0B /* SDStatusBarOverriderPost15_0.h in Headers */,
 				72ECF74A1BAAC3580071D401 /* SDStatusBarOverriderPre8_3.h in Headers */,
 				72ECF74B1BAAC3580071D401 /* SDStatusBarOverriderPost8_3.h in Headers */,
 				3D97737422A6615C0031C416 /* SDStatusBarOverriderPost13_0.h in Headers */,
@@ -401,6 +409,7 @@
 				441955841F152DF700F1F39B /* SDStatusBarOverriderPost11_0.m in Sources */,
 				DB9638031D6E24CC002F122B /* SDStatusBarOverriderPost10_0.m in Sources */,
 				3D3ED70720C7CAD0006BBCC8 /* SDStatusBarOverriderPost12_0.m in Sources */,
+				8301C2F22674191000557F0B /* SDStatusBarOverriderPost15_0.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +419,7 @@
 			files = (
 				B7C0DC092577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m in Sources */,
 				72ECF7441BAAC34E0071D401 /* SDStatusBarManager.m in Sources */,
+				8301C2F02674190900557F0B /* SDStatusBarOverriderPost15_0.m in Sources */,
 				449C2C801E8AB839002D3846 /* SDStatusBarOverriderPost10_3.m in Sources */,
 				441955851F15330D00F1F39B /* SDStatusBarOverriderPost11_0.m in Sources */,
 				72ECF7451BAAC34E0071D401 /* SDStatusBarOverriderPre8_3.m in Sources */,
