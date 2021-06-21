@@ -56,10 +56,12 @@ No. The status bar server is blocked on devices. However, macOS includes the fac
 The best idea is to check [the source code](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/SDStatusBarManager/SDStatusBarManager.m) which should get you started with how it works :)
 
 ## Updating for new versions of iOS
+
 There's a general pattern for updating this project to support a new version of iOS, although this could change if Apple changes something in the future.
 
 ### Prepare the new files.
-1. Copy the previous releases's `SDStatusBarOverriderPostXX_Y.{h,m}` files, and update them to the new version.
+
+1. Copy the previous release's `SDStatusBarOverriderPostXX_Y.{h,m}` files, and update them to the new version.
 2. Update SDStatusBarManager.m to refer to the new overrider if detecting the new operating system version.
 
 ### Find the updated structs in the runtime headers. 
@@ -73,11 +75,12 @@ There's a general pattern for updating this project to support a new version of 
 
 ### Update the structs in the new overrider.
 
-There are two structs, StatusBarRawData and StatusBarOverrideData, that need to be updated. Each correspond to a line in the runtime header output for UIStatusBarServerListener. It should be pretty easy to figure out the mapping if you study it for a minute.
+There are two structs, StatusBarRawData and StatusBarOverrideData, that need to be updated. Each corresponds to a line in the runtime header output for UIStatusBarServerListener. It should be pretty easy to figure out the mapping if you study it for a minute.
 
 1. Update StatusBarRawData and StatusBarOverrideData to match any changes to the structs in the runtime headers.
 
 ### Check if it works
+
 That should be it!
 
 1. Run the sample app, and verify that the status bar is updated correctly.
