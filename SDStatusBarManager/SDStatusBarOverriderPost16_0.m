@@ -54,7 +54,7 @@ typedef NS_ENUM(int, StatusBarItem) {
   // 41
   // 42
   // 43
-  Extra1StatusBarItem = 44,
+  // 44,
 };
 
 typedef NS_ENUM(unsigned int, BatteryState) {
@@ -118,7 +118,7 @@ typedef struct {
   char primaryServiceBadgeString[100];
   char secondaryServiceBadgeString[100];
   char quietModeImage[256];
-  unsigned int extra1 : 1; // Unsure of actual size, but it's at least 1 byte. Since this is at the end of the struct, and we aren't modifying this part of the struct, it likely shouldn't matter that it's not the correct size.
+  char quietModeName[256];
 } StatusBarRawData;
 
 typedef struct {
@@ -158,7 +158,7 @@ typedef struct {
   unsigned int overridePrimaryServiceBadgeString : 1;
   unsigned int overrideSecondaryServiceBadgeString : 1;
   unsigned int overrideQuietModeImage : 1;
-  unsigned int overrideExtra1 : 1; // Not sure what this is, but there only seems to be one of them
+  unsigned int overrideQuietModeName : 1;
   StatusBarRawData values;
 } StatusBarOverrideData;
 
@@ -267,10 +267,6 @@ typedef struct {
 
   overrides->overrideItemIsEnabled[AirPlayStatusBarItem] = YES;
   overrides->values.itemIsEnabled[AirPlayStatusBarItem] = NO;
-    
-  overrides->overrideItemIsEnabled[Extra1StatusBarItem] = YES;
-  overrides->values.itemIsEnabled[Extra1StatusBarItem] = NO;
-    
 
   // Actually update the status bar
   [UIStatusBarServer postStatusBarOverrideData:overrides];
