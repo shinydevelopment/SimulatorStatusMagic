@@ -149,6 +149,8 @@
 		838CE06C2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost17_0.m; sourceTree = "<group>"; };
 		83EEB8AD2AB298EC000F9E0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83EEB8B42AB29AA4000F9E0F /* libSimulatorStatusMagicDlib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSimulatorStatusMagicDlib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		83EEB8CB2AB2A207000F9E0F /* libSimulatorStatusMagicDlib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libSimulatorStatusMagicDlib.dylib; sourceTree = "<group>"; };
+		83EEB8CC2AB2A7FF000F9E0F /* inject.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = inject.sh; sourceTree = "<group>"; };
 		83F6B55C28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost16_0.m; sourceTree = "<group>"; };
 		83F6B55D28ADED1100F91126 /* SDStatusBarOverriderPost16_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost16_0.h; sourceTree = "<group>"; };
 		B7C0DC052577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost14_0.h; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		5516355F19E3FF3D001F636D = {
 			isa = PBXGroup;
 			children = (
+				83EEB8CC2AB2A7FF000F9E0F /* inject.sh */,
+				83EEB8CA2AB2A1E7000F9E0F /* Output */,
 				83EEB8B82AB29B02000F9E0F /* DynamicLibrary */,
 				5516356A19E3FF3D001F636D /* SimulatorStatusMagic */,
 				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
@@ -265,6 +269,15 @@
 			);
 			path = DynamicLibrary;
 			sourceTree = "<group>";
+		};
+		83EEB8CA2AB2A1E7000F9E0F /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				83EEB8CB2AB2A207000F9E0F /* libSimulatorStatusMagicDlib.dylib */,
+			);
+			name = Output;
+			path = "../Debug-iphonesimulator";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		DDACF30819E83F06004FCB30 /* SDStatusBarManager */ = {
 			isa = PBXGroup;
@@ -466,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nFRAMEWORK_TARGET=SimulatorStatusMagiciOS\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${FRAMEWORK_TARGET}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${FRAMEWORK_TARGET}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Rename the file to project name\n# mv \"${PROJECT_DIR}/build/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build/${PROJECT_NAME}.framework\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"";
+			shellScript = "#!/bin/sh\n\n# This script builds the framework for both the simulator and the device, and then combines\n# them into one binary using lipo.\n#\n# On build success, the result is placed into the project folder, and finder will open to\n# that location for convenient access to the newly built framework.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nFRAMEWORK_TARGET=SimulatorStatusMagiciOS\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${FRAMEWORK_TARGET}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${FRAMEWORK_TARGET}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_TARGET}.framework/${FRAMEWORK_TARGET}\"\n\n# Step 4. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build\"\n\n# Step 5. Rename the file to project name\n# mv \"${PROJECT_DIR}/build/${FRAMEWORK_TARGET}.framework\" \"${PROJECT_DIR}/build/${PROJECT_NAME}.framework\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}/build\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
