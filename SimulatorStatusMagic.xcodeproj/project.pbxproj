@@ -60,6 +60,21 @@
 		838CE06D2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 838CE06B2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.h */; };
 		838CE06E2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 838CE06C2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m */; };
 		838CE06F2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 838CE06C2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m */; };
+		83EEB8B92AB29B23000F9E0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EEB8AD2AB298EC000F9E0F /* main.m */; };
+		83EEB8BA2AB29B2F000F9E0F /* SDStatusBarOverriderPost10_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 449C2C7E1E89BB61002D3846 /* SDStatusBarOverriderPost10_3.m */; };
+		83EEB8BB2AB29B2F000F9E0F /* SDStatusBarOverriderPost11_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 441955831F152DF700F1F39B /* SDStatusBarOverriderPost11_0.m */; };
+		83EEB8BC2AB29B2F000F9E0F /* SDStatusBarOverriderPost17_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 838CE06C2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m */; };
+		83EEB8BD2AB29B2F000F9E0F /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BE11AD735E2003E04A5 /* SDStatusBarOverriderPre8_3.m */; };
+		83EEB8BE2AB29B2F000F9E0F /* SDStatusBarOverriderPost9_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 448EAEA91B3B326100A09FBC /* SDStatusBarOverriderPost9_0.m */; };
+		83EEB8BF2AB29B2F000F9E0F /* SDStatusBarOverriderPost12_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3ED70520C7CAD0006BBCC8 /* SDStatusBarOverriderPost12_0.m */; };
+		83EEB8C02AB29B2F000F9E0F /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDACF30A19E83F06004FCB30 /* SDStatusBarManager.m */; };
+		83EEB8C12AB29B2F000F9E0F /* SDStatusBarOverriderPost13_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D97737022A6615C0031C416 /* SDStatusBarOverriderPost13_0.m */; };
+		83EEB8C22AB29B2F000F9E0F /* SDStatusBarOverriderPost16_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6B55C28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m */; };
+		83EEB8C32AB29B2F000F9E0F /* SDStatusBarOverriderPost14_0.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DC062577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.m */; };
+		83EEB8C42AB29B2F000F9E0F /* SDStatusBarOverriderPost15_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 8301C2EE2674190900557F0B /* SDStatusBarOverriderPost15_0.m */; };
+		83EEB8C52AB29B2F000F9E0F /* SDStatusBarOverriderPost8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A44BDD1AD7316A003E04A5 /* SDStatusBarOverriderPost8_3.m */; };
+		83EEB8C62AB29B2F000F9E0F /* SDStatusBarOverriderPost9_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D9BA91CA69D39002B6644 /* SDStatusBarOverriderPost9_3.m */; };
+		83EEB8C72AB29B2F000F9E0F /* SDStatusBarOverriderPost10_0.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9638011D6E24C9002F122B /* SDStatusBarOverriderPost10_0.m */; };
 		83F6B55E28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6B55C28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m */; };
 		83F6B55F28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6B55C28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m */; };
 		83F6B56028ADED1100F91126 /* SDStatusBarOverriderPost16_0.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F6B55D28ADED1100F91126 /* SDStatusBarOverriderPost16_0.h */; };
@@ -132,6 +147,8 @@
 		8301C2EF2674190900557F0B /* SDStatusBarOverriderPost15_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost15_0.h; sourceTree = "<group>"; };
 		838CE06B2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost17_0.h; sourceTree = "<group>"; };
 		838CE06C2A4BB93F00C75E19 /* SDStatusBarOverriderPost17_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost17_0.m; sourceTree = "<group>"; };
+		83EEB8AD2AB298EC000F9E0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83EEB8B42AB29AA4000F9E0F /* libSimulatorStatusMagicDlib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSimulatorStatusMagicDlib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F6B55C28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost16_0.m; sourceTree = "<group>"; };
 		83F6B55D28ADED1100F91126 /* SDStatusBarOverriderPost16_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost16_0.h; sourceTree = "<group>"; };
 		B7C0DC052577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost14_0.h; sourceTree = "<group>"; };
@@ -157,12 +174,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83EEB8B22AB29AA4000F9E0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		5516355F19E3FF3D001F636D = {
 			isa = PBXGroup;
 			children = (
+				83EEB8B82AB29B02000F9E0F /* DynamicLibrary */,
 				5516356A19E3FF3D001F636D /* SimulatorStatusMagic */,
 				DDACF30819E83F06004FCB30 /* SDStatusBarManager */,
 				72ECF7261BAAC33A0071D401 /* SimulatorStatusMagiciOS */,
@@ -178,6 +203,7 @@
 			children = (
 				5516356819E3FF3D001F636D /* SimulatorStatusMagic.app */,
 				72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */,
+				83EEB8B42AB29AA4000F9E0F /* libSimulatorStatusMagicDlib.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +256,14 @@
 				72ECF7281BAAC33A0071D401 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83EEB8B82AB29B02000F9E0F /* DynamicLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				83EEB8AD2AB298EC000F9E0F /* main.m */,
+			);
+			path = DynamicLibrary;
 			sourceTree = "<group>";
 		};
 		DDACF30819E83F06004FCB30 /* SDStatusBarManager */ = {
@@ -289,6 +323,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83EEB8B02AB29AA4000F9E0F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -328,6 +369,23 @@
 			productReference = 72ECF7251BAAC33A0071D401 /* SimulatorStatusMagiciOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		83EEB8B32AB29AA4000F9E0F /* SimulatorStatusMagicDlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83EEB8B52AB29AA4000F9E0F /* Build configuration list for PBXNativeTarget "SimulatorStatusMagicDlib" */;
+			buildPhases = (
+				83EEB8B02AB29AA4000F9E0F /* Headers */,
+				83EEB8B12AB29AA4000F9E0F /* Sources */,
+				83EEB8B22AB29AA4000F9E0F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimulatorStatusMagicDlib;
+			productName = SimulatorStatusMagicDlib;
+			productReference = 83EEB8B42AB29AA4000F9E0F /* libSimulatorStatusMagicDlib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -345,6 +403,11 @@
 					};
 					72ECF7551BAAC49C0071D401 = {
 						CreatedOnToolsVersion = 6.4;
+					};
+					83EEB8B32AB29AA4000F9E0F = {
+						CreatedOnToolsVersion = 15.0;
+						DevelopmentTeam = GZS3K47B3Y;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -365,6 +428,7 @@
 				5516356719E3FF3D001F636D /* SimulatorStatusMagic */,
 				72ECF7241BAAC33A0071D401 /* SimulatorStatusMagiciOS */,
 				72ECF7551BAAC49C0071D401 /* SimulatorStatusMagicUniversalFramework */,
+				83EEB8B32AB29AA4000F9E0F /* SimulatorStatusMagicDlib */,
 			);
 		};
 /* End PBXProject section */
@@ -449,6 +513,28 @@
 				72ECF7471BAAC34E0071D401 /* SDStatusBarOverriderPost9_0.m in Sources */,
 				DB9638021D6E24CB002F122B /* SDStatusBarOverriderPost10_0.m in Sources */,
 				3D3ED70820C7CAD0006BBCC8 /* SDStatusBarOverriderPost12_0.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83EEB8B12AB29AA4000F9E0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83EEB8C32AB29B2F000F9E0F /* SDStatusBarOverriderPost14_0.m in Sources */,
+				83EEB8BC2AB29B2F000F9E0F /* SDStatusBarOverriderPost17_0.m in Sources */,
+				83EEB8C42AB29B2F000F9E0F /* SDStatusBarOverriderPost15_0.m in Sources */,
+				83EEB8BD2AB29B2F000F9E0F /* SDStatusBarOverriderPre8_3.m in Sources */,
+				83EEB8C02AB29B2F000F9E0F /* SDStatusBarManager.m in Sources */,
+				83EEB8C72AB29B2F000F9E0F /* SDStatusBarOverriderPost10_0.m in Sources */,
+				83EEB8C22AB29B2F000F9E0F /* SDStatusBarOverriderPost16_0.m in Sources */,
+				83EEB8C52AB29B2F000F9E0F /* SDStatusBarOverriderPost8_3.m in Sources */,
+				83EEB8C62AB29B2F000F9E0F /* SDStatusBarOverriderPost9_3.m in Sources */,
+				83EEB8BE2AB29B2F000F9E0F /* SDStatusBarOverriderPost9_0.m in Sources */,
+				83EEB8BA2AB29B2F000F9E0F /* SDStatusBarOverriderPost10_3.m in Sources */,
+				83EEB8BF2AB29B2F000F9E0F /* SDStatusBarOverriderPost12_0.m in Sources */,
+				83EEB8BB2AB29B2F000F9E0F /* SDStatusBarOverriderPost11_0.m in Sources */,
+				83EEB8C12AB29B2F000F9E0F /* SDStatusBarOverriderPost13_0.m in Sources */,
+				83EEB8B92AB29B23000F9E0F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +759,62 @@
 			};
 			name = Release;
 		};
+		83EEB8B62AB29AA4000F9E0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GZS3K47B3Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Debug;
+		};
+		83EEB8B72AB29AA4000F9E0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GZS3K47B3Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -708,6 +850,15 @@
 			buildConfigurations = (
 				72ECF7571BAAC49C0071D401 /* Debug */,
 				72ECF7581BAAC49C0071D401 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83EEB8B52AB29AA4000F9E0F /* Build configuration list for PBXNativeTarget "SimulatorStatusMagicDlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83EEB8B62AB29AA4000F9E0F /* Debug */,
+				83EEB8B72AB29AA4000F9E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
