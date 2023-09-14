@@ -150,7 +150,7 @@
 		83EEB8AD2AB298EC000F9E0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83EEB8B42AB29AA4000F9E0F /* libSimulatorStatusMagicDlib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSimulatorStatusMagicDlib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		83EEB8CB2AB2A207000F9E0F /* libSimulatorStatusMagicDlib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libSimulatorStatusMagicDlib.dylib; sourceTree = "<group>"; };
-		83EEB8CC2AB2A7FF000F9E0F /* inject.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = inject.sh; sourceTree = "<group>"; };
+		83EEB8CC2AB2A7FF000F9E0F /* build_and_inject.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_and_inject.sh; sourceTree = "<group>"; };
 		83F6B55C28ADED1100F91126 /* SDStatusBarOverriderPost16_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost16_0.m; sourceTree = "<group>"; };
 		83F6B55D28ADED1100F91126 /* SDStatusBarOverriderPost16_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost16_0.h; sourceTree = "<group>"; };
 		B7C0DC052577DC4D0072F6D4 /* SDStatusBarOverriderPost14_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost14_0.h; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		5516355F19E3FF3D001F636D = {
 			isa = PBXGroup;
 			children = (
-				83EEB8CC2AB2A7FF000F9E0F /* inject.sh */,
+				83EEB8CC2AB2A7FF000F9E0F /* build_and_inject.sh */,
 				83EEB8CA2AB2A1E7000F9E0F /* Output */,
 				83EEB8B82AB29B02000F9E0F /* DynamicLibrary */,
 				5516356A19E3FF3D001F636D /* SimulatorStatusMagic */,
