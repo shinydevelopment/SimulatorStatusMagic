@@ -95,7 +95,7 @@
 - (IBAction)networkTypeChanged:(UISegmentedControl *)sender
 {
   // Note: The order of the segments should match the definition of SDStatusBarManagerNetworkType
-  [[SDStatusBarManager sharedInstance] setNetworkType:(int)sender.selectedSegmentIndex];
+  [[SDStatusBarManager sharedInstance] setNetworkType:(SDStatusBarManagerNetworkType)sender.selectedSegmentIndex];
 }
 
 #pragma mark Text field delegate
