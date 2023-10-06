@@ -11,7 +11,44 @@ Modify the iOS Simulator so that it has a perfect status bar, then run your app 
 
 Starting in Xcode 11, the `simctl` command line tool includes a `status_bar` option that allows you to override the appearance of the status bar in the simulator. Hopefully this will eventually supercede the need for SimulatorStatusMagic, but at the moment it still has holes that make this project continue to be relevant. In particular, `simctl status_bar` does not currently provide a way to add localized date and time strings in the status bar.
 
-### How do I use it?
+## Usage
+
+### 1) Injecting into Springboard (Required on iOS 17+)
+**tl;dr** Running `build_and_inject.sh booted` will apply a default status bar to the running simulator. Replace "booted" with a simulator UDID to target a specific simulator.
+
+As of iOS 17, the API used by SimulatorStatusMagic is not accessible to processes other than Springboard. So, in iOS 17+ we need to inject SimulatorStatusMagic into the Springboard process itself, which we do by building it as a dynamic library, and then updating Springboard's launchd configuration to load our dynamic library.
+
+Running `build_and_inject.sh` will do all of this for you. If you want to change anything about the values used in the status bar, you will need to update DynamicLibrary/main.m.
+
+
+### 2) Using in screenshot automation UI Tests (iOS 16 and lower)
+- Add the swift package in xcode using the repository url (https://github.com/shinydevelopment/SimulatorStatusMagic)
+- Select your UI Test target when asked what target to add it to
+- Call the following in your tests:
+```swift
+import SimulatorStatusMagic
+
+final class YourUITests: XCTestCase {
+
+    override func setUpWithError() throws {
+      SDStatusBarManager.sharedInstance().enableOverrides()
+      // ... your other setup code
+    }
+
+    override func tearDownWithError() throws {
+      SDStatusBarManager.sharedInstance().disableOverrides()
+      // ... your other teardown code
+    }
+
+```
+
+*Because the package is only added to your UI test this has no effect on your app target.*
+
+**Cocoapods/Carthage**
+It is recommended to **only** include `SDStatusBarManager` in your debug configuration so that the code is **never** included in release builds. When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
+
+
+### 3) Using the demo app to enable/disable overrides (iOS 16 and lower)
 
 * Clone this repository.
 * Open SimulatorStatusMagic.xcodeproj with Xcode 6 (or above).
@@ -19,21 +56,11 @@ Starting in Xcode 11, the `simctl` command line tool includes a `status_bar` opt
 * Once the app launches, press the only button on the screen :)
 * That's it, you're done! Now just run your app and take screenshots.
 
-### How do I remove the customisations?
+#### How do I remove the customisations?
 
 Run the app again and click "Restore Default Status Bar". Resetting the iOS Simulator using the normal menu option also works.
 
-### I have a script to take my screenshots, can I automate this?
-
-Yes! SimulatorStatusMagic is available via [CocoaPods](http://cocoapods.org), [Carthage](https://github.com/Carthage/Carthage), Swift Package Manager and as a standalone source release. [Installation instructions](https://github.com/shinydevelopment/SimulatorStatusMagic/blob/master/INSTALLATION.md) are available.
-
-**Cocoapods/Carthage**
-It is recommended to **only** include `SDStatusBarManager` in your debug configuration so that the code is **never** included in release builds. When you want to apply a perfect status bar, call `[[SDStatusBarManager sharedInstance] enableOverrides]`. To restore the standard status bar, call `[[SDStatusBarManager sharedInstance] disableOverrides]`.
-
-**Swift Package Manager**
-SPM does not yet support conditionally linking packages based on build configuration. The recommended approach when using SPM is to link to your UI test target only, and enable the overrides from that target instead.
-
-### What about automation of the sample app?
+#### What about automation of the sample app?
 
 If you'd prefer to automate the app itself to automatically enable or disable the overrides, this can be done with environment variables.
 
