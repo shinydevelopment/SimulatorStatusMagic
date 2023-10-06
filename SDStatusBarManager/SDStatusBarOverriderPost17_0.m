@@ -1,5 +1,5 @@
 //
-//  SDStatusBarOverriderPost16_0.m
+//  SDStatusBarOverriderPost17_0.m
 //  SimulatorStatusMagic
 //
 //  Created by Chris Vasselli on 10/14/20.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SDStatusBarOverriderPost16_0.h"
+#import "SDStatusBarOverriderPost17_0.h"
 
 typedef NS_ENUM(int, StatusBarItem) {
   TimeStatusBarItem = 0,
@@ -63,7 +63,7 @@ typedef NS_ENUM(unsigned int, BatteryState) {
 
 
 typedef struct {
-  bool itemIsEnabled[45];
+  bool itemIsEnabled[46];
   char timeString[64];
   char shortTimeString[64];
   char dateString[256];
@@ -119,10 +119,11 @@ typedef struct {
   char secondaryServiceBadgeString[100];
   char quietModeImage[256];
   char quietModeName[256];
+  unsigned int extra1 : 1; // Unsure of actual size, but it's at least 1 byte. Since this is at the end of the struct, and we aren't modifying this part of the struct, it likely shouldn't matter that it's not the correct size.
 } StatusBarRawData;
 
 typedef struct {
-  bool overrideItemIsEnabled[45];
+  bool overrideItemIsEnabled[46];
   unsigned int overrideTimeString : 1;
   unsigned int overrideDateString : 1;
   unsigned int overrideGsmSignalStrengthRaw : 1;
@@ -159,6 +160,7 @@ typedef struct {
   unsigned int overrideSecondaryServiceBadgeString : 1;
   unsigned int overrideQuietModeImage : 1;
   unsigned int overrideQuietModeName : 1;
+  unsigned int overrideExtra1 : 1; // Not sure what this is, but there only seems to be one of them
   StatusBarRawData values;
 } StatusBarOverrideData;
 
@@ -185,7 +187,7 @@ typedef struct {
 
 @end
 
-@implementation SDStatusBarOverriderPost16_0
+@implementation SDStatusBarOverriderPost17_0
 
 @synthesize timeString;
 @synthesize dateString;
