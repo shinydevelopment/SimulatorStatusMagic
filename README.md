@@ -20,6 +20,8 @@ As of iOS 17, the API used by SimulatorStatusMagic is not accessible to processe
 
 Running `build_and_inject.sh` will do all of this for you. If you want to change anything about the values used in the status bar, you will need to update DynamicLibrary/main.m.
 
+On iOS 27+, it takes about 1-2 minutes for the status bar to appear after injection completes.
+
 
 ### 2) Using in screenshot automation UI Tests (iOS 16 and lower)
 - Add the swift package in xcode using the repository url (https://github.com/shinydevelopment/SimulatorStatusMagic)
